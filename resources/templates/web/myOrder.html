@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:8080/ -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="browsermode" content="application">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="Cache" content="no-cache">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <!-- 禁止百度转码 -->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta name="format-detection" content="telephone=no">
+    <title>我的订单</title>
+    <link rel="stylesheet" href="${request.contextPath}/web/css/reset.css?v=${verison!}">
+    <link rel="stylesheet" href="${request.contextPath}/web/css/base.css?v=${verison!}">
+    <link rel="stylesheet" href="${request.contextPath}/web/css/my-order.css?v=${verison!}">
+    <link rel="stylesheet" href="${request.contextPath}/plug/layui/css/layui.css" media="all">
+</head>
+<script type="text/javascript" src="${request.contextPath}/web/js/media_750.js"></script>
+<script type="text/javascript" src="${request.contextPath}/web/js/jquery.min.js"></script>
+<script type="text/javascript" src="${request.contextPath}/web/js/jquery.mobile.min.js"></script>
+<script type="text/javascript" src="${request.contextPath}/web/js/common.js?v=${verison!}"></script>
+<script src="${request.contextPath}/js/layer.js"></script>
+<body style="background-color: rgb(245, 245, 245);">
+<div data-role="page">
+    <div class="app">
+        <div class="my-order router">
+            <div class="header bg-color-red">
+                <div class="picTxt acea-row row-between-wrapper">
+                    <div class="text">
+                        <div class="name">订单信息</div>
+                        <div>
+                            累计订单：${totalOrder!} 总消费：￥${totalMoney!}
+                        </div>
+                    </div>
+                    <div class="pictrue">
+                        <img src="${request.contextPath}/web/images/211589991417_.pic_hd.png">
+                    </div>
+                </div>
+            </div>
+            <div class="nav acea-row row-around">
+                <div class="item <#if status==1>on</#if>" data-id="1">
+                    <div>待付款</div>
+                    <div class="num">
+                        ${groupOrder.status1!}
+                    </div>
+                </div>
+                <div class="item <#if status==6>on</#if>" data-id="6">
+                    <div>待拼团</div>
+                    <div class="num">${groupOrder.status6!}</div>
+                </div>
+                <div class="item <#if status==2>on</#if>" data-id="2">
+                    <div>待发货</div>
+                    <div class="num">${groupOrder.status2!}</div>
+                </div>
+                <div class="item <#if status==3>on</#if>" data-id="3">
+                    <div>待收货</div>
+                    <div class="num">${groupOrder.status3!}</div>
+                </div>
+                <div class="item <#if status==4>on</#if>" data-id="4">
+                    <div>待评价</div>
+                    <div class="num">${groupOrder.status4!}</div>
+                </div>
+                <div class="item <#if status==5>on</#if>" data-id="5">
+                    <div>已完成</div>
+                    <div class="num">${groupOrder.status5!}</div>
+                </div>
+            </div>
+            <div class="list">
+                <#if data??>
+                    <#list data as item>
+                        <div class="item">
+                            <div class="title acea-row row-between-wrapper">
+                                <div class="acea-row row-middle">
+                                    <#if item.orderType == 2>
+                                        <span class="sign cart-color acea-row row-center-wrapper">秒杀</span>
+                                    <#elseif item.orderType == 3>
+                                        <span class="sign cart-color acea-row row-center-wrapper">拼团</span>
+                                    </#if>
+                                    ${item.changeDate?string("yyyy-MM-dd HH:mm:ss")}
+                                </div>
+                                <div class="font-color-red">${item.statusName!}</div>
+                            </div>
+                            <div>
+                                <#list item.cartInfo as cart>
+                                    <div class="item-info acea-row row-between row-top" onclick="detail('${item.orderSeq!}')">
+                                        <div class="pictrue">
+                                            <img src="${cart.image!}">
+                                        </div>
+                                        <div class="text acea-row row-between">
+                                            <div class="name line2">${cart.goodsName!}</div>
+                                            <div class="money">!
+                                                <div>
+                                                    ￥${cart.webSinglePrice!}
+                                                </div>
+                                                <div>x${cart.totalNum!}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </div>
+                            <div class="totalPrice">
+                                共${item.totalNum}件商品，总金额
+                                <span class="money font-color-red">￥${item.webTotalPrice}</span>
+                                <#if item.orderType == 3>已拼团${item.groupNum!}人</#if>
+                            </div>
+                            <div class="bottom acea-row row-right row-middle">
+                                <#if item.status ==1>
+                                    <a href="javascript:void(0)" class="bnt cancelBnt" onclick="deleteOrder('${item.orderSeq!}')">
+                                        取消订单
+                                    </a>
+                                    <a href="${request.contextPath}/web/orderSubmit/${item.orderSeq!}" class="bnt bg-color-red">
+                                        立即付款
+                                    </a>
+                                <#elseif item.status ==2>
+                                    <a href="${request.contextPath}/web/orderDetail/${item.orderSeq!}" class="bnt bg-color-red">
+                                        查看详情
+                                    </a>
+                                 <#elseif item.status ==3>
+                                     <a href="javascript:void(0);" class="bnt bg-color-red" onclick="confirm('${item.orderSeq!}')">
+                                         确认收货
+                                     </a>
+                                 <#elseif item.status ==4>
+                                     <a href="${request.contextPath}/web/orderDetail/${item.orderSeq!}" class="bnt bg-color-red">
+                                         去评价
+                                     </a>
+                                 <#elseif item.status ==5>
+                                    <a href="${request.contextPath}/web/orderDetail/${item.orderSeq!}" class="bnt bg-color-red">
+                                        查看订单
+                                    </a>
+                                <#elseif item.status ==6>
+                                     <a href="${request.contextPath}/web/orderDetail/${item.orderSeq!}" class="bnt bg-color-red">
+                                         查看订单
+                                     </a>
+                                </#if>
+                            </div>
+                        </div>
+                    </#list>
+                </#if>
+                <#if data?size==0>
+                    <div class="noCart">
+                        <div class="pictrue">
+                            <img src="${request.contextPath}/web/images/noOrder.90017ce2.png">
+                        </div>
+                    </div>
+                </#if>
+            </div>
+        </div>
+    </div>
+    <#include "include/right.html" />
+</div>
+</body>
+<script>
+$(function () {
+    $('.nav .item').on('touchstart', function () {
+        $('.nav .item').removeClass('on');
+        $(this).addClass('on');
+    })
+    $('.row-around .item').on('click',function(){
+        window.location.href="${request.contextPath}/web/myOrder?status="+$(this).data("id");
+    });
+})
+function deleteOrder(id){
+    $.ajax({
+          type: 'POST',
+          url: '${request.contextPath}/web/order/delete/'+id,
+          dataType:'json',
+          contentType:'application/json',
+          success: function(data){
+              if(data.code==200){
+                    window.location.href="${request.contextPath}/web/myOrder?status=${status}";
+              }else{
+                 layer.msg(data.msg)
+              }
+          }
+    });
+}
+function confirm(id){
+    $.ajax({
+          type: 'POST',
+          url: '${request.contextPath}/web/order/confirm/'+id,
+          dataType:'json',
+          contentType:'application/json',
+          success: function(data){
+              layer.msg(data.msg)
+              if(data.code==200){
+               window.location.href="${request.contextPath}/web/myOrder?status=4";
+              }
+          }
+    });
+}
+function detail(id){
+    window.location.href="${request.contextPath}/web/orderDetail/"+id;
+}
+</script>
+</html>

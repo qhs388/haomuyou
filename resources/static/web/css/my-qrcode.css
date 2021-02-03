@@ -1,0 +1,17 @@
+.my-qrcode .wrapper{
+    padding: 1.26rem 0 1.26rem 0;
+    text-align: center;
+}
+.my-qrcode .wrapper .text {
+    padding: .2rem 0;
+    font-size: .32rem;
+    color: #000;
+}
+
+.my-qrcode .wrapper .qrcode{
+    text-align: center;
+}
+.my-qrcode .wrapper .qrcode img{
+    width: 4rem;
+    height: 4rem;
+}

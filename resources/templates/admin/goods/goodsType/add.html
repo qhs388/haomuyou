@@ -1,0 +1,205 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <title>添加分类</title>
+    <script src="${request.contextPath}/plug/vue/dist/vue.min.js"></script>
+    <link href="${request.contextPath}/plug/iview/dist/styles/iview.css" rel="stylesheet">
+    <script src="${request.contextPath}/plug/iview/dist/iview.min.js"></script>
+    <script src="${request.contextPath}/plug/jquery/jquery.min.js"></script>
+    <script src="${request.contextPath}/plug/form-create/province_city.js"></script>
+    <script src="${request.contextPath}/plug/form-create/province_city_area.js"></script>
+    <script src="${request.contextPath}/plug/form-create/form-create.min.js"></script>
+    <style type="text/css">
+    .fc-upload-btn, .fc-files {
+        display: inline-block;
+        width: 58px;
+        height: 58px;
+        text-align: center;
+        line-height: 58px;
+        border: 1px solid #c0ccda;
+        border-radius: 4px;
+        overflow: hidden;
+        background: #fff;
+        position: relative;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, .1);
+        margin-right: 4px;
+        box-sizing: border-box;
+    }
+
+    .__fc_h {
+        display: none;
+    }
+
+    .__fc_v {
+        visibility: hidden;
+    }
+
+    .fc-files img {
+        width: 100%;
+        height: 100%;
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    .fc-upload-btn {
+        border: 1px dashed #c0ccda;
+        cursor: pointer;
+    }
+
+    .fc-upload .fc-upload-cover {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, .6);
+        transition: opacity .3s;
+    }
+
+    .fc-upload .fc-upload-cover i {
+        color: #fff;
+        font-size: 20px;
+        cursor: pointer;
+        margin: 0 2px;
+    }
+
+    .fc-files:hover .fc-upload-cover {
+        opacity: 1;
+    }
+
+    .fc-hide-btn .ivu-upload .ivu-upload {
+        display: none;
+    }
+
+    .fc-upload .ivu-upload-list {
+        margin-top: 0;
+    }
+</style>
+    <style>
+        /*弹框样式修改*/
+        .ivu-modal{top: 20px;}
+        .ivu-modal .ivu-modal-body{padding: 10px;}
+        .ivu-modal .ivu-modal-body .ivu-modal-confirm-head{padding:0 0 10px 0;}
+        .ivu-modal .ivu-modal-body .ivu-modal-confirm-footer{display: none;padding-bottom: 10px;}
+        .ivu-date-picker {display: inline-block;line-height: normal;width: 280px;}
+        .ivu-modal-footer{display: none;}
+        body{padding: 20px;}
+    </style>
+</head>
+<body>
+<input type="hidden" id="rowKey">
+<script type="text/javascript">
+window.$f = null
+        formCreate.formSuccess = function(form,$r){
+        parent.$(".J_iframe:visible")[0].contentWindow.location.reload(); setTimeout(function(){parent.layer.close(parent.layer.getFrameIndex(window.name));},1000);        //刷新父级页面
+        //关闭当前窗口
+        //        var index = parent.layer.getFrameIndex(window.name);
+        //        parent.layer.close(index);
+        //提交成功后按钮恢复
+        // $r.loading(false);
+        };
+
+        (function () {
+        var create = (function () {
+            var getRule = function () {
+                var options = ${options};
+                var data = <#if data??>${data}<#else>""</#if>;
+                var rule = [{"type":"select","field":"pid","title":"父级","value":0,"props":{"multiple":false,"placeholder":"请选择父级","filterable":true},"options":[],"validate":[],"col":[]},{"type":"input","field":"cateName","title":"分类名称","value":"","props":{"type":"text","placeholder":"请输入分类名称"},"validate":[],"col":[]},{"type":"frame","field":"pic","title":"分类图标(180*180)","value":"","props":{"type":"image","maxLength":1,"title":"请选择分类图标(180*180)","src":"/admin/file/image?parentinputname=pic","icon":"image","width":"100%","height":"500px"},"validate":[],"col":[]},{"type":"inputNumber","field":"sort","title":"排序","value":"","props":{"placeholder":"请输入排序"},"validate":[],"col":[]},{"type":"radio","field":"isShow","title":"状态","value":"1","props":{},"options":[{"label":"显示","value":"1"},{"label":"隐藏","value":"0"}],"validate":[],"col":[]},{"type":"radio","field":"type","title":"类型","value":"1","props":{},"options":[{"label":"用途","value":"1"},{"label":"材质","value":"2"}],"validate":[],"col":[]}];
+                rule[0].options = options;
+                if(""!=data){
+                console.log(data.pid.toString());
+                    rule[0].value=data.pid;
+                    rule[1].value=data.cateName;
+                    rule[2].value=data.pic;
+                    rule[3].value=data.sort;
+                    rule[4].value=data.isShow.toString();
+                    rule[5].value=data.type.toString();;
+                    $("#rowKey").val(data.id);
+                }
+                rule.forEach(function (c) {
+                    if ((c.type == 'cascader' || c.type == 'tree') && Object.prototype.toString.call(c.props.data) == '[object String]') {
+                        if (c.props.data.indexOf('js.') === 0) {
+                            c.props.data = window[c.props.data.replace('js.', '')];
+                        }
+                    }
+                });
+                return rule;
+            }, vm = new Vue,name = 'formBuilderExec';
+            var _b = false;
+            window[name] =  function create(el, callback) {
+                if(_b) return ;
+                _b = true;
+                if (!el) el = document.body;
+                $f = formCreate.create(getRule(), {
+                    el: el,
+                    form:{"inline":false,"labelPosition":"right","labelWidth":125,"showMessage":true,"autocomplete":"off"},
+                    row:[],
+                    submitBtn:{},
+                    resetBtn:{},
+                    iframeHelper:true,
+                    global:{
+                        upload: {
+                            props:{
+                                onExceededSize: function (file) {
+                                    vm.$Message.error(file.name + '超出指定大小限制');
+                                },
+                                onFormatError: function () {
+                                    vm.$Message.error(file.name + '格式验证失败');
+                                },
+                                onError: function (error) {
+                                    vm.$Message.error(file.name + '上传失败,(' + error + ')');
+                                },
+                                onSuccess: function (res, file) {
+                                    if (res.code == 200) {
+                                        file.url = res.data.filePath;
+                                    } else {
+                                        vm.$Message.error(res.msg);
+                                    }
+                                },
+                            },
+                        },
+                    },
+                    //表单提交事件
+                    onSubmit: function (formData) {
+                        $f.btn.loading(true);
+                        var rowKey = $("#rowKey").val();
+                        var url = '${request.contextPath}/admin/goodsType/add';
+                        if(""!= rowKey){
+                            formData.id = rowKey;
+                            url = '${request.contextPath}/admin/goodsType/modify';
+                        }
+                        $.ajax({
+                            url: url,
+                            type: 'POST',
+                            dataType: 'json',
+                            data: formData,
+                            success: function (res) {
+                                if (res.code == 200) {
+                                    vm.$Message.success(res.msg);
+                                    $f.btn.loading(false);
+                                    formCreate.formSuccess && formCreate.formSuccess(res, $f, formData);
+                                    callback && callback(0, res, $f, formData);
+                                    //TODO 表单提交成功!
+                                } else {
+                                    vm.$Message.error(res.msg || '表单提交失败');
+                                    $f.btn.loading(false);
+                                    callback && callback(1, res, $f, formData);
+                                    //TODO 表单提交失败
+                                }
+                            },
+                            error: function () {
+                                vm.$Message.error('表单提交失败');
+                                $f.btn.loading(false);
+                            }
+                        });
+                    }
+                });
+                return $f;
+            };
+            return window[name];
+        }());
+
+        window.$f = create();
+        })();
+        </script>
+</body></html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="browsermode" content="application">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="Cache" content="no-cache">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <!-- 禁止百度转码 -->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta name="format-detection" content="telephone=no">
+    <title>我的推广</title>
+    <link rel="stylesheet" href="${request.contextPath}/web/css/reset.css?v=${verison!}">
+    <link rel="stylesheet" href="${request.contextPath}/web/css/base.css?v=${verison!}">
+    <link rel="stylesheet" href="${request.contextPath}/web/css/user-cash.css?v=${verison!}">
+    <link rel="stylesheet" href="${request.contextPath}/plug/layui/css/layui.css" media="all">
+</head>
+<body style="background-color: rgb(245, 245, 245);">
+<div data-role="page">
+    <div class="app">
+        <div class="cash-withdrawal router">
+            <div class="nav acea-row">
+                <div class="item font-color-red">
+                    <div class="line bg-color-red on"></div>
+                    <div class="iconfont icon-yinhangqia on"></div>
+                    <div>银行卡</div>
+                </div>
+                <div class="item font-color-red">
+                    <div class="line bg-color-red"></div>
+                    <div class="iconfont icon-weixin2 "></div>
+                    <div>微信</div>
+                </div>
+                <div class="item font-color-red">
+                    <div class="line bg-color-red"></div>
+                    <div class="iconfont icon-icon34 "></div>
+                    <div>支付宝</div>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="list"  data-type="1">
+                    <div class="item acea-row row-between-wrapper">
+                        <div class="name">持卡人</div>
+                        <div class="input"><input placeholder="请输入持卡人姓名" id="cardName"></div>
+                    </div>
+                    <div class="item acea-row row-between-wrapper">
+                        <div class="name">卡号</div>
+                        <div class="input"><input placeholder="请填写卡号" id="cardNo"></div>
+                    </div>
+                    <div class="item acea-row row-between-wrapper">
+                        <div class="name">银行</div>
+                        <div class="input"><select id="cardType">
+                            <option value="">请选择银行</option>
+                            <option value="中国农行">中国农行</option>
+                            <option value="中国建设银行">中国建设银行</option>
+                            <option value="工商银行">工商银行</option>
+                        </select></div>
+                    </div>
+                    <div class="item acea-row row-between-wrapper">
+                        <div class="name">提现</div>
+                        <div class="input"><input placeholder="最低提现金额" class="webMoney1" type="number"></div>
+                    </div>
+                    <div class="tip">当前余额: ${data.totalMoney} 可提现金额：${data.canOut!}</div>
+                    <a class="bnt bg-color-red">提现</a>
+                </div>
+                <div class="list" hidden="hidden" data-type="2">
+                    <div class="item acea-row row-between-wrapper">
+                        <div class="name">微信号</div>
+                        <div class="input"><input placeholder="请输入微信号" id="weixinNo"></div>
+                    </div>
+                    <div class="item acea-row row-between-wrapper">
+                        <div class="name">提现</div>
+                        <div class="input"><input placeholder="最低提现金额"  class="webMoney2" type="number"></div>
+                    </div>
+                    <div class="tip">当前余额: ${data.totalMoney} 可提现金额：${data.canOut!}</div>
+                    <a class="bnt bg-color-red">提现</a>
+                </div>
+                <div class="list" hidden="hidden" data-type="3">
+                    <div class="item acea-row row-between-wrapper">
+                        <div class="name">用户名</div>
+                        <div class="input"><input placeholder="请输入支付宝用户名" id="zhifubaoName"></div>
+                    </div>
+                    <div class="item acea-row row-between-wrapper">
+                        <div class="name">账号</div>
+                        <div class="input"><input placeholder="请输入支付宝账号" id="zhifubaoNo"></div>
+                    </div>
+                    <div class="item acea-row row-between-wrapper">
+                        <div class="name">提现</div>
+                        <div class="input"><input placeholder="最低提现金额" class="webMoney3" type="number"></div>
+                    </div>
+                    <div class="tip">当前余额: ${data.totalMoney} 可提现金额：${data.canOut!}</div>
+                    <a class="bnt bg-color-red">提现</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <#include "include/right.html" />
+</div>
+</body>
+<script type="text/javascript" src="${request.contextPath}/web/js/media_750.js"></script>
+<script type="text/javascript" src="${request.contextPath}/web/js/jquery.min.js"></script>
+<script type="text/javascript" src="${request.contextPath}/web/js/jquery.mobile.min.js"></script>
+<script type="text/javascript" src="${request.contextPath}/web/js/common.js"></script>
+<script src="${request.contextPath}/js/layer.js"></script>
+<script>
+    var canOut = ${data.canOut!}*100;
+    var totalMoney = ${data.totalMoney!}*100;
+    $(function () {
+        var $changeItem = $('.nav .item');
+        $changeItem.on('touchstart', function () {
+            var $this = $(this);
+            var index = $this.index();
+            var $lists = $('.cash-withdrawal .wrapper .list');
+            $changeItem.find('.line, .iconfont').removeClass('on');
+            $this.find('.line, .iconfont').addClass('on');
+            $lists.hide();
+            $($lists.get(index)).show();
+        })
+        $(".list .bg-color-red").on('touchstart',function(){
+                // layer.msg("当前余额不足", {icon: 2})
+                var obj = new Object();
+                var type = $(this).parent().data("type");
+                obj["cashoutType"] = type;
+                if(obj["cashoutType"] == '1'){
+                    obj["cardName"] =  $.trim($("#cardName").val());
+                    obj["cardNo"] =  $.trim($("#cardNo").val());
+                    obj["cardType"] =  $.trim($("#cardType").val());
+                    if("" == obj["cardName"]){
+                        layer.msg("持卡人姓名不能为空！")
+                        return;
+                    }
+                    if("" == obj["cardName"]){
+                        layer.msg("银行卡号不能为空！")
+                        return;
+                    }
+                    if("" == obj["cardName"]){
+                        layer.msg("银行类型不能为空！")
+                        return;
+                    }
+                }else if(obj["cashoutType"] == '2'){
+                    obj["weixinNo"] =  $.trim($("#weixinNo").val());
+                    if("" == obj["weixinNo"]){
+                        layer.msg("微信号不能为空！")
+                        return;
+                    }
+                }else if(obj["cashoutType"] == '3'){
+                    obj["zhifubaoName"] =  $.trim($("#zhifubaoName").val());
+                    obj["zhifubaoNo"] =  $.trim($("#zhifubaoNo").val());
+                    if("" == obj["zhifubaoName"]){
+                        layer.msg("支付宝用户名不能为空！")
+                        return;
+                    }
+                    if("" == obj["zhifubaoNo"]){
+                        layer.msg("支付宝账户不能为空！")
+                        return;
+                    }
+                }
+                obj["webMoney"] =  $.trim($(".webMoney"+type).val());
+                if("" == obj["webMoney"]){
+                    layer.msg("提现金额不能为空！")
+                    return;
+                }
+                if(0 == canOut || obj["webMoney"]*100 > canOut){
+                    layer.msg("可提现金额不足！")
+                    return;
+                }
+                $.ajax({
+                  type: 'POST',
+                  url: '${request.contextPath}/web/applyInfo/addCashOut',
+                  data: JSON.stringify(obj),
+                  dataType:'json',
+                  contentType:'application/json',
+                  success: function(data){
+                      layer.msg(data.msg)
+                      if(data.code==200){
+                         window.location.reload();
+                      }
+                  }
+            });
+        })
+    })
+</script>
+</html>

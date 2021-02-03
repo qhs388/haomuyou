@@ -1,0 +1,219 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <title>添加分类</title>
+    <!-- import Vue 2.5-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.min.js"></script>
+    <!-- import iview 2.14.3-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/iview@2.14.3/dist/styles/iview.css">
+    <script src="https://cdn.jsdelivr.net/npm/iview@2.14.3/dist/iview.min.js"></script>
+    <!-- 省市区三级联动json数据,不使用三级联动不需要引入 -->
+    <script src="https://cdn.jsdelivr.net/npm/form-create/district/province_city_area.js"></script>
+    <!-- import formCreate -->
+    <script src="https://cdn.jsdelivr.net/npm/form-create/dist/form-create.min.js"></script>
+    <script src="${request.contextPath}/plug/jquery/jquery.min.js"></script>
+    <style>
+        .fc-upload .fc-upload-cover i {
+            line-height: 56px;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <div id="form-create"></div>
+</div>
+<script type="text/javascript">
+    var rule1 = [
+      {"type":"input","field":"name","title":"姓名","value":"${data.name!}","props":{"disabled":true}},
+      {"type":"hidden","field":"id","title":"id","value":"${data.id!}","props":{"disabled":true}},
+      {"type":"input","field":"phone","title":"联系方式","value":"${data.phone!}","props":{"disabled":true}},
+      {"type":"input","field":"address","title":"地址","value":"${data.address!}","props":{"disabled":true}},
+      {
+            "type":"radio",
+            "field":"status",
+            "title":"审核",
+            "value":"${data.status!}",
+            "props":{
+
+            },
+            "options":[
+                {
+                    "label":"通过",
+                    "value":"1"
+                },
+                {
+                    "label":"不通过",
+                    "value":"2"
+                }
+            ]
+        },
+       {"type":"input","field":"remark","title":"备注","value":"${data.remark!}","props":{"type":"textarea","placeholder":"请输入备注"}}
+    ]
+    var rule2 = [
+      {"type":"hidden","field":"id","title":"id","value":"${data.id!}","props":{"disabled":true}},
+      {"type":"input","field":"name","title":"姓名","value":"${data.name!}","props":{"disabled":true}},
+      {"type":"input","field":"phone","title":"联系方式","value":"${data.phone!}","props":{"disabled":true}},
+      {"type":"input","field":"address","title":"地址","value":"${data.address!}","props":{"disabled":true}},
+      {"type":"input","field":"sfzh","title":"身份证号","value":"${data.sfzh!}","props":{"disabled":true}},
+      {"type":"input","field":"goods_price","title":"商品价格","value":12},
+      {
+        "type":"frame",
+        "field":"sfzhImage1",
+        "title":"身份证正面",
+        "value":"${data.sfzhImage1!}",
+        "props":{
+            "type":"image",
+            "maxLength":1,
+            "icon":"image",
+             allowRemove:false
+        }
+       },
+       {
+        "type":"frame",
+        "field":"sfzhImage2",
+        "title":"身份证反面",
+        "value":"${data.sfzhImage2!}",
+        "props":{
+            "type":"image",
+            "maxLength":1,
+            "icon":"image",
+             allowRemove:false
+        }
+       },
+       {
+            "type":"radio",
+            "field":"status",
+            "title":"审核",
+            "value":"${data.status!}",
+            "props":{
+
+            },
+            "options":[
+                {
+                    "label":"通过",
+                    "value":"1"
+                },
+                {
+                    "label":"不通过",
+                    "value":"2"
+                }
+            ]
+        },
+       {"type":"input","field":"remark","title":"备注","value":"${data.remark!}","props":{"type":"textarea","placeholder":"请输入备注"}}
+    ]
+    var rule3 = [
+      {"type":"hidden","field":"id","title":"id","value":"${data.id!}","props":{"disabled":true}},
+      {"type":"input","field":"name","title":"姓名","value":"${data.name!}","props":{"disabled":true}},
+      {"type":"hidden","field":"zzhm","title":"执照号码","value":"${data.zzhm!}","props":{"disabled":true}},
+      {
+        "type":"frame",
+        "field":"yyzzImage",
+        "title":"营业执照",
+        "value":"${data.yyzzImage!}",
+        "props":{
+            "type":"image",
+            "maxLength":1,
+            "icon":"image",
+             allowRemove:false
+        }
+       },
+        {
+        "type":"frame",
+        "field":"sfzhImage1",
+        "title":"身份证正面",
+        "value":"${data.sfzhImage1!}",
+        "props":{
+            "type":"image",
+            "maxLength":1,
+            "icon":"image",
+             allowRemove:false
+        }
+       },
+       {
+        "type":"frame",
+        "field":"sfzhImage2",
+        "title":"身份证反面",
+        "value":"${data.sfzhImage2!}",
+        "props":{
+            "type":"image",
+            "maxLength":1,
+            "icon":"image",
+             allowRemove:false
+        }
+       },
+       {
+            "type":"radio",
+            "field":"status",
+            "title":"审核",
+            "value":"${data.status!}",
+            "props":{
+
+            },
+            "options":[
+                {
+                    "label":"通过",
+                    "value":"1"
+                },
+                {
+                    "label":"不通过",
+                    "value":"2"
+                }
+            ]
+        },
+       {"type":"input","field":"remark","title":"备注","value":"${data.remark!}","props":{"type":"textarea","placeholder":"请输入备注"}}
+    ]
+    //表单插入的节点
+    var root = document.getElementById('form-create');
+
+    var $f = {},model = {};
+    var vm = new Vue;
+
+    var type = '${data.type!}';
+    var rule;
+    if(type == '1'){
+        rule = rule1;
+    }else  if(type == '2'){
+        rule = rule2;
+    }else  if(type == '3'){
+        rule = rule3;
+    }
+
+    //$f为表单api
+    $f = window.formCreate.create(
+        //表单生成规则
+        rule,
+        //组件参数配置
+        {
+            el:root,
+            //表单提交事件
+            onSubmit:function (formData) {
+                $f.btn.loading(true);
+                $.ajax({
+                    url: '${request.contextPath}/admin/applyInfo/update',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: formData,
+                    success: function (res) {
+                        if (res.code == 200) {
+                            vm.$Message.success(res.msg);
+                            $f.btn.loading(false);
+                            parent.$(".J_iframe:visible")[0].contentWindow.location.reload(); setTimeout(function(){parent.layer.close(parent.layer.getFrameIndex(window.name));},1000);
+                        } else {
+                            vm.$Message.error(res.msg || '表单提交失败');
+                            $f.btn.loading(false);
+                        }
+                    },
+                    error: function () {
+                        vm.$Message.error('表单提交失败');
+                        $f.btn.loading(false);
+                    }
+                });
+
+
+            }
+    });
+
+    //获取双向数据绑定的数据规则
+    model = $f.model();
+</script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+.my-account .wrapper {
+    background-color: #fff;
+    padding: .32rem 0 .34rem 0;
+    margin-bottom: .14rem;
+}
+.my-account .wrapper .header {
+    width: 6.92rem;
+    height: 3.76rem;
+    border-radius: .16rem;
+    margin: 0 auto;
+    color: hsla(0,0%,100%,.6);
+    font-size: .24rem;
+}
+.my-account .wrapper .header .headerCon {
+    background-image: url(../images/account-card.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    padding: .36rem 0 .29rem 0;
+}
+.my-account .wrapper .header .headerCon .account {
+    padding: 0 .35rem;
+}
+.my-account .wrapper .header .headerCon .cumulative {
+    margin-top: .5rem;
+}
+.my-account .wrapper .header .headerCon .account .assets .money {
+    font-size: .72rem;
+    color: #fff;
+    font-family: GuildfordProBook\ 5;
+    margin-top: .1rem;
+    height: .75rem;
+    line-height: .75rem;
+}
+.my-account .wrapper .header .headerCon .account .recharge {
+    font-size: .28rem;
+    width: 1.5rem;
+    height: .54rem;
+    border-radius: .27rem;
+    background-color: #fff9f8;
+    text-align: center;
+    line-height: .54rem;
+}
+.my-account .wrapper .header .headerCon .cumulative .item {
+    -webkit-box-flex: 1;
+    flex: 1;
+    -webkit-flex: 1;
+    -o-flex: 1;
+    -ms-flex: 1;
+    padding-left: .35rem;
+}
+.my-account .wrapper .header .headerCon .cumulative .item .money {
+    font-size: .48rem;
+    font-family: GuildfordProBook\ 5;
+    color: #fff;
+    margin-top: .06rem;
+}
+.my-account .tip {
+    font-size:.26rem;
+    color:rgba(83,74,74,1);
+    line-height:.34rem;
+    padding: 0 .34rem;
+    margin-top: -.2rem;
+}
+.my-account .wrapper .list {
+    padding: 0 .3rem;
+}
+.my-account .wrapper .list .item {
+    margin-top: .44rem;
+}
+.my-account .wrapper .list .item .picTxt {
+    width: 4.28rem;
+    font-size: .3rem;
+    color: #282828;
+}
+
+.my-account .wrapper .list .item .picTxt .iconfont {
+    width: .82rem;
+    height: .82rem;
+    border-radius: 50%;
+    background-image: -webkit-gradient(linear,left top,right top,from(#ff9389),to(#f9776b));
+    background-image: linear-gradient(90deg,#ff9389 0,#f9776b);
+    background-image: -moz-linear-gradient(to right,#ff9389 0,#f9776b 100%);
+    text-align: center;
+    line-height: .82rem;
+    color: #fff;
+    font-size: .4rem;
+}
+.my-account .wrapper .list .item .picTxt .iconfont img{
+    width: 21px;
+    height: 20px;
+    vertical-align: text-top;
+}
+.my-account .wrapper .list .item .picTxt .text {
+    width: 3.17rem;
+}
+.my-account .wrapper .list .item .picTxt .text .infor {
+    font-size: .24rem;
+    color: #999;
+    margin-top: .05rem;
+}
+.my-account .wrapper .list .item .bnt.end {
+    font-size: .26rem;
+    color: #aaa;
+    background-color: #f2f2f2;
+    border-color: #f2f2f2;
+}
+.my-account .wrapper .list .item .bnt {
+    font-size: .26rem;
+    color: #282828;
+    width: 1.56rem;
+    height: .52rem;
+    border: 1px solid #ddd;
+    border-radius: .26rem;
+    text-align: center;
+    line-height: .5rem;
+}
+.recommend {
+    background-color: #fff;
+}
+.recommend .title {
+    height: 1.35rem;
+    font-size: .28rem;
+    color: #282828;
+}
+.recommend .title .iconfont {
+    font-size: 1.7rem;
+    color: #454545;
+    height: .5rem;
+    line-height: .5rem;
+}
+.icon-zhuangshixian:before {
+    content: "\E6F1";
+}
+.recommend .title .name {
+    margin: 0 .28rem;
+}
+.recommend .title .iconfont {
+    font-size: 1.7rem;
+    color: #454545;
+    height: .5rem;
+    line-height: .5rem;
+}
+.recommend .title .iconfont.lefticon {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+}
+.recommend .recommendList {
+    padding: 0 .3rem;
+}
+.recommend .recommendList .item {
+    width: 3.35rem;
+    margin-bottom: .3rem;
+}
+.recommend .recommendList .item .pictrue {
+    width: 100%;
+    height: 3.35rem;
+    position: relative;
+}
+.recommend .recommendList .item .pictrue .image {
+    width: 100%;
+    height: 100%;
+    border-radius: .1rem;
+}
+.pictrue_log_big {
+    width: 1rem;
+    height: .46rem;
+    line-height: .46rem;
+    border-radius: .1rem 0 .16rem 0;
+    font-size: .28rem;
+}
+.pictrue_log_class {
+    background: -webkit-gradient(linear,left top,right top,from(#f67a38),to(#f11b09));
+    background: linear-gradient(90deg,#f67a38,#f11b09);
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #fff;
+    text-align: center;
+}
+.recommend .recommendList .item .name {
+    font-size: .28rem;
+    color: #282828;
+    margin-top: .2rem;
+}
+.recommend .recommendList .item .money {
+    font-size: .2rem;
+    margin-top: .03rem;
+}
+.recommend .recommendList .item .money .num {
+    font-size: .28rem;
+}
+.icon-hebingxingzhuang:before {
+    content: "\E656";
+}
+.my-account .wrapper .list .item .picTxt .iconfont.yellow {
+    background-image: -webkit-gradient(linear,left top,right top,from(#fca),to(#fea060));
+    background-image: -moz-linear-gradient(to right,#fca 0,#fea060 100%);
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:8080/ -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="browsermode" content="application">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="Cache" content="no-cache">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <!-- 禁止百度转码 -->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta name="format-detection" content="telephone=no">
+    <title>我的账户</title>
+    <link rel="stylesheet" href="${request.contextPath}/web/css/reset.css?v=${verison!}">
+    <link rel="stylesheet" href="${request.contextPath}/web/css/base.css?v=${verison!}">
+    <link rel="stylesheet" href="${request.contextPath}/web/css/my-account.css?v=${verison!}">
+</head>
+<body style="background-color: rgb(255, 255, 255);">
+<div data-role="page">
+    <div class="app">
+        <div class="my-account router">
+            <div class="wrapper">
+                <div class="header">
+                    <div class="headerCon">
+                        <div class="account acea-row row-top row-between">
+                            <div class="assets">
+                                <div>
+                                    总资产(元)
+                                </div>
+                                <div class="money">
+                                    ${data.totalMoney!}
+                                </div>
+                            </div>
+                            <a href="${request.contextPath}/web/getCash" class="recharge font-color-red">提现</a>
+                        </div>
+                        <div class="cumulative acea-row row-top">
+                            <div class="item">
+                                <div>
+                                    累计提现(元)
+                                </div>
+                                <div class="money">
+                                    ${data.totalOut!}
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div>
+                                    累计消费(元)
+                                </div>
+                                <div class="money">
+                                    ${data.totalCost!}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="list">
+                    <div class="item acea-row row-between-wrapper">
+                        <div class="picTxt acea-row row-between-wrapper">
+                            <div class="iconfont"><img src="${request.contextPath}/web/images/pintuan.png"></div>
+                            <div class="text">
+                                <div class="line1">
+                                    最新拼团活动
+                                </div>
+                                <div class="infor line1">
+                                    最新的优惠商品上架拼团
+                                </div>
+                            </div>
+                        </div>
+                        <a href="${request.contextPath}/web/groupGoods" class="bnt">立即参与</a>
+                    </div>
+                    <div class="item acea-row row-between-wrapper">
+                        <div class="picTxt acea-row row-between-wrapper">
+                            <div class="iconfont yellow"><img src="${request.contextPath}/web/images/miaosha.png"></div>
+                            <div class="text">
+                                <div class="line1">
+                                    当前限时秒杀
+                                </div>
+                                <div class="infor line1">
+                                    最新商品秒杀进行中
+                                </div>
+                            </div>
+                        </div>
+                        <a href="${request.contextPath}/web/skillGoods" class="bnt">立即参与</a>
+                    </div>
+                </div>
+                <div class="recommend">
+                    <div class="title acea-row row-center-wrapper">
+                        <span class="iconfont icon-zhuangshixian"></span>
+                        <span class="name">为你推荐</span>
+                        <span class="iconfont icon-zhuangshixian lefticon"></span>
+                    </div>
+                    <div class="recommendList acea-row row-between-wrapper">
+                        <#if recommend??>
+                            <#list recommend as item>
+                                <div class="item"  onclick="jump(${item.id})">
+                                    <div class="pictrue">
+                                        <img src="${item.image!}" class="image"/>
+                                        <!---->
+                                        <span class="pictrue_log_big pictrue_log_class">热销</span>
+                                        <!---->
+                                    </div>
+                                    <div class="name line1">
+                                        ${item.goodsName!}
+                                    </div>
+                                    <div class="money font-color-red">
+                                        ￥
+                                        <span class="num">${item.webPrice!}</span>
+                                    </div>
+                                </div>
+                            </#list>
+                        </#if>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <#include "include/right.html" />
+    </div>
+</body>
+<script type="text/javascript" src="${request.contextPath}/web/js/media_750.js"></script>
+<script type="text/javascript" src="${request.contextPath}/web/js/jquery.min.js"></script>
+<script type="text/javascript" src="${request.contextPath}/web/js/jquery.mobile.min.js"></script>
+<script type="text/javascript" src="${request.contextPath}/web/js/common.js"></script>
+<script>
+  function jump(id){
+        window.location.href="${request.contextPath}/web/goodsDetail/" + id;
+       }
+</script>
+</html>

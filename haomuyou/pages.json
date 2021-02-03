@@ -1,12 +1,68 @@
 {
+	"easycom": {
+		"^u-(.*)": "@/uview-ui/components/u-$1/u-$1.vue"
+	},
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
-			"path": "pages/index/index",
+			"path": "pages/tabbar/index",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationBarTitleText": "首页"
+			}
+		},
+		{
+			"path": "pages/tabbar/category",
+			"style": {
+				"navigationBarTitleText": "分类"
+			}
+		},
+		{
+			"path": "pages/tabbar/cartList",
+			"style": {
+				"navigationBarTitleText": "购物车"
+			}
+		},
+		{
+			"path": "pages/tabbar/userCenter",
+			"style": {
+				"navigationBarTitleText": "我的"
 			}
 		}
 	],
+	"tabBar": {
+		"height": "50px",
+		"borderStyle": "white",
+		"backgroundColor": "#ffffff",
+		"color": "#444444",
+		"selectedColor": "#e44b1d",
+		"fontSize": "10px",
+		"iconWidth": "24px",
+		"spacing": "1px",
+		"list": [{
+				"pagePath": "pages/tabbar/index",
+				"iconPath": "static/img/tabbar/shouye2.png",
+				"selectedIconPath": "static/img/tabbar/shouye1.png",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/tabbar/category",
+				"iconPath": "static/img/tabbar/spfl2.png",
+				"selectedIconPath": "static/img/tabbar/spfl1.png",
+				"text": "分类"
+			},
+			{
+				"pagePath": "pages/tabbar/cartList",
+				"iconPath": "static/img/tabbar/gouwuche2.png",
+				"selectedIconPath": "static/img/tabbar/gouwuche1.png",
+				"text": "购物车"
+			},
+			{
+				"pagePath": "pages/tabbar/userCenter",
+				"iconPath": "static/img/tabbar/wode2.png",
+				"selectedIconPath": "static/img/tabbar/wode1.png",
+				"text": "我的"
+			}
+		]
+	},
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",

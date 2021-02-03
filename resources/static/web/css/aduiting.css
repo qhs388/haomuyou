@@ -1,0 +1,25 @@
+.aduiting .wrapper {
+    background-color: #fff;
+    padding: .32rem 0 .34rem 0;
+    margin-bottom: .14rem;
+}
+.aduiting .wrapper .msg {
+    color:#9B9B9B;
+    font-size: .36rem;
+    text-align: center;
+    margin-top: .72rem;
+}
+.aduiting .wrapper .confirm-container {
+    text-align: center;
+    margin: .64rem 0 .34rem 0;
+}
+.aduiting .wrapper .confirm-container .keepBnt {
+    display: inline-block;
+    width: 2.38rem;
+    height: .6rem;
+    text-align: center;
+    line-height: .6rem;
+    font-size: .26rem;
+    color: #fff;
+    border-radius: .36rem;
+}

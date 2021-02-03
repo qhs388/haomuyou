@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:8080/ -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="browsermode" content="application">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="Cache" content="no-cache">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <!-- 禁止百度转码 -->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta name="format-detection" content="telephone=no">
+    <title>限时抢购</title>
+    <link rel="stylesheet" href="${request.contextPath}/web/css/reset.css?v=${verison!}">
+    <link rel="stylesheet" href="${request.contextPath}/web/css/base.css?v=${verison!}">
+    <link rel="stylesheet" href="${request.contextPath}/web/css/goods-seckill.css?v=${verison!}">
+</head>
+<script type="text/javascript" src="${request.contextPath}/web/js/media_750.js"></script>
+<script type="text/javascript" src="${request.contextPath}/web/js/jquery.min.js"></script>
+<script type="text/javascript" src="${request.contextPath}/web/js/jquery.mobile.min.js"></script>
+<script type="text/javascript" src="${request.contextPath}/web/js/common.js?v=${verison!}"></script>
+<body style="background-color: rgb(255, 255, 255);">
+<div data-role="page">
+    <div class="app">
+        <div class="flash-sale router">
+            <div class="header">
+                <img src="http://demo3.crmeb.net/uploads/attach/2019/11/20191127/0f82ff4c674a9ecb37d64bba95b8ae62.jpg">
+            </div>
+            <div class="time-tabs van-tabs van-tabs--line">
+                <div>
+                    <div class="van-sticky">
+                        <div class="van-tabs__wrap van-tabs__wrap--scrollable van-hairline--top-bottom">
+                            <div role="tablist" class="van-tabs__nav van-tabs__nav--line">
+                                <#list data as item>
+                                    <div role="tab" class="van-tab <#if item.status == 1>van-tab--active</#if>"
+                                         style="flex-basis: 22%;" <#if item.status == 1>aria-selected="true"</#if>>
+                                    <span class="van-ellipsis">
+                                        <div>
+                                            <div class="timeItem">
+                                                <div class="time">${item.time!}</div>
+                                                <div class="state">${item.statusName!}</div>
+                                            </div>
+                                        </div>
+                                    </span>
+                                    </div>
+                                </#list>
+                                <div class="van-tabs__line"
+                                     style="width: 50.5px; transition-duration: 0.3s; height: 0px; border-radius: 0px;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="van-tabs__content van-tabs__content--animated">
+                <div class="van-tabs__track" style="transition-duration: 0.3s;">
+                    <#list data as item>
+                        <div role="tabpanel" class="van-tab__pane-wrapper <#if item.status == 0 || item.status == 2>van-tab__pane-wrapper--inactive</#if>"
+                             aria-hidden="true">
+                            <div class="van-tab__pane">
+                                <div class="countDown font-color-red acea-row row-center-wrapper">
+                                    <#if item.status == 2>
+                                    <div class="activity">活动已结束</div>
+                                    <#elseif item.status == 0>
+                                        <div class="activity">活动即将开始</div>
+                                    <#elseif item.status == 1>
+                                        <div class="time">
+                                            距结束仅剩
+                                            <span class="timeTxt"></span>
+                                            <span class="styleAll time1">00</span>
+                                            <span class="timeTxt"> : </span>
+                                            <span class="styleAll time2">00</span>
+                                            <span class="timeTxt"> : </span>
+                                            <span class="styleAll time3">00</span>
+                                            <span class="timeTxt"></span>
+                                        </div>
+                                    </#if>
+                                </div>
+                                <div class="list">
+                                    <#if item.seckillGoodsBeanList??>
+                                        <#list item.seckillGoodsBeanList as goods>
+                                            <div class="item acea-row row-between-wrapper">
+                                                <div class="pictrue">
+                                                    <img src="${goods.goodsImage!}">
+                                                </div>
+                                                <div class="text acea-row row-column-around">
+                                                    <div class="line1">${goods.goodsName!}</div>
+                                                    <div class="money">
+                                                        限时价<span class="num font-color-red">￥${goods.webSeckillPrice!}</span>
+                                                    </div>
+                                                    <div class="progress cart-color">
+                                                        <div class="bg-red" style="width: ${goods.percent!}%;"></div>
+                                                        <div class="piece font-color-red">仅剩${goods.usableNum}件</div>
+                                                    </div>
+                                                </div>
+                                                <#if item.status == 2>
+                                                    <a class="grab bg-color-red">已结束</a>
+                                                    <#elseif item.status == 0>
+                                                        <a class="grab bg-color-red">即将开始</a>
+                                                        <#elseif item.status == 1>
+                                                            <a class="grab bg-color-red"
+                                                               href="${request.contextPath}/web/skillDetail/${goods.id!}">马上抢</a>
+                                                </#if>
+                                            </div>
+                                        </#list>
+                                    </#if>
+                                </div>
+                            </div>
+                        </div>
+                    </#list>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<#include "include/right.html" />
+</div>
+</body>
+<script>
+
+    $(function () {
+        var fontSize = $(document.documentElement).css('fontSize').replace('px', '');
+        var tabWidth = 101.5 * fontSize / 50;
+        var currentIndex = ${currentIndex!};
+        changeTab();
+
+        var $tabList = $('.van-sticky .van-tab');
+        $tabList.on('touchstart', function () {
+            var $this = $(this);
+            currentIndex = $this.index();
+            $tabList.removeClass('van-tab--active');
+            $tabList.removeAttr('aria-selected');
+            $this.addClass('van-tab--active');
+            $this.attr('aria-selected', true);
+            changeTab();
+        })
+
+        function changeTab() {
+            var offset = currentIndex * tabWidth - $(window).width() / 2 + tabWidth / 2;
+            $('.van-tabs__line').css('transform', 'translateX( '+ offset +'px) translateX(-50%)');
+            $('.van-tabs__track').css('transform', 'translateX(' + currentIndex * ( -100 ) + '%)')
+            $('.van-tabs__wrap--scrollable .van-tabs__nav')[0].scrollTo({
+                left: offset,
+                behavior: "smooth"
+            });
+        }
+    })
+
+    var seconds = parseInt('<#if seconds??>${seconds!}<#else>0</#if>');
+    setInterval("timeover()", 1000)
+
+    function timeover(){
+        var result = formatSeconds(seconds);
+        $(".time1").html(result[0]);
+        $(".time2").html(result[1]);
+        $(".time3").html(result[2]);
+        seconds -= 1;
+    }
+    function formatSeconds(value) {
+        var secondTime = parseInt(value);// 秒
+        var minuteTime = 0;// 分
+        var hourTime = 0;// 小时
+        if(secondTime > 60) {//如果秒数大于60，将秒数转换成整数
+            //获取分钟，除以60取整数，得到整数分钟
+            minuteTime = parseInt(secondTime / 60);
+            //获取秒数，秒数取佘，得到整数秒数
+            secondTime = parseInt(secondTime % 60);
+            //如果分钟大于60，将分钟转换成小时
+            if(minuteTime > 60) {
+                //获取小时，获取分钟除以60，得到整数小时
+                hourTime = parseInt(minuteTime / 60);
+                //获取小时后取佘的分，获取分钟除以60取佘的分
+                minuteTime = parseInt(minuteTime % 60);
+            }
+        }
+
+        var array = []
+
+        var hour = parseInt(hourTime) > 9 ? parseInt(hourTime) : "0"+parseInt(hourTime)
+        var minut = parseInt(minuteTime) > 9 ? parseInt(minuteTime) : "0"+parseInt(minuteTime)
+        var second = parseInt(secondTime) > 9 ? parseInt(secondTime) : "0"+parseInt(secondTime)
+        array.push(hour)
+        array.push(minut)
+        array.push(second)
+        return array;
+    }
+</script>
+</html>

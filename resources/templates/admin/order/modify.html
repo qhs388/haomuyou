@@ -1,0 +1,107 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <title>添加分类</title>
+    <!-- import Vue 2.5-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.min.js"></script>
+    <!-- import iview 2.14.3-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/iview@2.14.3/dist/styles/iview.css">
+    <script src="https://cdn.jsdelivr.net/npm/iview@2.14.3/dist/iview.min.js"></script>
+    <!-- 省市区三级联动json数据,不使用三级联动不需要引入 -->
+    <script src="https://cdn.jsdelivr.net/npm/form-create/district/province_city_area.js"></script>
+    <!-- import formCreate -->
+    <script src="https://cdn.jsdelivr.net/npm/form-create/dist/form-create.min.js"></script>
+    <script src="${request.contextPath}/plug/jquery/jquery.min.js"></script>
+    <style>
+        .fc-upload .fc-upload-cover i {
+            line-height: 56px;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <div id="form-create"></div>
+</div>
+<script type="text/javascript">
+    var rule = [
+      {"type":"input","field":"orderId","title":"订单编号","value":"${data.orderId!}","props":{"disabled":true}},
+      {"type":"hidden","field":"id","title":"id","value":"${data.id!}","props":{"disabled":true}},
+      {"type":"input","field":"webTotalPrice","title":"商品总价","value":"${data.webTotalPrice!}","props":{}},
+      {"type":"input","field":"webPayPrice","title":"实际支付金额","value":"${data.webPayPrice!}","props":{}},
+      {
+            "type":"radio",
+            "field":"status",
+            "title":"订单状态",
+            "value":"${data.status!}",
+            "props":{
+
+            },
+            "options":[
+                {
+                    "label":"待付款",
+                    "value":"1"
+                },
+                {
+                    "label":"待发货",
+                    "value":"2"
+                },
+                {
+                    "label":"待收货",
+                    "value":"3"
+                },
+                {
+                    "label":"待评价",
+                    "value":"4"
+                },
+                {
+                    "label":"已完成",
+                    "value":"5"
+                }
+            ]
+        }
+    ]
+    //表单插入的节点
+    var root = document.getElementById('form-create');
+
+    var $f = {},model = {};
+    var vm = new Vue;
+
+    //$f为表单api
+    $f = window.formCreate.create(
+        //表单生成规则
+        rule,
+        //组件参数配置
+        {
+            el:root,
+            //表单提交事件
+            onSubmit:function (formData) {
+                $f.btn.loading(true);
+                $.ajax({
+                    url: '${request.contextPath}/admin/order/modify',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: formData,
+                    success: function (res) {
+                        if (res.code == 200) {
+                            vm.$Message.success(res.msg);
+                            $f.btn.loading(false);
+                            parent.$(".J_iframe:visible")[0].contentWindow.location.reload(); setTimeout(function(){parent.layer.close(parent.layer.getFrameIndex(window.name));},1000);
+                        } else {
+                            vm.$Message.error(res.msg || '表单提交失败');
+                            $f.btn.loading(false);
+                        }
+                    },
+                    error: function () {
+                        vm.$Message.error('表单提交失败');
+                        $f.btn.loading(false);
+                    }
+                });
+
+
+            }
+    });
+
+    //获取双向数据绑定的数据规则
+    model = $f.model();
+</script>
+</body>
+</html>

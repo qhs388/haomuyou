@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hanson.mapper.GoodsTypeBeanMapper">
+  <resultMap id="BaseResultMap" type="com.hanson.entity.GoodsTypeBean">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="pid" jdbcType="INTEGER" property="pid" />
+    <result column="cate_name" jdbcType="VARCHAR" property="cateName" />
+    <result column="sort" jdbcType="INTEGER" property="sort" />
+    <result column="pic" jdbcType="VARCHAR" property="pic" />
+    <result column="is_show" jdbcType="INTEGER" property="isShow" />
+    <result column="type" jdbcType="INTEGER" property="type" />
+    <result column="is_index" jdbcType="INTEGER" property="isIndex" />
+    <result column="icon" jdbcType="VARCHAR" property="icon" />
+    <result column="icon_sort" jdbcType="INTEGER" property="iconSort" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_goods_type
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.hanson.entity.GoodsTypeBean">
+    insert into t_goods_type (pid, cate_name,
+      sort, pic, is_show, type,
+      create_time,is_index,icon,icon_sort)
+    values (#{pid,jdbcType=INTEGER}, #{cateName,jdbcType=VARCHAR},
+      #{sort,jdbcType=INTEGER}, #{pic,jdbcType=VARCHAR}, #{isShow,jdbcType=INTEGER}, #{type,jdbcType=INTEGER},
+    #{createTime,jdbcType=TIMESTAMP}, #{isIndex,jdbcType=INTEGER},#{icon,jdbcType=VARCHAR}, #{iconSort,jdbcType=INTEGER})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.hanson.entity.GoodsTypeBean">
+    update t_goods_type
+    set pid = #{pid,jdbcType=INTEGER},
+      cate_name = #{cateName,jdbcType=VARCHAR},
+      sort = #{sort,jdbcType=INTEGER},
+      pic = #{pic,jdbcType=VARCHAR},
+      is_show = #{isShow,jdbcType=INTEGER},
+      type = #{type,jdbcType=INTEGER},
+      is_index = #{isIndex,jdbcType=INTEGER},
+      icon = #{icon,jdbcType=VARCHAR},
+      icon_sort = #{iconSort,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, pid, cate_name, sort, pic, is_show, create_time,type,is_index,icon,icon_sort
+    from t_goods_type
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, pid, cate_name, sort, pic, is_show, create_time,type,is_index,icon,icon_sort
+    from t_goods_type
+  </select>
+  <select id="listGoodsType" resultMap="BaseResultMap" parameterType="com.hanson.entity.GoodsTypeBean">
+    select id, pid, cate_name, sort, pic, is_show, create_time,type,is_index,icon,icon_sort
+    from t_goods_type
+    where
+    pid = #{goodsTypeBean.pid}
+    <if test="goodsTypeBean.isShow != null">
+      and  is_show = #{goodsTypeBean.isShow}
+    </if>
+    <if test="goodsTypeBean.cateName != null and goodsTypeBean.cateName != ''">
+      and cate_name like concat('%', #{goodsTypeBean.cateName},'%')
+    </if>
+  </select>
+  <select id="selectByPid" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+    select id, pid, cate_name, sort, pic, is_show, create_time,type,is_index,icon,icon_sort
+    from t_goods_type where pid = #{pid}
+  </select>
+  <select id="selectByPidAndType" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+    select id, pid, cate_name, sort, pic, is_show, create_time,type,is_index,icon,icon_sort
+    from t_goods_type where pid = #{pid} and type = #{type}
+  </select>
+  <update id="updateIsShow">
+    update t_goods_type set is_show=#{isShow} where id=#{id}
+  </update>
+</mapper>

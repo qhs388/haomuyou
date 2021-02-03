@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:8080/ -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="browsermode" content="application">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="Cache" content="no-cache">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <!-- 禁止百度转码 -->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta name="format-detection" content="telephone=no">
+    <title>新增评论</title>
+    <link rel="stylesheet" href="${request.contextPath}/web/css/reset.css">
+    <link rel="stylesheet" href="${request.contextPath}/web/css/base.css?v=${verison!}">
+    <link rel="stylesheet" href="${request.contextPath}/web/css/jQuery.score.css">
+    <link rel="stylesheet" href="${request.contextPath}/plug/layui/css/layui.css" media="all">
+    <style>
+		.router {
+			position: absolute;
+			width: 100%;
+		}
+		.goodsStyle {
+			background-color: #fff;
+			padding: .22rem .3rem;
+		}
+		.goodsStyle .pictrue {
+			width: 1.2rem;
+			height: 1.2rem;
+		}
+		.goodsStyle .pictrue .image {
+			width: 100%;
+			height: 100%;
+			border-radius: .06rem;
+		}
+		.goodsStyle .text {
+			width: 5.45rem;
+			font-size: .28rem;
+			color: #999;
+		}
+		.goodsStyle .text .name {
+			width: 3.6rem;
+			color: #282828;
+		}
+		.line2 {
+			word-break: break-all;
+			display: -webkit-box;
+			-webkit-line-clamp: 2;
+			-webkit-box-orient: vertical;
+		}
+		.goodsStyle .text .money {
+			text-align: right;
+		}
+		.goodsStyle .text .money .num {
+			margin-top: .07rem;
+		}
+		.evaluate-con .score {
+			background-color: #fff;
+			border-top: 1px solid #f5f5f5;
+			font-size: .28rem;
+			color: #282828;
+			padding: .48rem .3rem .65rem .3rem;
+		}
+		.evaluate-con .score .item .starsList {
+			padding: 0 .35rem 0 .4rem;
+		}
+		.evaluate-con .score .item .starsList .iconfont {
+			font-size: .4rem;
+			color: #aaa;
+		}
+		.evaluate-con .score .textarea {
+			width: 6.9rem;
+			background-color: #fafafa;
+			border-radius: .1rem;
+			margin-top: .48rem;
+			height: 3rem;
+		}
+		.evaluate-con .score .textarea textarea {
+			font-size: .28rem;
+			padding: .38rem .3rem 0 .3rem;
+			width: 100%;
+			height: 1.6rem;
+		}
+		.evaluate-con .score .textarea .list {
+			margin-top: .25rem;
+			padding-left: .05rem;
+		}
+		.g-core-image-upload-btn {
+			position: relative;
+			overflow: hidden;
+		}
+		.evaluate-con .score .textarea .list .pictrue.uploadBnt[data-v-6d987580] {
+			border: 1px solid #ddd;
+		}
+		.evaluate-con .score .textarea .list .pictrue {
+			width: 1.4rem;
+			height: 1.4rem;
+			margin: 0 0 .35rem .25rem;
+			position: relative;
+			font-size: .22rem;
+			color: #bbb;
+		}
+		.evaluate-con .score .textarea .list .pictrue .icon-icon25201 {
+			color: #bfbfbf;
+			font-size: .5rem;
+		}
+		.g-core-image-upload-form {
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			width: 100%;
+			height: 100%;
+			min-height: 61px;
+			opacity: 0;
+		}
+		.g-core-image-upload-form input {
+			width: 100%;
+			height: 100%;
+		}
+		.g-core-image-corp-container {
+			z-index: 1900;
+			position: fixed;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			background: rgba(0,0,0,.9);
+			color: #f1f1f1;
+		}
+		.evaluate-con .score .evaluateBnt {
+			font-size: .3rem;
+			color: #fff;
+			width: 6.9rem;
+			height: .86rem;
+			border-radius: .43rem;
+			text-align: center;
+			line-height: .86rem;
+			margin-top: .45rem;
+		}
+	</style>
+</head>
+<script type="text/javascript" src="${request.contextPath}/web/js/media_750.js"></script>
+<script type="text/javascript" src="${request.contextPath}/web/js/jquery.min.js"></script>
+<script type="text/javascript" src="${request.contextPath}/web/js/jquery.mobile.min.js"></script>
+<script type="text/javascript" src="${request.contextPath}/web/js/common.js"></script>
+<script type="text/javascript" src="${request.contextPath}/web/js/jQuery.score.js"></script>
+<script src="${request.contextPath}/js/layer.js"></script>
+<body style="background-color: rgb(255, 255, 255);">
+<div data-role="page">
+    <div class="app">
+        <div data-v-6d987580="" class="evaluate-con router">
+            <div data-v-6d987580="" class="goodsStyle acea-row row-between">
+                <div data-v-6d987580="" class="pictrue">
+                    <input id="goodsId" value="${data.goodsId!}" type="hidden">
+                    <img data-v-6d987580="" src="${data.image!}" class ="image" />
+                </div>
+                <div data-v-6d987580="" class="text acea-row row-between">
+                    <div data-v-6d987580="" class="name line2">
+                        ${data.goodsName!}
+                    </div>
+                    <div data-v-6d987580="" class="money">
+                        <div data-v-6d987580="">
+                            ￥${data.webSinglePrice!}
+                        </div>
+                        <div data-v-6d987580="" class="num">
+                            x${data.totalNum!}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-v-6d987580="" class="score">
+                <div data-v-6d987580="" class="item acea-row row-middle">
+                    <div data-v-6d987580="">
+                        商品质量
+                    </div>
+                    <div class="starsList" id="star1"></div>
+                    <span data-v-6d987580="" class="evaluate"></span>
+                </div>
+                <div data-v-6d987580="" class="item acea-row row-middle">
+                    <div data-v-6d987580="">
+                        服务态度
+                    </div>
+                    <div class="starsList" id="star2"></div>
+                    <span data-v-6d987580="" class="evaluate"></span>
+                </div>
+                <div data-v-6d987580="" class="textarea">
+                    <textarea data-v-6d987580="" placeholder="商品满足你的期待么？说说你的想法，分享给想买的他们吧~" id="comment"></textarea>
+                </div>
+                <div data-v-6d987580="" class="evaluateBnt bg-color-red" onclick="save()">
+                    立即评价
+                </div>
+            </div>
+        </div>
+    </div>
+    <#include "include/right.html" />
+</div>
+</body>
+<script>
+$(function(){
+	$('.starsList').score({
+		number: 5,
+		size: 24,
+		color: '#FC4141'
+	});
+});
+ function save(){
+        var obj = new Object();
+        obj["goodsId"] = $.trim($("#goodsId").val());
+        obj["star1"] =  $.trim($('#star1').score('score'));
+        obj["star2"] =  $.trim($('#star2').score('score'));
+        obj["comment"] =  $.trim($("#comment").val());
+        obj["orderId"] =  '${orderId!}';
+        if("" == obj["star1"]){
+            layer.msg("请给商品质量打星！")
+            return;
+        }
+        if("" == obj["star2"]){
+            layer.msg("请给服务态度打星！")
+            return;
+        }
+        if("" == obj["comment"]){
+            layer.msg("评价内容不能为空！")
+            return;
+        }
+        var url = '${request.contextPath}/web/goodsComment/add';
+          $.ajax({
+              type: 'POST',
+              url: url,
+              data: JSON.stringify(obj),
+              dataType:'json',
+              contentType:'application/json',
+              success: function(data){
+                  if(data.code==200){
+                      layer.msg(data.msg, {icon: 1})
+                       window.location.href="${request.contextPath}/web/orderDetail/${data.orderId!}"
+                  }else{
+                      layer.msg(data.msg, {icon: 2})
+                  }
+              }
+        });
+    }
+</script>
+</html>

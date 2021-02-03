@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="${request.contextPath}/css/bootstrap.min.css?v=3.4.0" rel="stylesheet">
+    <link href="${request.contextPath}/plug/layui/css/layui.css" rel="stylesheet">
+    <link href="${request.contextPath}/css/layui-admin.css" rel="stylesheet">
+    <link href="${request.contextPath}/css/font-awesome.min.css?v=4.3.0" rel="stylesheet">
+    <link href="${request.contextPath}/css/animate.min.css" rel="stylesheet">
+    <link href="${request.contextPath}/css/style.min.css?v=3.0.0" rel="stylesheet">
+    <script src="${request.contextPath}/js/jquery.min.js"></script>
+    <script src="${request.contextPath}/js/bootstrap.min.js"></script>
+    <script src="${request.contextPath}/plug/layui/layui.all.js"></script>
+    <title></title>
+</head>
+<body class="gray-bg">
+<div class="wrapper wrapper-content">
+    <div class="ibox-content order-info">
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        收货信息
+                    </div>
+                    <div class="panel-body">
+                        <div class="row show-grid">
+                            <div class="col-xs-12" >用户昵称: ${data.nickName!}</div>
+                            <div class="col-xs-12">收货人: ${data.userName!}</div>
+                            <div class="col-xs-12">联系电话: ${data.userPhone!}</div>
+                            <div class="col-xs-12">收货地址: ${data.userAddress!}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        订单信息
+                    </div>
+                    <div class="panel-body">
+                        <div class="row show-grid">
+                            <div class="col-xs-6" >订单编号: ${data.orderId!}</div>
+                            <div class="col-xs-6" style="color: #8BC34A;">订单状态:
+                                ${data.statusName!}
+                            </div>
+                            <div class="col-xs-6">商品总数: ${data.totalNum!}</div>
+                            <div class="col-xs-6">商品总价: ￥${data.webTotalPrice!}</div>
+                            <div class="col-xs-6">实际支付: ￥${data.webPayPrice!}</div>
+                            <div class="col-xs-6">创建时间: ${data.createDate?string("yyyy/MM/dd HH:mm")}</div>
+                            <div class="col-xs-6">支付方式:
+                                <#if data.payTime??>
+                                    已支付
+                                <#else>
+                                    未支付
+                                </#if>
+
+                            </div>
+                            <div class="col-xs-6" style="color: #ff0005">用户备注: ${data.remark!}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        备注信息
+                    </div>
+                    <div class="panel-body">
+                        <div class="row show-grid">
+                            <div class="col-xs-6" >${data.remark!}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="browsermode" content="application">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="Cache" content="no-cache">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <!-- 禁止百度转码 -->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta name="format-detection" content="telephone=no">
+    <title>${groupData.goodsName!}</title>
+    <link rel="stylesheet" href="${request.contextPath}/web/css/reset.css?v=${verison!}">
+    <link rel="stylesheet" href="${request.contextPath}/web/css/bulk-purchase.css?v=${verison!}">
+    <link rel="stylesheet" href="${request.contextPath}/web/css/swiper.min.css">
+    <link rel="stylesheet" href="${request.contextPath}/web/css/base.css?v=${verison!}">
+    <link rel="stylesheet" href="${request.contextPath}/plug/layui/css/layui.css" media="all">
+</head>
+<script type="text/javascript" src="${request.contextPath}/web/js/media_750.js"></script>
+<script type="text/javascript" src="${request.contextPath}/web/js/jquery.min.js"></script>
+<script type="text/javascript" src="${request.contextPath}/web/js/jquery.mobile.min.js"></script>
+<script type="text/javascript" src="${request.contextPath}/web/js/swiper.min.js"></script>
+<script type="text/javascript" src="${request.contextPath}/web/js/common.js?v=${verison!}"></script>
+<script src="${request.contextPath}/js/layer.js"></script>
+<body style="background-color: rgb(245, 245, 245);">
+<div data-role="page">
+    <div class="app">
+        <div class="router product-con">
+            <div id="title0">
+                <div class="slider-banner product-bg">
+                    <div class="swiper-container swiper-container-initialized swiper-container-horizontal swiper-container-ios">
+                        <div class="swiper-wrapper">
+                            <#if data.sliderImages??>
+                                <#list data.sliderImages as item>
+                                    <div class="swiper-slide">
+                                        <div class="slide-image"
+                                             style="background: url(${item}) center center / 100% 100% no-repeat;">
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#if>
+                        </div>
+                        <div class="pages"></div>
+                    </div>
+                </div>
+                <div class="icon-fenxiang">
+                    <img  src="/web/images/share.png" class="image">
+                </div>
+                <div class="wrapper">
+                    <div class="share acea-row row-between row-bottom">
+                        <div class="money font-color-red">
+                            ￥<span class="num">${groupData.webGroupPrice!}</span>
+                            <span class="y-money">${groupData.webGoodsPrice!}</span>
+                        </div>
+                    </div>
+                    <div class="introduce">${groupData.goodsName!}</div>
+                    <div class="label acea-row row-between-wrapper">
+                        <div>原价:￥${groupData.webGoodsPrice!}</div>
+                        <div>库存:${groupData.stock!}件</div>
+                        <div>销量:${groupData.sales!}件</div>
+                    </div>
+                </div>
+                <div class="notice acea-row row-middle">
+                    <div class="num font-color-red">
+                        <span class="iconfont icon-laba"></span>
+                        已拼${groupData.sales!}件
+                        <span class="line">|</span>
+                    </div>
+                    <div class="swiper-no-swiping swiper">
+                        <div class="swiper-container swiper-wrapper swiper-container-initialized swiper-container-vertical swiper-container-ios">
+                            <div class="swiper-wrapper"
+                                 style="transition-duration: 0ms; transform: translate3d(0px, 0px, 0px);"></div>
+                            <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="playWay">
+                    <div class="title acea-row row-between-wrapper">
+                        <div>拼团玩法</div>
+                    </div>
+                    <div class="way acea-row row-middle">
+                        <div class="item">
+                            <span class="num">①</span>开团/参团
+                        </div>
+                        <div class="iconfont icon-arrow"></div>
+                        <div class="item">
+                            <span class="num">②</span>邀请好友
+                        </div>
+                        <div class="iconfont icon-arrow"></div>
+                        <div class="item">
+                            <div>
+                                <span class="num">③</span>满员发货
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <span class="atterTxt" style="display:none;"></span>
+            <div id="title1" class="userEvaluation">
+                <div class="title acea-row row-between-wrapper">
+                    <div>用户评价(${countData.all!})</div>
+                    <a href="${request.contextPath}/web/commentList/0/${data.id!}" class="praise">
+                        <span class="font-color-red">${countData.goodPercent!}</span>
+                        好评率
+                        <span class="iconfont icon-jiantou"></span>
+                    </a>
+                </div>
+                <div class="evaluateWtapper">
+                    <#if comment??>
+                        <#list comment as item>
+                            <#if item_index == 0>
+                                <div class="evaluateItem">
+                                    <div class="pic-text acea-row row-middle">
+                                        <div class="pictrue">
+                                            <img src="${item.userImage}" class="image"/>
+                                        </div>
+                                        <div class="acea-row row-middle">
+                                            <div class="name line1">${item.userName!}</div>
+                                            <div class="start star${item.star!}">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="time">${item.createDate?string("yyyy-MM-dd HH:mm:ss")}</div>
+                                    <div class="evaluate-infor">${item.comment!}</div>
+                                    <div class="imgList acea-row">
+                                    </div>
+                                </div>
+                            </#if>
+                        </#list>
+                    </#if>
+                </div>
+            </div>
+            <div id="title2" class="product-intro">
+                <div class="title">产品介绍</div>
+                <div class="conter">
+                    <p>
+                        ${data.content!}
+                    </p>
+                </div>
+            </div>
+            <div style="height: 1.2rem"></div>
+            <div class="footer-group acea-row row-between-wrapper">
+                <div class="customerSer acea-row row-center-wrapper row-column">
+                    <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzUxODE1MDI4Mg==&scene=124#wechat_redirect" class="item animated">
+                        <div  class="iconfont icon-kefu">
+                        </div>
+                        <div >客服</div>
+                    </a>
+                </div>
+                <div class="bnt bg-color-violet singlePruchase" data-id="${data.id!}">单独购买</div>
+                <div class="bnt bg-color-red bulkPurchase">立即开团</div>
+            </div>
+            <div>
+                <div class="product-window group-con">
+                    <div class="textpic acea-row row-between-wrapper">
+                        <div class="pictrue">
+                            <img class="image" src="${groupData.goodsImage!}">
+                        </div>
+                        <div class="text">
+                            <div class="line1">
+                                ${groupData.goodsName!}
+                            </div>
+                            <div class="money font-color-red">
+                                ￥<span class="num">${groupData.webGroupPrice!}</span>
+                                <span class="stock">库存: ${groupData.stock!}</span>
+                            </div>
+                        </div>
+                        <div class="iconfont icon-guanbi">
+
+                        </div>
+                    </div>
+                    <div class="productWinList">
+                        <#if data.specType == '0'>
+                            <div class="item">
+                                <div class="title">规格</div>
+                                <div class="listn acea-row row-middle">
+                                    <div  class="itemn on">
+                                        默认
+                                    </div>
+                                </div>
+                            </div>
+                            <#else>
+                                <#if data.items??>
+                                    <#list data.items as item>
+                                        <div class="item">
+                                            <div class="title">${item.value}</div>
+                                            <div class="listn acea-row row-middle">
+                                                <#list item.detail as attr>
+                                                    <div  class="itemn">
+                                                        ${attr}
+                                                    </div>
+                                                </#list>
+                                            </div>
+                                        </div>
+                                    </#list>
+                                </#if>
+                        </#if>
+                    </div>
+                    <div class="cart">
+                        <div class="title">数量</div>
+                        <div class="carnum acea-row row-left">
+                            <div class="item reduce on">-</div>
+                            <div class="item num">
+                                <input type="number" class="ipt_num" value="1">
+                            </div>
+                            <div class="item plus">+</div>
+                        </div>
+                    </div>
+                </div>
+                <#include "include/share.html" />
+                <div class="mask" style="display: none"></div>
+            </div>
+        </div>
+    </div>
+    <#include "include/right.html" />
+</div>
+</body>
+<script>
+    var type = '${data.specType!}';
+    var attrData = attrData();
+    $(function () {
+        var mySwiper = new Swiper('.swiper-container', {
+            // 轮播图的方向，也可以是vertical方向
+            direction: 'horizontal',
+            //播放速度
+            loop: true,
+            // 自动播放时间
+            autoplay: true,
+            // 播放的速度
+            speed: 1000,
+            // 这样，即使我们滑动之后， 定时器也不会被清除
+            autoplayDisableOnInteraction: false
+        });
+        var attrList = [];
+        $('.bulkPurchase').on('touchstart', function () {
+           var isOpen = $(".product-window").hasClass('on');
+            if(isOpen){
+                var obj = new Object();
+                var type = '${data.specType!}';
+                var attrSize = $(".productWinList").children(".item").length;
+                var selectSize = $(".itemn.on").length;
+                var attr;
+                if(type == '1'){
+                    attr = $('.atterTxt').html().replace(/\s+/g, "");
+                    if(attr == '' || selectSize != attrSize){
+                        layer.msg("请选择全部规则！")
+                        return;
+                    }
+                }else{
+                    attr = "默认";
+                }
+
+                var number = $(".ipt_num").val();
+                if(number < 1){
+                    layer.msg("请选择数量！")
+                    return;
+                }
+                obj["id"] = ${groupData.id!};
+                obj["goodsAttr"] = attr;
+                obj["totalNum"] = number;
+                obj["goodsId"] = ${data.id};
+                $.ajax({
+                      type: 'POST',
+                      url: '${request.contextPath}/web/order/addGroupOrder',
+                      data: JSON.stringify(obj),
+                      dataType:'json',
+                      contentType:'application/json',
+                      success: function(data){
+                          if(data.code==200){
+                                $('.mask').hide();
+                                $('.product-window').removeClass('on');
+                                window.location.href="${request.contextPath}/web/orderSubmit/" + data.data
+                          }else{
+                             layer.msg(data.msg)
+                          }
+                      }
+                });
+            }else{
+             $('.mask').show();
+             $('.product-window').addClass('on');
+            }
+        })
+         $(".singlePruchase").on('touchstart', function () {
+            window.location.href='${request.contextPath}/web/goodsDetail/'+$(this).data("id");
+        })
+        $('.iconfont.icon-guanbi, .mask').on('touchstart', function () {
+            $('.mask').hide();
+            $('.product-window').removeClass('on');
+            $('.generate-posters').removeClass('on');
+            $('.poster-first').removeClass('on');
+            $('.haibao-first').removeClass('on');
+        })
+        if ($('.listn .itemn')[0]) {
+            $('.listn .itemn').on('touchstart', function () {
+                var $this = $(this);
+                var $item = $($this.parents('.item')[0]);
+                $(this).parent().find('.itemn').removeClass('on')
+                $this.addClass('on');
+                attrList[$item.index()] = $this.html();
+                 var attr = attrList.join(',').replace(/\s+/g, "");
+                $('.atterTxt').html(attr)
+                 if(type == '1' && attrData.get(attr) != undefined){
+                    var attrObj = attrData.get(attr);
+                    $('.product-window .pictrue .image').attr('src',attrObj.image);
+                 }
+            })
+        }
+    })
+   function attrData(){
+        var map = new Map();
+        <#if data.attrs??>
+            <#if data.attrs?size gt 0>
+                <#list data.attrs as item>
+                    var attrObject = new Object();
+                    attrObject.suk = '${item.suk!}';
+                    attrObject.stock = '${item.stock!}';
+                    attrObject.price = '${item.price!}';
+                    attrObject.vipPrice = '${item.vipPrice!}';
+                    attrObject.image = '${item.image!}';
+                    map.set(attrObject.suk,attrObject);
+                </#list>
+            </#if>
+        </#if>
+        return map;
+    }
+</script>
+</html>

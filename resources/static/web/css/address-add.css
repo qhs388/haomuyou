@@ -1,0 +1,43 @@
+.addAddress .list {
+    background-color: #fff;
+}
+.addAddress .list .item {
+    padding: 0 .3rem;
+    min-height: .9rem;
+    border-top: .01rem solid #eee;
+    font-size: .3rem;
+}
+.addAddress .list .item .name {
+    width: 1.95rem;
+    color: #333;
+}
+.addAddress .list .item input {
+    width: 4.75rem;
+    font-size: .3rem;
+}
+.addAddress .list .item .iconfont {
+    position: absolute;
+    right: .3rem;
+}
+.addAddress .default {
+    padding: 0 .3rem;
+    height: .9rem;
+    background-color: #fff;
+    margin-top: .23rem;
+}
+.addAddress .default .def {
+    margin-left: .6rem;
+}
+.addAddress .keepBnt, .addAddress .wechatAddress {
+    width: 6.9rem;
+    height: .86rem;
+    text-align: center;
+    line-height: .86rem;
+    font-size: .32rem;
+}
+.addAddress .keepBnt {
+    display: block;
+    border-radius: .5rem;
+    margin: .5rem auto .3rem auto;
+    color: #fff;
+}

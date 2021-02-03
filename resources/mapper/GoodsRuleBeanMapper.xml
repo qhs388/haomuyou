@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hanson.mapper.GoodsRuleBeanMapper">
+  <resultMap id="BaseResultMap" type="com.hanson.entity.GoodsRuleBean">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="rule_name" jdbcType="VARCHAR" property="ruleName" />
+    <result column="rule_value" jdbcType="VARCHAR" property="ruleValue" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="update_date" jdbcType="TIMESTAMP" property="updateDate" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_goods_rule
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.hanson.entity.GoodsRuleBean">
+    insert into t_goods_rule (id, rule_name, rule_value, 
+      create_date, update_date)
+    values (#{id,jdbcType=INTEGER}, #{ruleName,jdbcType=VARCHAR}, #{ruleValue,jdbcType=VARCHAR}, 
+      #{createDate,jdbcType=TIMESTAMP}, #{updateDate,jdbcType=TIMESTAMP})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.hanson.entity.GoodsRuleBean">
+    update t_goods_rule
+    set rule_name = #{ruleName,jdbcType=VARCHAR},
+      rule_value = #{ruleValue,jdbcType=VARCHAR},
+      create_date = #{createDate,jdbcType=TIMESTAMP},
+      update_date = #{updateDate,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, rule_name, rule_value, create_date, update_date
+    from t_goods_rule
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, rule_name, rule_value, create_date, update_date
+    from t_goods_rule
+  </select>
+  <select id="listGoodsRule" resultMap="BaseResultMap">
+    select id, rule_name, rule_value, create_date, update_date
+    from t_goods_rule
+    where
+    1=1
+    <if test="goodsRuleBean.ruleName != null and goodsRuleBean.ruleName != ''">
+      and rule_name like concat('%', #{goodsRuleBean.ruleName},'%')
+    </if>
+    order by create_date desc
+  </select>
+</mapper>

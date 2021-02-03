@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hanson.mapper.CartBeanMapper">
+  <resultMap id="BaseResultMap" type="com.hanson.entity.CartBean">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="open_id" jdbcType="VARCHAR" property="openId" />
+    <result column="goods_id" jdbcType="INTEGER" property="goodsId" />
+    <result column="goods_attr" jdbcType="VARCHAR" property="goodsAttr" />
+    <result column="add_num" jdbcType="INTEGER" property="addNum" />
+    <result column="total_price" jdbcType="INTEGER" property="totalPrice" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_cart
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.hanson.entity.CartBean">
+    insert into t_cart (id, open_id, goods_id, 
+      goods_attr, add_num, create_date,total_price
+      )
+    values (#{id,jdbcType=INTEGER}, #{openId,jdbcType=VARCHAR}, #{goodsId,jdbcType=INTEGER}, 
+      #{goodsAttr,jdbcType=VARCHAR}, #{addNum,jdbcType=INTEGER}, #{createDate,jdbcType=TIMESTAMP}, #{totalPrice,jdbcType=INTEGER}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.hanson.entity.CartBean">
+    update t_cart
+    set open_id = #{openId,jdbcType=VARCHAR},
+      goods_id = #{goodsId,jdbcType=INTEGER},
+      goods_attr = #{goodsAttr,jdbcType=VARCHAR},
+      add_num = #{addNum,jdbcType=INTEGER},
+      total_price = #{totalPrice,jdbcType=INTEGER},
+      create_date = #{createDate,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, open_id, goods_id, goods_attr, add_num, create_date,total_price
+    from t_cart
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, open_id, goods_id, goods_attr, add_num, create_date,total_price
+    from t_cart
+  </select>
+  <select id="selectByOpenId" resultMap="BaseResultMap">
+    select id, open_id, goods_id, goods_attr, add_num, create_date,total_price
+    from t_cart
+    where open_id=#{openId,jdbcType=VARCHAR}
+  </select>
+
+  <select id="countByOpenId" resultType="java.lang.Integer">
+    select sum(add_num)
+    from t_cart
+    where open_id=#{openId,jdbcType=VARCHAR}
+  </select>
+
+</mapper>

@@ -1,0 +1,165 @@
+.user .header {
+    padding: 0 .3rem;
+    height: 2.7rem;
+    position: relative;
+/*
+    background-image: url(../images/user-center-bg.png);
+*/
+    background-size: cover;
+    background: #e93323;
+}
+.user .header .message {
+    height: 1.66rem;
+}
+.user .header .nav {
+    height: .94rem;
+}
+.user .header .nav .item{
+    padding-right: 0.6rem;
+}
+.user .header .nav .item div{
+    font-size: 0.26rem;
+    text-align: center;
+    color: #fff;
+}
+.user .header .nav .item .num{
+    font-size: 0.32rem;
+}
+.user .wrapper {
+    padding: 0 .2rem;
+}
+.user .header .picTxt .text .name {
+    font-size: 0.32rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    color: #fff;
+}
+.user .header .picTxt .text .lable {
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    height: 18px;
+    padding: 0 10px;
+    background: rgba(0,0,0,.2);
+    border-radius: 18px;
+    font-size: 10px;
+    margin-left: 6px;
+}
+.user .header .picTxt .pictrue {
+    width: 0.9rem;
+    height: 0.9rem;
+}
+.user .header .picTxt .pictrue img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.user .header .picTxt .text {
+    width: 4.34rem;
+    color: #fff;
+    margin-left: .35rem;
+    text-align: left;
+}
+.user .header .picTxt .text .bind-phone {
+     display: flex;
+     width: 1.6rem;
+     height: 0.36rem;
+     line-height: 0.36rem;
+     color: hsla(0,0%,100%,.6);
+     font-size: .26rem;
+     margin-top: .15rem;
+     border-radius: 0.18rem;
+     text-align: center;
+     -webkit-box-align: center;
+     -webkit-align-items: center;
+     align-items: center;
+}
+.user .header .picTxt .text .bind-phone img{
+      width: .2rem;
+      height: .2rem;
+      margin-left: .1rem;
+}
+.user .wrapper {
+    padding: 0 .28rem 0 .34rem;
+}
+.user .wrapper .myOrder,
+.user .wrapper .myService {
+    background-color: #fff;
+    margin-top: .5rem;
+    box-shadow:0 0.04rem 0.2rem 0 rgba(116,116,116,0.15);
+    border-radius:0.08rem;
+}
+.user .wrapper .myOrder .title,
+.user .wrapper .myService .title {
+    height: .6rem;
+    padding: 0 .3rem;
+    font-size: .3rem;
+    color: #0D0D0D;
+    font-weight: 600;
+}
+
+.user .wrapper .myOrder .orderState {
+    height: 1.4rem;
+}
+
+.user .wrapper .myOrder .title .allOrder {
+    font-size: .24rem;
+    color: #666;
+}
+.user .wrapper .myOrder .orderState .item {
+    font-size: .26rem;
+    color: #626262;
+    -webkit-box-flex: 1;
+    flex: 1;
+    -webkit-flex: 1;
+    -o-flex: 1;
+    -ms-flex: 1;
+    text-align: center;
+}
+.user .wrapper .myOrder .orderState .item .pictrue {
+    width: .52rem;
+    height: .52rem;
+    margin: 0 auto .12rem auto;
+    position: relative;
+}
+.user .wrapper .myOrder .orderState .item .pictrue img {
+    width: 100%;
+    height: 100%;
+}
+.myOrder .order-status-num{
+    min-width: 6px;
+    background-color: #fff;
+    color: #ee5a52;
+    border-radius: 15px;
+    position: absolute;
+    right: -7px;
+    top: -6px;
+    font-size: 10px;
+    padding: 0 4px;
+    border: 1px solid #ee5a52;
+}
+.user .wrapper .myService .serviceList {
+    padding: .08rem 0 .27rem 0;
+}
+.user .wrapper .myService .serviceList .item {
+    display: block;
+    width: 25%;
+    text-align: center;
+    font-size: .26rem;
+    color: #333;
+    margin:.3rem 0;
+}
+.user .wrapper .myService .serviceList .item .pictrue {
+    width: .48rem;
+    height: .48rem;
+    margin: 0 auto .16rem auto;
+}
+.user .wrapper .myService .serviceList .item .pictrue img {
+    width: 100%;
+    height: 100%;
+}

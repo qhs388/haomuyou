@@ -1,0 +1,601 @@
+
+.goodList .item {
+    position: relative;
+    padding-left: 0.3rem;
+    background-color: #fff;
+}
+
+.goodList .item .pictrue {
+    width: 1.8rem;
+    height: 1.8rem;
+    position: relative;
+}
+
+.goodList .item .pictrue .image {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.06rem;
+}
+
+.goodList .item .text {
+    font-size: 0.3rem;
+    color: #222;
+    width: 4.89rem;
+    text-align: left;
+}
+
+.goodList .item .text .money {
+    font-size: 0.26rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+
+.goodList .item .text .money .num {
+    font-size: 0.34rem;
+}
+
+.goodList .item .text .vip-money .image {
+    width: 0.46rem;
+    height: 0.21rem;
+    margin-left: 0.05rem;
+}
+
+.goodList .item .text .vip-money .num {
+    font-size: 0.22rem;
+    color: #aaa;
+    font-weight: normal;
+    margin: -0.02rem 0 0 0;
+}
+
+.goodList .item .iconfont {
+    position: absolute;
+    right: 0.3rem;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    font-size: 0.3rem;
+    bottom: 0.38rem;
+}
+
+.swiper .swiper-pagination {
+    text-align: right;
+    padding-right: 0.4rem;
+    bottom: 0.1rem;
+    width: 100%;
+}
+
+.swiper .swiper-pagination-bullet {
+    width: 0.12rem;
+    height: 0.12rem;
+    border: 0.02rem solid #fff;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0);
+    opacity: 1;
+}
+
+.swiper .swiper-pagination-bullet ~ .swiper-pagination-bullet {
+    margin-left: 0.12rem;
+}
+
+.swiper .swiper-pagination-bullet-active {
+    border-color: #e93323;
+    background-color: #e93323;
+}
+
+/*首页*/
+.index .header {
+    height: 1.48rem;
+    width: 100%;
+    background:#e93323;
+}
+
+.index .header .logo {
+    width: 1.27rem;
+    height: 0.45rem;
+    margin-right: 0.25rem;
+}
+
+.index .header .logo img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.index .header .search {
+    width: 5rem;
+    height: 0.64rem;
+    background-color: #f7f7f7;
+    border-radius: 0.5rem;
+    padding: 0 0.28rem;
+    font-size: 0.28rem;
+    color: #bbb;
+}
+
+.index .header .search img {
+    margin-right: 0.1rem;
+}
+
+.index .banner {
+    height: 3.8rem;
+}
+
+.index .banner img {
+    width: 100%;
+    height: 3.8rem;
+}
+
+.index .banner .swiper-pagination {
+    bottom: 0.07rem;
+}
+
+.index .banner .swiper-pagination-bullet {
+    width: 0.08rem;
+    height: 0.08rem;
+    border-radius: 0.04rem;
+    background: #FFF;
+    opacity: 1
+}
+
+.index .banner .swiper-pagination-bullet-active {
+    width: 0.22rem;
+    background: #C03F17
+}
+
+.index .nav {
+    padding-top: 0.2rem;
+}
+
+.index .nav .item {
+    width: 20%;
+    text-align: center;
+    font-size: 0.26rem;
+    margin-bottom: 0.35rem;
+}
+
+.index .nav .item .pictrue {
+    width: 0.9rem;
+    height: 0.9rem;
+    margin: 0 auto 0.15rem auto;
+}
+
+.index .nav .item .pictrue img {
+    width: 100%;
+    height: 100%;
+}
+
+.index .news .pictrue {
+    width: 1.24rem;
+    height: 0.28rem;
+    border-right: 1px solid #ddd;
+    padding-right: 0.23rem;
+    box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+}
+
+.index .news .pictrue img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+
+.index .news .new-banner .swiper-slide {
+    height: 100%;
+}
+
+.index .news .new-banner .text {
+    width: 4.8rem;
+    height: 0.77rem;
+}
+
+.index .news .new-banner .text .label {
+    font-size: 0.2rem;
+    color: #ff4c48;
+    width: 0.68rem;
+    height: 0.34rem;
+    border-radius: 0.2rem;
+    text-align: center;
+    line-height: 0.34rem;
+    border: 0.02rem solid #ff4947;
+}
+
+.index .news .new-banner .iconfont {
+    font-size: 0.28rem;
+    color: #888;
+}
+
+
+.index .specialArea .assemble {
+    width: 2.6rem;
+    height: 2.6rem;
+    position: relative;
+}
+
+.index .specialArea .assemble img {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.05rem;
+}
+
+.index .specialArea .assemble .text {
+    position: absolute;
+    top: 0.37rem;
+    left: 0.22rem;
+}
+
+.index .specialArea .name {
+    font-size: 0.3rem;
+    color: #fff;
+}
+
+.index .specialArea .list {
+    height: 2.6rem;
+    width: 4.16rem;
+}
+
+.index .specialArea .item {
+    width: 100%;
+    height: 1.24rem;
+    position: relative;
+}
+
+.index .specialArea .item img {
+    width: 100%;
+    height: 100%;
+}
+
+.index .specialArea .item .text {
+    position: absolute;
+    top: 0.23rem;
+    left: 0.28rem;
+}
+
+.index .wrapper .title {
+    border-top: 1px solid #eee;
+    padding-top: 0.34rem;
+    margin: 0 0.3rem;
+}
+
+.index .wrapper .title .text {
+    font-size: 0.24rem;
+    color: #999;
+    width: 5.3rem;
+    text-align: left;
+}
+
+.index .wrapper .title .text .name {
+    color: #282828;
+    font-size: 0.3rem;
+    font-weight: bold;
+    margin-bottom: 0.05rem;
+    position: relative;
+}
+.index .wrapper .title .more {
+    font-size: 0.26rem;
+    color: #333;
+}
+
+.index .wrapper .title .more .iconfont {
+    margin-left: 0.02rem;
+    font-size: 0.26rem;
+}
+
+.index .wrapper .scroll-product .swiper-slide {
+    width: 1.8rem;
+    display: inline-block;
+    margin-right: 0.19rem;
+    border-bottom: 0.04rem solid #47b479;
+    box-shadow: 0 0.15rem 0.15rem -0.1rem #eee;
+    -webkit-box-shadow: 0 0.15rem 0.15rem -0.1rem #eee;
+    -moz-box-shadow: 0 0.15rem 0.15rem -0.1rem #eee;
+    -o-box-shadow: 0 0.15rem 0.15rem -0.1rem #eee;
+}
+
+.index .wrapper .scroll-product .swiper-slide:nth-of-type(3n) {
+    border-bottom: 0.04rem solid #ff6960;
+}
+
+.index .wrapper .scroll-product .swiper-slide:nth-of-type(3n-1) {
+    border-bottom: 0.04rem solid #579afe;
+}
+
+.index .wrapper .scroll-product .swiper-slide:nth-last-child(1) {
+    margin-right: 0;
+}
+
+
+
+.index .wrapper .scroll-product .swiper-slide .img-box img {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.06rem 0.06rem 0 0;
+}
+
+.index .wrapper .boutique img {
+    width: 100%;
+    height: 2.6rem;
+}
+
+.index .wrapper .boutique .swiper-pagination {
+    bottom: -0.08rem;
+    width: 100%;
+}
+
+.index .wrapper .boutique .swiper-pagination-bullet {
+    width: 0.07rem;
+    height: 0.07rem;
+    border-radius: 50%;
+    background-color: #fc4141;
+    opacity: 0.3;
+}
+
+.index .wrapper .boutique .swiper-pagination-bullet ~ .swiper-pagination-bullet {
+    margin-left: 0.1rem;
+}
+
+.index .wrapper .boutique .swiper-pagination-bullet-active {
+    width: 0.2rem;
+    height: 0.07rem;
+    border-radius: 0.035rem;
+    opacity: 1
+}
+
+
+.index .adver img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+
+.index .wrapper .newProducts .swiper-slide {
+    display: inline-block;
+    width: 2.43rem;
+    margin-right: 0.2rem;
+    border: 1px solid #eee;
+    border-radius: 0.12rem;
+}
+
+.index .wrapper .newProducts .swiper-slide:nth-last-child(1) {
+    margin-right: 0;
+}
+
+
+.index .wrapper .newProducts .swiper-slide .img-box img {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.12rem 0.12rem 0 0;
+}
+
+.index .wrapper .newProducts .swiper-slide .money {
+    padding: 0 0.1rem 0.18rem 0.1rem;
+    text-align: center;
+    font-size: 0.26rem;
+    font-weight: bold;
+}
+
+/** 首页 **/
+.promotion-area-title {
+    text-align: center;
+    margin: 0.48rem 0 0.16rem 0
+}
+
+.promotion-area { /* Safari */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.promotion-area .seckill,
+.promotion-area .assemble {
+    width: 3.3rem;
+    height: 4.14rem;
+    margin: 0.22rem 0.14rem;
+    border-radius: 0.16rem;
+    -webkit-box-shadow: 0px 0px 10px 1px rgba(128, 128, 128, 0.5);
+    box-shadow: 0px 0px 10px 1px rgba(128, 128, 128, 0.5);
+    padding: .28rem .26rem;
+}
+
+.promotion-area .seckill {
+    background: url(../images/seckill-bg.png) -0.5rem 1.5rem no-repeat;
+}
+
+.promotion-area .assemble {
+    background: url(../images/assemble-bg2.jpg) 0rem 2.2rem no-repeat;
+    background-size: 3.3rem 2.06rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.promotion-area .assemble img {
+    width: 2.14rem;
+    height: 1.38rem;
+    position: absolute;
+    right: -0.04rem;
+    top: 0.8rem;
+}
+
+.assemble-title {
+    width: 95px;
+    height: 25px;
+    font-size: 18px;
+    font-family: PingFangSC-Semibold, PingFang SC;
+    font-weight: 600;
+    color: rgba(62, 62, 62, 1);
+    line-height: 25px;
+    letter-spacing: 1px;
+}
+
+.seckill-title {
+    font-size: .36rem;
+    width: 1.84rem;
+    height: .46rem;
+    background: url(../images/seckill-title.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+.assemble-subtitle,
+.seckill-subtitle {
+    margin-top: 0.08rem;
+    color: #5B5B5B;
+    font-size: 0.24rem;
+}
+
+.time {
+    margin-top: .16rem;
+}
+
+.time .styleAll {
+    width: .32rem;
+    height: .32rem;
+    background-color: #2c2c2c;
+    border-radius: 50%;
+    color: #fefefe;
+    font-size: .2rem;
+    display: inline-block;
+    text-align: center;
+    line-height: .32rem;
+}
+
+.hotList {
+    width: 100%;
+    overflow: hidden;
+}
+
+.publicTitle {
+    position: relative;
+    width: 100%;
+    margin: .3rem auto .5rem auto;
+}
+
+.publicTitle .more {
+    position: absolute;
+    font-size: .24rem;
+    color: #666;
+    right: .2rem;
+}
+
+.acea-row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-lines: multiple;
+    -moz-box-lines: multiple;
+    -o-box-lines: multiple;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.hotList .list .item {
+    width: 2.23rem;
+    margin: 0 0 .3rem .2rem;
+}
+
+.hotList .list .item .pictrue {
+    width: 100%;
+    height: 2.23rem;
+    position: relative;
+}
+
+.hotList .list .item .pictrue img {
+    width: 100%;
+    height: 100%;
+}
+
+.hotList .list .item .text .name {
+    width: 100%;
+    font-size: .28rem;
+    color: #282828;
+    margin-top: .15rem;
+}
+
+.hotList .list .item .text .money {
+    font-size: .28rem;
+}
+
+.publicList {
+    padding: 0 .2rem;
+}
+
+.publicList .item {
+    width: 3.45rem;
+    margin-bottom: .37rem;
+}
+
+.publicList .item .pictrue {
+    width: 100%;
+    height: 3.45rem;
+}
+
+.publicList .item .pictrue img {
+    width: 100%;
+    height: 100%;
+}
+
+.publicList .item .text {
+    width: 100%;
+}
+
+.publicList .item .text .name {
+    font-size: .3rem;
+    color: #282828;
+    width: 100%;
+    margin: .2rem 0 .05rem 0;
+}
+
+.publicList .item .text .money {
+    font-size: .24rem;
+    margin-bottom: 0.05rem;
+}
+
+.publicList .item .text .money .num {
+    font-size: .36rem;
+}
+
+.publicList .item .text .money .label {
+    padding: 0 .05rem;
+    margin-left: .08rem;
+    width: .72rem;
+    height: .26rem;
+    background: url(../images/fengqiang.png) no-repeat;
+    background-size: cover;
+    display: inline-block;
+    margin-bottom: -0.1rem;
+}
+
+.publicList .item .text .ot-money {
+    font-size: .22rem;
+    color: #aaa;
+    text-decoration: line-through;
+    margin-top: -.1rem;
+}
+
+.publicList .item .text .cart {
+    width: .5rem;
+    height: .5rem;
+    background: url(../images/cart.png) .1rem .1rem no-repeat;
+}
+
+.recommend .title {
+    width: 4.26rem;
+    height: .79rem;
+    margin: .4rem auto;
+}
+.recommend .title img{
+    width: 4.5rem;
+}
+.publicTitle img{
+    width: 4.5rem;
+}
+.promotion-area-title img{
+    width: 4.5rem;
+}

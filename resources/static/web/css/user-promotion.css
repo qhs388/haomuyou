@@ -1,0 +1,87 @@
+.my-promotion .header {
+    background-image: url(../images/promotionBg.79d3d197.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 100%;
+    height: 3.75rem;
+}
+.my-promotion .header .name {
+    font-size: .3rem;
+    color: #fff;
+    padding-top: .57rem;
+    position: relative;
+}
+.my-promotion .header .name .record {
+    font-size: .26rem;
+    color: hsla(0,0%,100%,.8);
+    position: absolute;
+    right: .2rem;
+}
+.my-promotion .header .name .record .iconfont {
+    font-size: .25rem;
+}
+.my-promotion .header .num {
+    text-align: center;
+    color: #fff;
+    margin-top: .25rem;
+    font-size: .9rem;
+    font-family: GuildfordProBook\ 5;
+}
+.my-promotion .header .profit {
+    padding: 0 .2rem;
+    margin-top: .33rem;
+    font-size: .24rem;
+    color: hsla(0,0%,100%,.8);
+}
+.my-promotion .header .profit .item {
+    min-width: 2rem;
+    text-align: center;
+}
+.my-promotion .header .profit .item .money {
+    font-size: .34rem;
+    color: #fff;
+}
+.my-promotion .header .profit .item {
+    min-width: 2rem;
+    text-align: center;
+}
+.my-promotion .header .profit .item .money {
+    font-size: .34rem;
+    color: #fff;
+}
+.my-promotion .bnt {
+    display: block;
+    font-size: .28rem;
+    color: #fff;
+    width: 2.58rem;
+    height: .68rem;
+    border-radius: .5rem;
+    text-align: center;
+    line-height: .68rem;
+    margin: -.32rem auto 0 auto;
+}
+.my-promotion .list {
+    padding: 0 .2rem;
+    margin-top: .1rem;
+}
+.my-promotion .list .item {
+    width: 3.45rem;
+    height: 2.4rem;
+    border-radius: .2rem;
+    background-color: #fff;
+    margin-top: .2rem;
+    font-size: .3rem;
+    color: #666;
+}
+.my-promotion .list .item .iconfont {
+    font-size: .7rem;
+    background-image: -webkit-gradient(linear,left top,right top,from(#fc4d3d),to(#e93323));
+    background-image: linear-gradient(90deg,#fc4d3d 0,#e93323);
+    background-image: -moz-linear-gradient(to right,#fc4d3d 0,#e93323 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: .2rem;
+}
+.bg-color-red {
+    background-color: #e93323!important
+}

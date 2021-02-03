@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="browsermode" content="application">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="Cache" content="no-cache">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <!-- 禁止百度转码 -->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta name="format-detection" content="telephone=no">
+    <title>商品列表</title>
+    <link rel="stylesheet" href="${request.contextPath}/web/css/reset.css?v=${verison!}">
+    <link rel="stylesheet" href="${request.contextPath}/web/css/base.css?v=${verison!}">
+    <link rel="stylesheet" href="${request.contextPath}/web/css/goods-list.css?v=${verison!}">
+</head>
+<script type="text/javascript" src="${request.contextPath}/web/js/media_750.js"></script>
+<script type="text/javascript" src="${request.contextPath}/web/js/jquery.min.js"></script>
+<script type="text/javascript" src="${request.contextPath}/web/js/jquery.mobile.min.js"></script>
+<script type="text/javascript" src="${request.contextPath}/web/js/common.js?v=${verison!}"></script>
+<body style="background-color: rgb(255, 255, 255);">
+<div data-role="page">
+    <div class="app">
+        <div class="productList router">
+            <form method="get" action="${request.contextPath}/web/searchResult" id="form">
+                <div class="search bg-color-red acea-row row-between-wrapper">
+                    <div class="input acea-row row-between-wrapper">
+                        <img src="${request.contextPath}/web/images/search-icon.png" alt="" onclick="search()"/>
+                        <input  name="isBest" id="isBest" type="hidden" value="${isBest!}">
+                        <input  name="sortPrice" id="sortPrice" type="hidden" value="${sortPrice!}">
+                        <input  name="sortSales" id="sortSales" type="hidden" value="${sortSales!}">
+                        <input  name="typeId" id="typeId" type="hidden" value="${typeId!}">
+                        <input placeholder="<#if keyWords??>${keyWords}<#else>搜索商品信息</#if>" name="keyWords"></div>
+                    <div class="iconfont icon-pailie"></div>
+                </div>
+            </form>
+            <div class="nav acea-row row-middle">
+                <div class="item" onclick="getDefault()">
+                    ${typeName!}
+                </div>
+                <div class="item" onclick="getPrice()">
+                    价格
+                    <#if sortPrice == 0>
+                        <img src="${request.contextPath}/web/images/sort.png">
+                    <#elseif sortPrice == 1>
+                        <img src="${request.contextPath}/web/images/sort-up.png">
+                    <#elseif sortPrice == 2>
+                        <img src="${request.contextPath}/web/images/sort-down.png">
+                    </#if>
+                </div>
+                <div class="item" onclick="getSales()">
+                    销量
+                    <#if sortSales == 0>
+                        <img src="${request.contextPath}/web/images/sort.png">
+                    <#elseif sortSales == 1>
+                        <img src="${request.contextPath}/web/images/sort-up.png">
+                    <#elseif sortSales == 2>
+                        <img src="${request.contextPath}/web/images/sort-down.png">
+                    </#if>
+                </div>
+                <div class="item <#if isBest??&&isBest==1>font-color-red</#if>" onclick="getBest()">
+                    精品
+                </div>
+            </div>
+            <div class="list acea-row row-between-wrapper">
+                <#if data??>
+                    <#list data as item>
+                        <a href="${request.contextPath}/web/goodsDetail/${item.id}" class="item" title="${item.goodsName!}">
+                            <div class="pictrue">
+                                <img src="${item.image!}">
+                            </div>
+                            <div class="text">
+                                <div class="name line1">${item.goodsName!}</div>
+                                <div class="money font-color-red">
+                                    ￥<span class="num">${item.webPrice!}</span>
+                                </div>
+                                <div class="vip acea-row row-between-wrapper">
+                                    <div class="vip-money">
+                                        ￥${item.webVipPrice!}<img src="${request.contextPath}/web/images/vip-icon.png">
+                                    </div>
+                                    <div>已售${item.sales}件</div>
+                                </div>
+                            </div>
+                        </a>
+                    </#list>
+                </#if>
+            </div>
+            <#if !data?? || data?size==0>
+                <div class="noSearResult" style="margin-top: 1.72rem;">
+                    <div class="noPictrue">
+                        <img src="${request.contextPath}/web/images/noSearch.27430a84.png" class="image"/>
+                    </div>
+                </div>
+            </#if>
+        </div>
+    </div>
+    <#include "include/right.html" />
+</div>
+</body>
+<script>
+    $(function () {
+        var $listChangeTrigger = $('.productList .search .iconfont');
+        $listChangeTrigger.on('touchstart', function () {
+            $listChangeTrigger.toggleClass('icon-pailie');
+            $listChangeTrigger.toggleClass('icon-tupianpailie');
+            $('.productList .list, .productList .list .item, .productList .list .item .pictrue,' +
+                ' .productList .list .item .text, .productList .list .item .text .money,' +
+                ' .productList .list .item .text .vip').toggleClass('on');
+        })
+        $(window).on('scroll', function () {
+            var isChrome = document.documentElement.scrollTop === 0 && document.body.scrollTop !== 0;
+            var clientHeight = isChrome ? document.body.clientHeight : document.documentElement.clientHeight;
+            var scrollTop = isChrome ? document.body.scrollTop : document.documentElement.scrollTop;
+            var scrollHeight = isChrome ? document.body.scrollHeight : document.documentElement.scrollHeight;
+
+            if (clientHeight + scrollTop === scrollHeight) {
+                console.log('到底了')
+                // 加载更多
+            }
+        })
+    })
+    function search(){
+        $("#form").submit();
+    }
+    function getDefault(){
+         var typeId = $("#typeId").val();
+         window.location.href="${request.contextPath}/web/category";
+    }
+    function getBest(){
+        var isBest = $("#isBest").val();
+        if("1"==isBest){
+            $("#isBest").val("");
+        }else{
+            $("#isBest").val("1");
+        }
+        $("#form").submit();
+    }
+    function getPrice(){
+        var sortPrice = $("#sortPrice").val();
+        if("0"==sortPrice){
+            $("#sortPrice").val("1");
+        }else if("1"==sortPrice){
+            $("#sortPrice").val("2");
+        }else if("2"==sortPrice){
+            $("#sortPrice").val("0");
+        }
+        $("#sortSales").val("0");
+        $("#form").submit();
+    }
+    function getSales(){
+        var sortSales = $("#sortSales").val();
+        if("0"==sortSales){
+            $("#sortSales").val("1");
+        }else if("1"==sortSales){
+            $("#sortSales").val("2");
+        }else if("2"==sortSales){
+            $("#sortSales").val("0");
+        }
+        $("#sortPrice").val("0");
+        $("#form").submit();
+    }
+</script>
+</html>

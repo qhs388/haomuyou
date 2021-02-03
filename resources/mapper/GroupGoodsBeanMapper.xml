@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hanson.mapper.GroupGoodsBeanMapper">
+    <resultMap id="BaseResultMap" type="com.hanson.entity.GroupGoodsBean">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="goods_id" jdbcType="INTEGER" property="goodsId"/>
+        <result column="goods_name" jdbcType="VARCHAR" property="goodsName"/>
+        <result column="goods_image" jdbcType="VARCHAR" property="goodsImage"/>
+        <result column="goods_price" jdbcType="INTEGER" property="goodsPrice"/>
+        <result column="group_price" jdbcType="INTEGER" property="groupPrice"/>
+        <result column="stock" jdbcType="INTEGER" property="stock"/>
+        <result column="sales" jdbcType="INTEGER" property="sales"/>
+        <result column="num" jdbcType="INTEGER" property="num"/>
+        <result column="start_time" jdbcType="TIMESTAMP" property="startTime"/>
+        <result column="end_time" jdbcType="TIMESTAMP" property="endTime"/>
+        <result column="group_num" jdbcType="INTEGER" property="groupNum"/>
+        <result column="status" jdbcType="INTEGER" property="status"/>
+        <result column="is_show" jdbcType="INTEGER" property="isShow"/>
+        <result column="create_date" jdbcType="TIMESTAMP" property="createDate"/>
+        <result column="update_date" jdbcType="TIMESTAMP" property="updateDate"/>
+        <result column="join_num" jdbcType="INTEGER" property="joinNum"/>
+        <result column="view_num" jdbcType="INTEGER" property="viewNum"/>
+        <result column="grouped_num" jdbcType="INTEGER" property="groupedNum"/>
+    </resultMap>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete from t_group_goods
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" parameterType="com.hanson.entity.GroupGoodsBean">
+        insert into t_group_goods (id, goods_id, goods_name,
+        goods_image, goods_price, group_price,
+        stock, sales, num,
+        start_time, end_time, group_num,
+        status, is_show, create_date,
+        update_date, join_num, view_num,
+        grouped_num)
+        values (#{id,jdbcType=INTEGER}, #{goodsId,jdbcType=INTEGER}, #{goodsName,jdbcType=VARCHAR},
+        #{goodsImage,jdbcType=VARCHAR}, #{goodsPrice,jdbcType=INTEGER}, #{groupPrice,jdbcType=INTEGER},
+        #{stock,jdbcType=INTEGER}, #{sales,jdbcType=INTEGER}, #{num,jdbcType=INTEGER},
+        #{startTime,jdbcType=TIMESTAMP}, #{endTime,jdbcType=TIMESTAMP}, #{groupNum,jdbcType=INTEGER},
+        #{status,jdbcType=INTEGER}, #{isShow,jdbcType=INTEGER}, #{createDate,jdbcType=TIMESTAMP},
+        #{updateDate,jdbcType=TIMESTAMP}, #{joinNum,jdbcType=INTEGER}, #{viewNum,jdbcType=INTEGER},
+        #{groupedNum,jdbcType=INTEGER})
+    </insert>
+    <update id="updateByPrimaryKey" parameterType="com.hanson.entity.GroupGoodsBean">
+        update t_group_goods
+        set goods_id = #{goodsId,jdbcType=INTEGER},
+        goods_name = #{goodsName,jdbcType=VARCHAR},
+        goods_image = #{goodsImage,jdbcType=VARCHAR},
+        goods_price = #{goodsPrice,jdbcType=INTEGER},
+        group_price = #{groupPrice,jdbcType=INTEGER},
+        stock = #{stock,jdbcType=INTEGER},
+        sales = #{sales,jdbcType=INTEGER},
+        num = #{num,jdbcType=INTEGER},
+        start_time = #{startTime,jdbcType=TIMESTAMP},
+        end_time = #{endTime,jdbcType=TIMESTAMP},
+        group_num = #{groupNum,jdbcType=INTEGER},
+        status = #{status,jdbcType=INTEGER},
+        is_show = #{isShow,jdbcType=INTEGER},
+        create_date = #{createDate,jdbcType=TIMESTAMP},
+        update_date = #{updateDate,jdbcType=TIMESTAMP},
+        join_num = #{joinNum,jdbcType=INTEGER},
+        view_num = #{viewNum,jdbcType=INTEGER},
+        grouped_num = #{groupedNum,jdbcType=INTEGER}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select id, goods_id, goods_name, goods_image, goods_price, group_price, stock, sales,
+        num, start_time, end_time, group_num, status, is_show, create_date, update_date,
+        join_num, view_num, grouped_num
+        from t_group_goods
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <select id="selectAll" resultMap="BaseResultMap">
+        select id, goods_id, goods_name, goods_image, goods_price, group_price, stock, sales,
+        num, start_time, end_time, group_num, status, is_show, create_date, update_date,
+        join_num, view_num, grouped_num
+        from t_group_goods
+    </select>
+    <select id="listGroupGoods" resultMap="BaseResultMap" parameterType="com.hanson.entity.GroupGoodsBean">
+        select id, goods_id, goods_name, goods_image, goods_price, group_price, stock, sales,
+        num, start_time, end_time, group_num, status, is_show, create_date, update_date,
+        join_num, view_num, grouped_num
+        from t_group_goods
+        where 1=1
+        <if test="groupGoodsBean.isShow != null">
+            and  is_show = #{groupGoodsBean.isShow}
+        </if>
+        <if test="groupGoodsBean.goodsName != null and groupGoodsBean.goodsName != ''">
+            and (goods_name like concat('%', #{groupGoodsBean.goodsName},'%'))
+        </if>
+        order by create_date desc
+    </select>
+    <select id="selectCurrentTimeData" resultMap="BaseResultMap">
+        select id, goods_id, goods_name, goods_image, goods_price, group_price, stock, sales,
+        num, start_time, end_time, group_num, status, is_show, create_date, update_date,
+        join_num, view_num, grouped_num
+        from t_group_goods
+        where is_show=1 and now() between start_time and end_time order by create_date desc
+    </select>
+    <select id="selectByGoodsId" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select id, goods_id, goods_name, goods_image, goods_price, group_price, stock, sales,
+        num, start_time, end_time, group_num, status, is_show, create_date, update_date,
+        join_num, view_num, grouped_num
+        from t_group_goods
+        where goods_id = #{goodsId,jdbcType=INTEGER}
+    </select>
+    <update id="updateIsShow">
+        update t_group_goods set  is_show = #{isShow,jdbcType=INTEGER} where id = #{id,jdbcType=INTEGER}
+    </update>
+</mapper>

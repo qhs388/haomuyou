@@ -1,0 +1,209 @@
+.productList .search {
+    width: 100%;
+    height: .86rem;
+    padding-left: .23rem;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 5;
+}
+.productList .search .input {
+    width: 6.4rem;
+    height: .6rem;
+    background-color: #fff;
+    border-radius: .5rem;
+    padding: 0 .2rem;
+}
+.productList .search .input .iconfont {
+    font-size: .35rem;
+    color: #555;
+}
+.productList .search .input input {
+    width: 5.48rem;
+    height: 100%;
+    font-size: .26rem;
+}
+.productList .search .icon-pailie, .productList .search .icon-tupianpailie {
+    margin: 0 auto;
+    color: #fff;
+    width: .5rem;
+    font-size: .5rem;
+    height: .86rem;
+    line-height: .86rem;
+}
+.productList .nav {
+    height: .86rem;
+    color: #454545;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    font-size: .28rem;
+    background-color: #fff;
+    top: .86rem;
+    z-index: 5;
+}
+.productList .nav .item {
+    width: 25%;
+    text-align: center;
+}
+.productList .nav .item img {
+    width: .15rem;
+    height: .19rem;
+    margin-left: .1rem;
+}
+.productList .list {
+    padding: 0 .2rem;
+    margin-top: 1.72rem;
+}
+.productList .list .item {
+    width: 3.45rem;
+    margin-top: .2rem;
+    background-color: #fff;
+    border-radius: .1rem;
+}
+.productList .list .item .pictrue {
+    width: 100%;
+    height: 3.45rem;
+}
+.productList .list .item .pictrue img {
+    width: 100%;
+    height: 100%;
+    border-radius: .1rem .1rem 0 0;
+}
+.productList .list .item .text {
+    padding: .2rem .17rem .26rem .17rem;
+    font-size: .3rem;
+    color: #222;
+    text-align: left;
+}
+.productList .list .item .text .money {
+    font-size: .26rem;
+    font-weight: 700;
+    margin-top: .08rem;
+}
+.productList .list .item .text .money .num {
+    font-size: .34rem;
+}
+.productList .list .item .text .vip {
+    font-size: .22rem;
+    color: #aaa;
+    margin-top: .07rem;
+}
+.productList .list .item .text .vip .vip-money {
+    font-size: .24rem;
+    color: #282828;
+    font-weight: 700;
+}
+.productList .list .item .text .vip .vip-money img {
+    width: .46rem;
+    height: .21rem;
+    margin-left: .04rem;
+}
+.noCommodity{
+    border-top: 3px solid #f5f5f5;
+    padding-bottom: 1px;
+}
+.noCommodity .noPictrue {
+    width: 4.14rem;
+    height: 3.36rem;
+    margin: 0 auto .3rem auto;
+}
+.noCommodity .noPictrue .image {
+    width: 100%;
+    height: 100%;
+}
+.recommend .title {
+    height: 1.35rem;
+    font-size: .28rem;
+    color: #282828;
+}
+.recommend .title .name {
+    margin: 0 .28rem;
+}
+.recommend .recommendList {
+    padding: 0 .3rem;
+}
+.recommend .recommendList .item {
+    width: 3.35rem;
+    margin-bottom: .3rem;
+}
+.recommend .recommendList .item .pictrue {
+    width: 100%;
+    height: 3.35rem;
+}
+.recommend .recommendList .item .name {
+    font-size: .28rem;
+    color: #282828;
+    margin-top: .2rem;
+}
+.recommend .recommendList .item .pictrue .image {
+    width: 100%;
+    height: 100%;
+    border-radius: .06rem;
+}
+.recommend .recommendList .item .money {
+    font-size: .2rem;
+    margin-top: .03rem;
+}
+.recommend .recommendList .item .money .num {
+    font-size: .28rem;
+}
+.productList .list.on {
+    background-color: #fff;
+    border-top: 1px solid #f6f6f6;
+}
+.productList .list .item.on {
+    width: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    display: -webkit-flex;
+    display: -webkit-box;
+    border-bottom: 1px solid #f6f6f6;
+    padding: .3rem 0;
+    margin: 0;
+}
+.productList .list .item .pictrue.on {
+    width: 1.8rem;
+    height: 1.8rem;
+}
+.productList .list .item .pictrue img.on {
+    border-radius: .06rem;
+}
+.productList .list .item .text.on {
+    width: 5.08rem;
+    padding: 0 0 0 .22rem;
+}
+.productList .list .item .text .money.on {
+    margin-top: .4rem;
+}
+.productList .list .item .text .vip.on {
+    margin-top: .11rem;
+}
+.productList .list .item .text .money.on {
+    margin-top: .4rem;
+}
+.productList .list .item .text .vip.on {
+    margin-top: .11rem;
+}
+.recommend .title .iconfont {
+    font-size: 1.7rem;
+    color: #454545;
+    height: .5rem;
+    line-height: .5rem;
+}
+.recommend .title .iconfont.lefticon {
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+}
+.noSearResult .noPictrue{
+    width: 4.14rem;
+    height: 3.36rem;
+    margin: 0 auto .3rem auto;
+}
+.noSearResult .noPictrue .image {
+    width: 100%;
+    height: 100%;
+}

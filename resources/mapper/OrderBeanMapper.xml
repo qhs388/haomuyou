@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hanson.mapper.OrderBeanMapper">
+  <resultMap id="BaseResultMap" type="com.hanson.entity.OrderBean">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="mer_id" jdbcType="INTEGER" property="merId" />
+    <result column="open_id" jdbcType="VARCHAR" property="openId" />
+    <result column="order_id" jdbcType="VARCHAR" property="orderId" />
+    <result column="goods_id" jdbcType="INTEGER" property="goodsId" />
+    <result column="goods_attr" jdbcType="VARCHAR" property="goodsAttr" />
+    <result column="user_name" jdbcType="VARCHAR" property="userName" />
+    <result column="user_phone" jdbcType="VARCHAR" property="userPhone" />
+    <result column="user_address" jdbcType="VARCHAR" property="userAddress" />
+    <result column="total_num" jdbcType="INTEGER" property="totalNum" />
+    <result column="total_price" jdbcType="INTEGER" property="totalPrice" />
+    <result column="pay_price" jdbcType="INTEGER" property="payPrice" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="pay_time" jdbcType="TIMESTAMP" property="payTime" />
+    <result column="pay_type" jdbcType="INTEGER" property="payType" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="order_type" jdbcType="INTEGER" property="orderType" />
+    <result column="group_num" jdbcType="VARCHAR" property="groupNum" />
+    <result column="user_score" jdbcType="INTEGER" property="userScore" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="update_date" jdbcType="TIMESTAMP" property="updateDate" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_order
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByOrderId" parameterType="java.lang.String">
+    delete from t_order
+    where order_id = #{orderId,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.hanson.entity.OrderBean">
+    insert into t_order (id, open_id, order_id, 
+      goods_id, user_name, user_phone, 
+      user_address, total_num, total_price, 
+      pay_price, status, pay_time, 
+      pay_type, remark, create_date,goods_attr,order_type,group_num,mer_id,update_date
+      )
+    values (#{id,jdbcType=INTEGER}, #{openId,jdbcType=VARCHAR}, #{orderId,jdbcType=VARCHAR},
+      #{goodsId,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{userPhone,jdbcType=VARCHAR}, 
+      #{userAddress,jdbcType=VARCHAR}, #{totalNum,jdbcType=INTEGER}, #{totalPrice,jdbcType=INTEGER}, 
+      #{payPrice,jdbcType=INTEGER}, #{status,jdbcType=INTEGER}, #{payTime,jdbcType=TIMESTAMP}, 
+      #{payType,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP},
+      #{goodsAttr,jdbcType=VARCHAR},#{orderType,jdbcType=INTEGER},#{groupNum,jdbcType=VARCHAR},#{merId,jdbcType=INTEGER},#{updateDate,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.hanson.entity.OrderBean">
+    update t_order
+    set open_id = #{openId,jdbcType=VARCHAR},
+      order_id = #{orderId,jdbcType=VARCHAR},
+      mer_id = #{merId,jdbcType=INTEGER},
+      goods_id = #{goodsId,jdbcType=INTEGER},
+      goods_attr = #{goodsAttr,jdbcType=VARCHAR},
+      user_name = #{userName,jdbcType=VARCHAR},
+      user_phone = #{userPhone,jdbcType=VARCHAR},
+      user_address = #{userAddress,jdbcType=VARCHAR},
+      total_num = #{totalNum,jdbcType=INTEGER},
+      total_price = #{totalPrice,jdbcType=INTEGER},
+      pay_price = #{payPrice,jdbcType=INTEGER},
+      status = #{status,jdbcType=INTEGER},
+      pay_time = #{payTime,jdbcType=TIMESTAMP},
+      pay_type = #{payType,jdbcType=INTEGER},
+      remark = #{remark,jdbcType=VARCHAR},
+      create_date = #{createDate,jdbcType=TIMESTAMP},
+      update_date = #{updateDate,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateAddresById" parameterType="com.hanson.entity.OrderBean">
+    update t_order
+      set
+      user_name = #{userName,jdbcType=VARCHAR},
+      user_phone = #{userPhone,jdbcType=VARCHAR},
+      user_address = #{userAddress,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
+      user_score = #{userScore,jdbcType=INTEGER},
+      update_date = #{updateDate,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, open_id, order_id, goods_id, user_name, user_phone, user_address, total_num, 
+    total_price, pay_price, status, pay_time, pay_type, remark, create_date,goods_attr,order_type,group_num,mer_id,update_date,user_score
+    from t_order
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, open_id, order_id, goods_id, user_name, user_phone, user_address, total_num, 
+    total_price, pay_price, status, pay_time, pay_type, remark, create_date,goods_attr,order_type,group_num,mer_id,update_date,user_score
+    from t_order
+  </select>
+  <select id="selectByOpenId" resultMap="BaseResultMap">
+    select id, open_id, order_id, goods_id, user_name, user_phone, user_address, total_num,
+    total_price, pay_price, status, pay_time, pay_type, remark, create_date,goods_attr,order_type,group_num,mer_id,update_date,user_score
+    from t_order where open_id = #{openId,jdbcType=VARCHAR} and status = #{status,jdbcType=INTEGER}
+  </select>
+  <update id="updateStatusByOrderId">
+      update t_order set status = #{status,jdbcType=INTEGER} where order_id = #{orderId,jdbcType=VARCHAR}
+  </update>
+  <update id="updatePayPrice">
+      update t_order set status = #{status,jdbcType=INTEGER},pay_price = #{payPrice,jdbcType=INTEGER} where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateGroupPayPrice">
+    update t_order set group_num = #{groupNum,jdbcType=VARCHAR},status = #{status,jdbcType=INTEGER},pay_price = #{payPrice,jdbcType=INTEGER} where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateStautsByGroupNum">
+    update t_order set status = #{status,jdbcType=INTEGER} where group_num = #{groupNum,jdbcType=VARCHAR}
+  </update>
+  <update id="updatePayTypeByOrderSeq">
+    update t_order set pay_type = #{payType,jdbcType=INTEGER},pay_time=now() where order_id = #{orderSeq,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByOrderId" resultMap="BaseResultMap">
+    select id, open_id, order_id, goods_id, user_name, user_phone, user_address, total_num,
+    total_price, pay_price, status, pay_time, pay_type, remark, create_date,goods_attr,order_type,group_num,mer_id,update_date,user_score
+    from t_order where  order_id = #{orderId,jdbcType=VARCHAR}
+  </select>
+  <select id="listOrder" resultMap="BaseResultMap" parameterType="com.hanson.entity.OrderBean">
+    select id, open_id, order_id, goods_id, user_name, user_phone, user_address, total_num,
+    total_price, pay_price, status, pay_time, pay_type, remark, create_date,goods_attr,order_type,group_num,mer_id,user_score from  t_order
+    where
+    <if test='orderBean.merId != null and orderBean.merId == 0'>
+      1=1
+    </if>
+    <if test='orderBean.merId != null and orderBean.merId != 0'>
+      mer_id = #{orderBean.merId}
+    </if>
+    <if test="orderBean.orderType != null">
+      and  order_type = #{orderBean.orderType}
+    </if>
+    <if test="orderBean.status != null">
+      and  status = #{orderBean.status}
+    </if>
+    <if test="orderBean.keyWords != null and orderBean.keyWords != ''">
+      and (user_name like concat('%', #{orderBean.keyWords},'%') or user_phone like concat('%', #{orderBean.keyWords},'%') or order_id like concat('%', #{orderBean.keyWords},'%'))
+    </if>
+    order by create_date desc
+  </select>
+  <select id="groupByStatus" resultType="java.util.Map">
+    SELECT STATUS
+    ,
+    count( 1 ) num
+    FROM
+    t_order
+    WHERE
+    open_id = #{openId,jdbcType=VARCHAR}
+    GROUP BY
+    STATUS
+  </select>
+  <select id="countByOpenId" resultType="com.hanson.common.bean.OrderCount">
+    SELECT
+    count( 1 ) num,
+    sum(pay_price) money
+    FROM
+    t_order
+    WHERE
+    open_id = #{openId,jdbcType=VARCHAR} and status > 1
+    <if test="time != null and time=='month'">
+      and DATE_FORMAT(create_date, '%Y%m' ) = DATE_FORMAT( CURDATE( ),'%Y%m' )
+    </if>
+    <if test="time != null and time=='week'">
+      and DATE_SUB(CURDATE(), INTERVAL 7 DAY) <![CDATA[ <= ]]> date(create_date)
+    </if>
+    <if test="time != null and time=='day'">
+      and to_days(create_date) = to_days(now())
+    </if>
+    <if test="time != null and time=='lastDay'">
+      and TO_DAYS( NOW( ) ) - TO_DAYS( create_date) <![CDATA[ <= ]]> 1
+    </if>
+  </select>
+  <select id="statisOrders" resultMap="BaseResultMap">
+    select id,status,create_date,total_price, pay_price,mer_id,status from t_order where mer_id is not null
+  </select>
+  <select id="countByGroupNum" parameterType="java.lang.String" resultType="java.lang.Long">
+    select count(1) from t_order where group_num = #{groupNum,jdbcType=VARCHAR}
+  </select>
+</mapper>

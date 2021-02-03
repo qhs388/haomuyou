@@ -1,0 +1,296 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <title>添加分类</title>
+    <script src="${request.contextPath}/plug/vue/dist/vue.min.js"></script>
+    <link href="${request.contextPath}/plug/iview/dist/styles/iview.css" rel="stylesheet">
+    <script src="${request.contextPath}/plug/iview/dist/iview.min.js"></script>
+    <script src="${request.contextPath}/plug/jquery/jquery.min.js"></script>
+    <script src="${request.contextPath}/plug/form-create/province_city.js"></script>
+    <script src="${request.contextPath}/plug/form-create/province_city_area.js"></script>
+    <script src="${request.contextPath}/plug/form-create/form-create.min.js"></script>
+    <style>
+        /*弹框样式修改*/
+        .ivu-modal{top: 20px;}
+        .ivu-modal .ivu-modal-body{padding: 10px;}
+        .ivu-modal .ivu-modal-body .ivu-modal-confirm-head{padding:0 0 10px 0;}
+        .ivu-modal .ivu-modal-body .ivu-modal-confirm-footer{display: none;padding-bottom: 10px;}
+        .ivu-date-picker {display: inline-block;line-height: normal;width: 280px;}
+        .ivu-modal-footer{display: none;}
+        body{padding: 20px;}
+    </style>
+</head>
+<body>
+<script>
+    window.$f = null
+    formCreate.formSuccess = function(form,$r){
+        parent.$(".J_iframe:visible")[0].contentWindow.location.reload(); setTimeout(function(){parent.layer.close(parent.layer.getFrameIndex(window.name));},1000);        //刷新父级页面
+//        parent.$(".J_iframe:visible")[0].contentWindow.location.reload();
+        //关闭当前窗口
+//        var index = parent.layer.getFrameIndex(window.name);
+//        parent.layer.close(index);
+        //提交成功后按钮恢复
+        console.log($r);
+        // $r.loading(false);
+    };
+
+    (function () {
+        var create = (function () {
+            var getRule = function () {
+                var rule = [
+    {
+        "type":"frame",
+        "field":"product",
+        "title":"选择商品",
+        "value":"<#if data??>${data.goodsImage!}</#if>",
+        "props":{
+            "type":"image",
+            "maxLength":1,
+            "title":"请选择商品",
+            "src":"${request.contextPath}/admin/goods/selectGoods?isBargain=1",
+            "icon":"plus",
+            "width":"100%",
+            "height":"500px"
+        },
+        "validate":[
+         { required: true, message: '请选择商品', trigger: 'blur' }
+        ],
+        "col":[
+        ]
+    },
+    {
+        "type":"hidden",
+        "field":"goodsId",
+        "value":"<#if data??>${data.goodsId!}</#if>"
+    },
+     {
+        "type":"hidden",
+        "field":"id",
+        "value":"<#if data??>${data.id!}</#if>"
+    },
+    {
+        "type":"input",
+        "field":"goodsName",
+        "title":"商品标题",
+        "value":"<#if data??>${data.goodsName!}</#if>",
+        "props":{
+            "type":"text",
+            "placeholder":"请输入商品标题"
+        },
+        "validate":[
+            { required: true, message: '请输入商品标题', trigger: 'blur' }
+        ],
+        "col":[
+        ]
+    },
+    {
+        "type":"DatePicker",
+        "field":"startTime",
+        "title":"活动开始日期",
+        "value":"<#if data??&& data.startTime??>${data.startTime?string('yyyy-MM-dd HH:mm:ss')}</#if>",
+        "props":{
+            "type":"datetime",
+            "placeholder":"请选择活动开始日期"
+        },
+        "validate":[
+        ],
+        "col":[
+        ]
+    },
+    {
+        "type":"DatePicker",
+        "field":"endTime",
+        "title":"活动结束日期",
+        "value":"<#if data?? && data.endTime??>${data.endTime?string('yyyy-MM-dd HH:mm:ss')}</#if>",
+        "props":{
+            "type":"datetime",
+            "placeholder":"请选择活动结束日期"
+        },
+        "validate":[
+        ],
+        "col":[
+        ]
+    },
+    {
+        "type":"frame",
+        "field":"goodsImage",
+        "title":"商品主图片(305*305px)",
+        "value":"<#if data??>${data.goodsImage!}</#if>",
+        "props":{
+            "type":"image",
+            "maxLength":1,
+            "title":"请选择商品主图片(305*305px)",
+            "src":"/admin/file/image?parentinputname=goodsImage",
+            "icon":"image",
+            "width":"100%",
+            "height":"500px"
+        },
+        "validate":[
+         { required: true, message: '请选择商品主图片', trigger: 'blur' }
+        ],
+        "col":[
+        ]
+    },
+    {
+        "type":"inputNumber",
+        "field":"num",
+        "title":"单次购买商品的数量",
+        "value":"<#if data??&&data.num??>${data.num?c}</#if>",
+        "props":{
+            "placeholder":"请输入数量",
+             "min":1,
+              "step": 1,
+            "precision":0
+        },
+        "validate":[
+        ],
+        "col":{
+            "span":12
+        }
+    },
+    {
+        "type":"inputNumber",
+        "field":"stock",
+        "title":"库存",
+        "value":"<#if data??&&data.stock??>${data.stock?c}</#if>",
+        "props":{
+            "placeholder":"请输入库存",
+            "min":1,
+             "step": 1,
+            "precision":0
+        },
+        "validate":[
+        ],
+        "col":{
+            "span":12
+        }
+    },
+    {
+        "type":"inputNumber",
+        "field":"webGoodsPrice",
+        "title":"商品原价",
+        "value":"<#if data??&&data.webGoodsPrice??>${data.webGoodsPrice!}</#if>",
+        "props":{
+             "step": 1,
+            "placeholder":"请输入商品原价"
+        },
+        "validate":[
+        ],
+        "col":{
+            "span":12
+        }
+    },
+    {
+        "type":"inputNumber",
+        "field":"webGroupPrice",
+        "title":"拼团价格",
+        "value":"<#if data??&&data.webGroupPrice??>${data.webGroupPrice!}</#if>",
+        "props":{
+             "step": 1,
+            "placeholder":"请输入拼团价格"
+        },
+        "validate":[
+        ],
+        "col":{
+            "span":12
+        }
+    },
+     {
+        "type":"inputNumber",
+        "field":"groupNum",
+        "title":"拼团人数",
+        "value":"<#if data??&&data.groupNum??>${data.groupNum?c}</#if>",
+        "props":{
+             "step": 1,
+            "placeholder":"请输入拼团人数"
+        },
+        "validate":[
+        ],
+        "col":{
+            "span":12
+        }
+    }
+   ];
+                rule.forEach(function (c) {
+                    if ((c.type == 'cascader' || c.type == 'tree') && Object.prototype.toString.call(c.props.data) == '[object String]') {
+                        if (c.props.data.indexOf('js.') === 0) {
+                            c.props.data = window[c.props.data.replace('js.', '')];
+                        }
+                    }
+                });
+                return rule;
+            }, vm = new Vue,name = 'formBuilderExec';
+            var _b = false;
+            window[name] =  function create(el, callback) {
+                if(_b) return ;
+                _b = true;
+                if (!el) el = document.body;
+                $f = formCreate.create(getRule(), {
+                    el: el,
+                    form:{"inline":false,"labelPosition":"right","labelWidth":125,"showMessage":true,"autocomplete":"off"},
+                    row:[],
+                    submitBtn:{},
+                    resetBtn:{},
+                    iframeHelper:true,
+                    global:{
+                        upload: {
+                            props:{
+                                onExceededSize: function (file) {
+                                    vm.$Message.error(file.name + '超出指定大小限制');
+                                },
+                                onFormatError: function () {
+                                    vm.$Message.error(file.name + '格式验证失败');
+                                },
+                                onError: function (error) {
+                                    vm.$Message.error(file.name + '上传失败,(' + error + ')');
+                                },
+                                onSuccess: function (res, file) {
+                                    if (res.code == 200) {
+                                        file.url = res.data.filePath;
+                                    } else {
+                                        vm.$Message.error(res.msg);
+                                    }
+                                },
+                            },
+                        },
+                    },
+                    //表单提交事件
+                    onSubmit: function (formData) {
+                        $f.btn.loading(true);
+                        var url = <#if data??>'${request.contextPath}/admin/groupGoods/modify'<#else>'${request.contextPath}/admin/groupGoods/add'</#if>;
+                        $.ajax({
+                            url:url,
+                            type: 'POST',
+                            dataType: 'json',
+                            data: formData,
+                            success: function (res) {
+                                if (res.code == 200) {
+                                    vm.$Message.success(res.msg);
+                                    $f.btn.loading(false);
+                                    formCreate.formSuccess && formCreate.formSuccess(res, $f, formData);
+                                    callback && callback(0, res, $f, formData);
+                                    //TODO 表单提交成功!
+                                } else {
+                                    vm.$Message.error(res.msg || '表单提交失败');
+                                    $f.btn.loading(false);
+                                    callback && callback(1, res, $f, formData);
+                                    //TODO 表单提交失败
+                                }
+                            },
+                            error: function () {
+                                vm.$Message.error('表单提交失败');
+                                $f.btn.loading(false);
+                            }
+                        });
+                    }
+                });
+                return $f;
+            };
+            return window[name];
+        }());
+
+        window.$f = create();
+//        create();
+    })();
+</script>
+</body>
+</html>

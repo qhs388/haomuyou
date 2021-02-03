@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:8080/ -->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="browsermode" content="application">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="Cache" content="no-cache">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <!-- 禁止百度转码 -->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta name="format-detection" content="telephone=no">
+    <title>购物车</title>
+    <link rel="stylesheet" href="${request.contextPath}/web/css/reset.css?v=${verison!}">
+    <link rel="stylesheet" href="${request.contextPath}/web/css/base.css?v=${verison!}">
+    <link rel="stylesheet" href="${request.contextPath}/web/css/cart.css?v=${verison!}">
+    <link rel="stylesheet" href="${request.contextPath}/plug/layui/css/layui.css" media="all">
+</head>
+<script type="text/javascript" src="${request.contextPath}/web/js/media_750.js"></script>
+<script type="text/javascript" src="${request.contextPath}/web/js/jquery.min.js"></script>
+<script type="text/javascript" src="${request.contextPath}/web/js/jquery.mobile.min.js"></script>
+<script type="text/javascript" src="${request.contextPath}/web/js/common.js?v=${verison!}"></script>
+<script src="${request.contextPath}/js/layer.js"></script>
+<body style="background-color: rgb(245, 245, 245);">
+<div data-role="page">
+    <div class="app">
+        <div class="shoppingCart router">
+            <div class="labelNav acea-row row-around row-middle">
+                <div class="item">
+                    <span class="iconfont icon-xuanzhong"></span>100%正品保证
+                </div>
+                <div class="item">
+                    <span class="iconfont icon-xuanzhong"></span>所有商品精挑细选
+                </div>
+                <div class="item"><span class="iconfont icon-xuanzhong"></span>售后无忧
+                </div>
+            </div>
+            <div class="nav acea-row row-between-wrapper">
+                <div>
+                    购物数量<span class="num font-color-red" id="totalNum"> ${totalCount} </span>
+                </div>
+                <div class="administrate acea-row row-center-wrapper">管理</div>
+            </div>
+            <div>
+                <#if data??>
+                    <#list data as item>
+                        <div class="list">
+                            <div class="item acea-row row-between-wrapper">
+                                <div class="select-btn">
+                                    <div class="checkbox-wrapper">
+                                        <label class="well-check">
+                                            <input type="checkbox" name="" value="" checked="true" data-id="${item.id}"/>
+                                            <i class="icon"></i>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="picTxt acea-row row-between-wrapper">
+                                    <a href="${request.contextPath}/web/goodsDetail/${item.goodsId}">
+                                        <div class="pictrue">
+                                            <img src="${item.image!}">
+                                        </div>
+                                    </a>
+                                    <div class="text">
+                                        <a class="line1">${item.goodsName!}</a>
+                                        <div class="infor line1">
+                                            属性：${item.goodsAttr!}
+                                        </div>
+                                        <div class="money">￥${item.webTotalPrice!}</div>
+                                    </div>
+                                    <div class="carnum acea-row row-center-wrapper">
+                                        <div class="reduce">
+                                            -
+                                        </div>
+                                        <div class="num"><input type="number" class="ipt_num" value="${item.addNum}" readonly>
+                                        </div>
+                                        <div class="plus">
+                                            +
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </#list>
+                </#if>
+
+                <div class="noCart">
+                    <#if data?size==0>
+                        <div class="pictrueTip">
+                            <img data-v-0adb247e="" src="${request.contextPath}/web/images/noCart.6f2abfef.png">
+                        </div>
+                    </#if>
+                    <div class="recommend">
+                        <div class="title acea-row row-center-wrapper">
+                            <span class="iconfont icon-zhuangshixian"></span>
+                            <span class="name">为你推荐</span>
+                            <span class="iconfont icon-zhuangshixian lefticon"></span>
+                        </div>
+                        <div class="recommendList acea-row row-between-wrapper">
+                            <#if recommend??>
+                                <#list recommend as item>
+                                    <div class="item" onclick="jump(${item.id})">
+                                        <div class="pictrue">
+                                            <img src="${item.image!}" class="image"/>
+                                            <span class="pictrue_log_big pictrue_log_class">热销</span>
+                                        </div>
+                                        <div class="name line1">
+                                            ${item.goodsName!}
+                                        </div>
+                                        <div class="money font-color-red">
+                                            ￥
+                                            <span class="num">${item.webPrice!}</span>
+                                        </div>
+                                    </div>
+                                </#list>
+                            </#if>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="height: 2.1rem"></div>
+            <div class="footer acea-row row-between-wrapper" style="">
+                <div>
+                    <div class="select-btn">
+                        <div class="checkbox-wrapper">
+                            <label class="well-check">
+                                <input type="checkbox" name="selectAll" value="" checked="true">
+                                <i class="icon"></i>
+                                <span class="checkAll">全选 (${totalCount!})</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="money acea-row row-middle">
+                    <span class="font-color-red">￥${totalPrice}</span>
+                    <a href="javascript:void(0)" class="placeOrder bg-color-red" onclick="addOrder()">立即下单</a>
+                </div>
+                <div class="button acea-row row-middle" style="display: none">
+                    <!--<a href="javascript:void(0)" class="bnt cart-color">收藏</a>-->
+                    <a href="javascript:void(0)" class="bnt" onclick="del()">删除</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <#include "include/footer.html" />
+    <#include "include/right.html" />
+</div>
+</body>
+<script>
+    $(function () {
+        $('.administrate').on('touchstart', function () {
+            var $this = $(this);
+            var currentText = $this.html();
+            if(currentText === '管理') {
+                $this.html('取消');
+                $('.footer .money').hide();
+                $('.footer .button').show();
+            } else {
+                $this.html('管理');
+                $('.footer .money').show();
+                $('.footer .button').hide();
+            }
+        })
+        $('.footer .select-btn input').on('change', function () {
+            var $this = $(this);
+            var checked = $this.is(":checked");
+            if (checked) {
+                $('.list .item .select-btn input').attr('checked', true);
+                $this.attr('checked', true);
+            } else {
+                $('.list .item .select-btn input').removeAttr('checked');
+                  $this.removeAttr('checked');
+            }
+
+            var allChecked = true;
+            var totalPrice = 0;
+            var totalNum = 0;
+            $('.list .item .select-btn input').each(function(i, item) {
+                if (!$(item).attr('checked')) {
+                    allChecked = false;
+                }else{
+                    var price = $(item).parent().parent().parent().parent().find('.picTxt .text .money').html();
+                    var num = $(item).parent().parent().parent().parent().find('.carnum .num .ipt_num').val();
+                    totalPrice += price.substr(1)*100*num/100;
+                    totalNum += parseInt(num);
+                }
+            })
+            $(".footer .money .font-color-red").html("￥"+totalPrice);
+            $(".footer .select-btn .checkAll").html("全选 ("+totalNum+")");
+        })
+        $('.list .item .select-btn input').on('change', function () {
+            var checked = $(this).is(":checked");
+            if (checked) {
+                $(this).attr('checked', true);
+            } else {
+                $(this).removeAttr('checked');
+            }
+
+            var allChecked = true;
+            var totalPrice = 0;
+            var totalNum = 0;
+            $('.list .item .select-btn input').each(function(i, item) {
+                if (!$(item).attr('checked')) {
+                    allChecked = false;
+                }else{
+                    var price = $(item).parent().parent().parent().parent().find('.picTxt .text .money').html();
+                    var num = $(item).parent().parent().parent().parent().find('.carnum .num .ipt_num').val();
+                    totalPrice += price.substr(1)*100*num/100;
+                    totalNum += parseInt(num);
+                }
+            })
+            $(".footer .money .font-color-red").html("￥"+totalPrice);
+             $(".footer .select-btn .checkAll").html("全选 ("+totalNum+")");
+            if (allChecked) {
+                $('.footer .select-btn input').attr('checked', true);
+            } else {
+                $('.footer .select-btn input').removeAttr('checked');
+            }
+        })
+
+        $('.reduce,.plus').on('touchstart', function () {
+            var allChecked = true;
+            var totalPrice = 0;
+            var totalNum = 0;
+            $('.list .item .select-btn input').each(function(i, item) {
+                if (!$(item).attr('checked')) {
+                    allChecked = false;
+                }else{
+                    var price = $(item).parent().parent().parent().parent().find('.picTxt .text .money').html();
+                    var num = $(item).parent().parent().parent().parent().find('.carnum .num .ipt_num').val();
+                    totalNum += parseInt(num);
+                    totalPrice += price.substr(1)*100*num/100;
+                }
+            })
+            $(".footer .money .font-color-red").html("￥"+totalPrice);
+            $(".footer .select-btn .checkAll").html("全选 ("+totalNum+")");
+        })
+    })
+      function del(){
+            var array = new Array();
+            $('.list .item .select-btn input').each(function(i, item) {
+                    if ($(item).attr('checked')) {
+                        array.push(($(item).data("id")));
+                    }
+            });
+            if(array.length == 0){
+                layer.msg("至少选择一个删除项！")
+                return;
+            }
+             $.ajax({
+                  type: 'POST',
+                  url: "${request.contextPath}/web/cart/delete",
+                  data: JSON.stringify(array),
+                  dataType:'json',
+                  contentType:'application/json',
+                  success: function(data){
+                      if(data.code==200){
+                         window.location.href="${request.contextPath}/web/cartList"
+                      }else{
+                         layer.msg(data.msg)
+                      }
+                  }
+            });
+        }
+       function addOrder(){
+            var obj = new Object();
+            var array = new Array();
+             $('.list .item .select-btn input').each(function(i, item) {
+                    if ($(item).attr('checked')) {
+                        var itemObj = new Object();
+                        itemObj["id"] = $(item).data("id");
+                        itemObj["addNum"] = $(item).parent().parent().parent().parent().find('.carnum .num .ipt_num').val();
+                        array.push(itemObj);
+                    }
+            });
+            if(array.length == 0){
+                layer.msg("至少选择一个！")
+                return;
+            }
+            obj["list"] = array;
+            console.log(obj);
+            $.ajax({
+                  type: 'POST',
+                  url: '${request.contextPath}/web/order/addCartOrder',
+                  data: JSON.stringify(obj),
+                  dataType:'json',
+                  contentType:'application/json',
+                  success: function(data){
+                      if(data.code==200){
+                            window.location.href="${request.contextPath}/web/orderSubmit/" + data.data
+                      }else{
+                         layer.msg(data.msg)
+                      }
+                  }
+            });
+       }
+       function jump(id){
+            window.location.href="${request.contextPath}/web/goodsDetail/" + id;
+       }
+
+</script>
+</html>

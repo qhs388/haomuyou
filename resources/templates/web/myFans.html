@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="browsermode" content="application">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="Cache" content="no-cache">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    <!-- 禁止百度转码 -->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta name="format-detection" content="telephone=no">
+    <title>我的推广</title>
+    <link rel="stylesheet" href="${request.contextPath}/web/css/reset.css?v=${verison!}">
+    <link rel="stylesheet" href="${request.contextPath}/web/css/base.css?v=${verison!}">
+    <link rel="stylesheet" href="${request.contextPath}/web/css/promoter-list.css?v=${verison!}">
+</head>
+<body style="background-color: rgb(245, 245, 245);">
+<div data-role="page">
+    <div class="app">
+        <div class="promoter-list router">
+            <div class="header">
+                <div class="promoterHeader bg-color-red">
+                    <div class="headerCon acea-row row-between-wrapper">
+                        <div>
+                            <div class="name">推广人数</div>
+                            <div>
+                                <span class="num">${total!}</span>人
+                            </div>
+                        </div>
+                        <div class="iconfont icon-tuandui"></div>
+                    </div>
+                </div>
+                <!--<div class="nav acea-row row-around">-->
+                    <!--<div class="item on">-->
+                        <!--一级(2)-->
+                    <!--</div>-->
+                    <!--<div class="item">-->
+                        <!--二级(0)-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="search acea-row row-between-wrapper">-->
+                    <!--<form action="${request.contextPath}/web/myFans" id="form">-->
+                        <!--<div class="input">-->
+                            <!--<input placeholder="点击搜索会员名称" id="search" name="search">-->
+                            <!--<span class="iconfont icon-guanbi" onclick="clearInput()"></span>-->
+                        <!--</div>-->
+                    <!--</form>-->
+                    <!--<div class="iconfont icon-sousuo2" onclick="submit()"></div>-->
+                <!--</div>-->
+            </div>
+            <div class="list">
+                <!--<div class="sortNav acea-row row-middle">-->
+                    <!--<div class="sortItem">-->
+                        <!--团队排序-->
+                        <!--<img src="${request.contextPath}/web/images/sort-icon.png">-->
+                    <!--</div>-->
+                    <!--<div class="sortItem">-->
+                        <!--金额排序-->
+                        <!--<img src="${request.contextPath}/web/images/sort-icon.png">-->
+                    <!--</div>-->
+                    <!--<div class="sortItem">-->
+                        <!--订单排序-->
+                        <!--<img src="${request.contextPath}/web/images/sort-icon.png">-->
+                    <!--</div>-->
+                <!--</div>-->
+                <div class="">
+                    <#if data??>
+                        <#list data as item>
+                            <div class="item acea-row row-between-wrapper">
+                                <div class="picTxt acea-row row-between-wrapper">
+                                    <div class="pictrue">
+                                        <img src="${item.childImage}">
+                                    </div>
+                                    <div class="text">
+                                        <div class="name line1">${item.childName!}</div>
+                                        <div>加入时间: ${item.createDate?string("yyyy/MM/dd")}</div>
+                                    </div>
+                                </div>
+                                <div class="right">
+                                    <div>
+                                        <span class="font-color-red">1</span> 人
+                                    </div>
+                                    <div>${item.totalOrderNum!} 单</div>
+                                    <div>${item.totalMoneyNum!} 元</div>
+                                </div>
+                            </div>
+                        </#list>
+                    </#if>
+                </div>
+            </div>
+        </div>
+    </div>
+    <#include "include/right.html" />
+</div>
+</body>
+<script type="text/javascript" src="${request.contextPath}/web/js/media_750.js"></script>
+<script type="text/javascript" src="${request.contextPath}/web/js/jquery.min.js"></script>
+<script type="text/javascript" src="${request.contextPath}/web/js/jquery.mobile.min.js"></script>
+<script type="text/javascript" src="${request.contextPath}/web/js/common.js"></script>
+<script>
+    $(function () {
+
+    })
+    function clearInput(){
+        $("#search").val("");
+    }
+    function submit(){
+        $("#form").submit();
+    }
+</script>
+</html>

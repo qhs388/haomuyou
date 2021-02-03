@@ -1,0 +1,60 @@
+<html>
+<head>
+    <title>确认支付</title>
+    <script type="text/javascript" src="${request.contextPath}/web/js/jquery.min.js"></script>
+</head>
+<body>
+<input type="hidden" name="appId" value="${appId}">
+<input type="hidden" name="nonceStr" value="${nonceStr}">
+<input type="hidden" name="package" value="${package}">
+<input type="hidden" name="paySign" value="${paySign}">
+<input type="hidden" name="timeStamp" value="${timeStamp}">
+<input type="hidden" name="openId" value="${openId}">
+<input type="hidden" name="orderType" value="${orderType}">
+</body>
+<script>
+
+    function onBridgeReady(){
+        var appId = $("input[name='appId']").val();
+        var nonceStr = $("input[name='nonceStr']").val();
+        var package = $("input[name='package']").val();
+        var paySign = $("input[name='paySign']").val();
+        var timeStamp = $("input[name='timeStamp']").val();
+        var openId = $("input[name='openId']").val();
+        var orderType = $("input[name='orderType']").val();
+        var orderSeq = '${orderSeq!}';
+        var orderTime = '${orderTime!}';
+        var totalFee = '${totalFee!}';
+        WeixinJSBridge.invoke(
+                'getBrandWCPayRequest', {
+                    "appId":appId,
+                    "timeStamp":timeStamp,
+                    "nonceStr":nonceStr,
+                    "package":package,
+                    "signType":"MD5",
+                    "paySign":paySign
+                },
+            function(res){
+                if(res.err_msg == "get_brand_wcpay_request:ok" ) {
+                    location.href="${request.contextPath}/web/paySuccess/"+orderSeq+"?orderTime="+orderTime+"&totalFee="+totalFee;
+                }else {//这里支付失败和支付取消统一处理
+                    location.href="${request.contextPath}/web/payFail/"+orderSeq+"?orderTime="+orderTime+"&totalFee="+totalFee;
+                }
+            }
+        );
+    }
+
+    $(document).ready(function () {
+        if (typeof WeixinJSBridge == "undefined"){
+            if (document.addEventListener){
+                document.addEventListener('WeixinJSBridgeReady', onBridgeReady, false);
+            }else if (document.attachEvent){
+                document.attachEvent('WeixinJSBridgeReady', onBridgeReady);
+                document.attachEvent('onWeixinJSBridgeReady', onBridgeReady);
+            }
+        }else {
+            onBridgeReady();
+        }
+    });
+</script>
+</html>

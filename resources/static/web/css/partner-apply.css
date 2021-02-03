@@ -1,0 +1,75 @@
+.partnerApply .list {
+
+}
+.partnerApply .list .item {
+    padding: 0 .3rem;
+    min-height: .9rem;
+    border-top: .01rem solid #DADADA;
+    font-size: .3rem;
+}
+.partnerApply .list .item .name {
+    width: 1.95rem;
+    color: #333;
+}
+.partnerApply .list .item  .upload-name {
+    padding: .2rem 0;
+}
+.partnerApply .list .item  .upload-credentials {
+    width:6.88rem;
+    height:3.6rem;
+    border:1px dashed rgba(187,187,187,1);
+    margin-bottom: .48rem;
+    position: relative;
+}
+.partnerApply .list .item  .upload-credentials img {
+    width: 100%;
+    height: 100%;
+}
+.partnerApply .list .item  .upload-credentials form.g-core-image-upload-form {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 61px;
+    opacity: 0;
+}
+.partnerApply .list .item  .upload-credentials form.g-core-image-upload-form input {
+    width: 100%;
+    height: 100%;
+}
+.partnerApply .list .item input {
+    width: 4.75rem;
+    font-size: .3rem;
+}
+.partnerApply .list .item input::placeholder{
+    color: #BFBBBB;
+}
+.partnerApply .list .item .iconfont {
+    position: absolute;
+    right: .3rem;
+}
+.partnerApply .default {
+    padding: 0 .3rem;
+    height: .9rem;
+    background-color: #fff;
+    margin-top: .23rem;
+}
+.partnerApply .default .def {
+    margin-left: .6rem;
+}
+.partnerApply .keepBnt, .partnerApply .wechatAddress {
+    width: 6.9rem;
+    height: .86rem;
+    text-align: center;
+    line-height: .86rem;
+    font-size: .32rem;
+}
+.partnerApply .keepBnt {
+    display: block;
+    border-radius: .5rem;
+    margin: .5rem auto .3rem auto;
+    color: #fff;
+}

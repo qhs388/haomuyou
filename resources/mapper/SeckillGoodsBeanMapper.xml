@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hanson.mapper.SeckillGoodsBeanMapper">
+  <resultMap id="BaseResultMap" type="com.hanson.entity.SeckillGoodsBean">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="goods_id" jdbcType="INTEGER" property="goodsId" />
+    <result column="goods_name" jdbcType="VARCHAR" property="goodsName" />
+    <result column="goods_image" jdbcType="VARCHAR" property="goodsImage" />
+    <result column="goods_price" jdbcType="INTEGER" property="goodsPrice" />
+    <result column="seckill_price" jdbcType="INTEGER" property="seckillPrice" />
+    <result column="stock" jdbcType="INTEGER" property="stock" />
+    <result column="sales" jdbcType="INTEGER" property="sales" />
+    <result column="num" jdbcType="INTEGER" property="num" />
+    <result column="start_time" jdbcType="TIMESTAMP" property="startTime" />
+    <result column="stop_time" jdbcType="TIMESTAMP" property="stopTime" />
+    <result column="time_type" jdbcType="INTEGER" property="timeType" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="is_show" jdbcType="INTEGER" property="isShow" />
+    <result column="create_date" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="update_date" jdbcType="TIMESTAMP" property="updateDate" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from t_seckill_goods
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.hanson.entity.SeckillGoodsBean">
+    insert into t_seckill_goods (id, goods_id, goods_name, 
+      goods_image, goods_price, seckill_price, 
+      stock, sales, num, 
+      start_time, stop_time, time_type, 
+      status, is_show, create_date, 
+      update_date)
+    values (#{id,jdbcType=INTEGER}, #{goodsId,jdbcType=INTEGER}, #{goodsName,jdbcType=VARCHAR}, 
+      #{goodsImage,jdbcType=VARCHAR}, #{goodsPrice,jdbcType=INTEGER}, #{seckillPrice,jdbcType=INTEGER}, 
+      #{stock,jdbcType=INTEGER}, #{sales,jdbcType=INTEGER}, #{num,jdbcType=INTEGER}, 
+      #{startTime,jdbcType=TIMESTAMP}, #{stopTime,jdbcType=TIMESTAMP}, #{timeType,jdbcType=INTEGER}, 
+      #{status,jdbcType=INTEGER}, #{isShow,jdbcType=INTEGER}, #{createDate,jdbcType=TIMESTAMP}, 
+      #{updateDate,jdbcType=TIMESTAMP})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.hanson.entity.SeckillGoodsBean">
+    update t_seckill_goods
+    set goods_id = #{goodsId,jdbcType=INTEGER},
+      goods_name = #{goodsName,jdbcType=VARCHAR},
+      goods_image = #{goodsImage,jdbcType=VARCHAR},
+      goods_price = #{goodsPrice,jdbcType=INTEGER},
+      seckill_price = #{seckillPrice,jdbcType=INTEGER},
+      stock = #{stock,jdbcType=INTEGER},
+      sales = #{sales,jdbcType=INTEGER},
+      num = #{num,jdbcType=INTEGER},
+      start_time = #{startTime,jdbcType=TIMESTAMP},
+      stop_time = #{stopTime,jdbcType=TIMESTAMP},
+      time_type = #{timeType,jdbcType=INTEGER},
+      status = #{status,jdbcType=INTEGER},
+      is_show = #{isShow,jdbcType=INTEGER},
+      create_date = #{createDate,jdbcType=TIMESTAMP},
+      update_date = #{updateDate,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, goods_id, goods_name, goods_image, goods_price, seckill_price, stock, 
+    sales, num, start_time, stop_time, time_type, status, is_show, create_date, update_date
+    from t_seckill_goods
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, goods_id, goods_name, goods_image, goods_price, seckill_price, stock, 
+    sales, num, start_time, stop_time, time_type, status, is_show, create_date, update_date
+    from t_seckill_goods
+  </select>
+  <select id="listSeckillGoods" resultMap="BaseResultMap" parameterType="com.hanson.entity.SeckillGoodsBean">
+    select id, goods_id, goods_name, goods_image, goods_price, seckill_price, stock,
+    sales, num, start_time, stop_time, time_type, status, is_show, create_date, update_date
+    from t_seckill_goods
+    where 1=1
+    <if test="seckillGoodsBean.isShow != null">
+      and  is_show = #{seckillGoodsBean.isShow}
+    </if>
+    <if test="seckillGoodsBean.goodsName != null and seckillGoodsBean.goodsName != ''">
+      and (goods_name like concat('%', #{seckillGoodsBean.goodsName},'%'))
+    </if>
+    order by create_date desc
+  </select>
+  <select id="selectCurrentTimeData" resultMap="BaseResultMap">
+    select id, goods_id, goods_name, goods_image, goods_price, seckill_price, stock,
+    sales, num, start_time, stop_time, time_type, status, is_show, create_date, update_date
+    from t_seckill_goods where is_show=1 and now() between start_time and stop_time order by create_date desc
+  </select>
+  <select id="selectByGoodsId" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+    select id, goods_id, goods_name, goods_image, goods_price, seckill_price, stock,
+    sales, num, start_time, stop_time, time_type, status, is_show, create_date, update_date
+    from t_seckill_goods where goods_id = #{goodsId,jdbcType=INTEGER}
+  </select>
+  <update id="updateIsShow">
+    update t_seckill_goods set is_show = #{isShow,jdbcType=INTEGER} where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
