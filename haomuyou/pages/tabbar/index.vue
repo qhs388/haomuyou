@@ -18,8 +18,27 @@
 			<image src="/static/img/promotion-area.png" mode=""></image>
 		</view>
 		<view class="promotion-area">
-			<view class="">
-				
+			<view class="seckill">
+				<view class="seckill-title">
+					<image src="/static/img/seckill-title.png" mode=""></image>
+				</view>
+				<view class="seckill-subtitle">
+					民宿家居火热销售
+				</view>
+				<view class="bg-img">
+					
+				</view>
+			</view>
+			<view class="assemble">
+				<view class="assemble-title">
+					一起来拼团
+				</view>
+				<view class="assemble-subtitle">
+					优惠多多
+				</view>
+				<view class="bg-img">
+					
+				</view>
 			</view>
 		</view>
 	</view>
@@ -124,7 +143,7 @@
 	
 	.promotion-area-title{
 		width:450upx;
-		height: 70upx;
+		height: 100upx;
 		margin: 0 auto;
 		image{
 			width: 100%;
@@ -132,11 +151,72 @@
 		}
 	}
 	.promotion-area{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 30upx;
+		box-sizing: border-box;
 		.seckill{
-			
+			width: 330upx;
+			height: 420upx;
+			box-shadow: 0px 0px 20upx 2upx rgba(128, 128, 128, 0.5);
+			border-radius: 20upx;
+			overflow: hidden;
+			.seckill-title{
+				padding:25upx;
+				box-sizing: border-box;
+				width: 250upx;
+				height: 100upx;
+				image{
+					width: 100%;
+					height: 100%;
+				}
+			}
+			.seckill-subtitle{
+				padding-left: 25upx;
+				box-sizing: border-box;
+				
+				font-size: 26upx;
+				color: #5B5B5B;
+				
+			}
+			.bg-img{
+				width: 100%;
+				height: 280upx;
+				background-image: url('../../static/img/seckill-bg.png');
+				background-size: 100% 100%;
+				background-repeat: no-repeat;
+			}
 		}
 		.assemble{
-			
+			width: 330upx;
+			height: 420upx;
+			box-shadow: 0px 0px 20upx 2upx rgba(128, 128, 128, 0.5);
+			border-radius: 20upx;
+			overflow: hidden;
+			position: relative;
+			.assemble-title{
+				padding:25upx;
+				font-weight: bold;
+				box-sizing: border-box;
+				font-size: 38upx;
+				color: #3e3e3e;
+			}
+			.assemble-subtitle{
+				padding-left: 25upx;
+				box-sizing: border-box;
+				font-size: 26upx;
+				color: #5B5B5B;
+			}
+			.bg-img{
+				position: absolute;
+				bottom: 0;
+				width: 100%;
+				height: 200upx;
+				background-image: url('../../static/img/assemble-bg2.jpg');
+				background-size: 100% 100%;
+				background-repeat: no-repeat;
+			}
 		}
 	}
 	
