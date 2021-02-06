@@ -41,6 +41,51 @@
 				</view>
 			</view>
 		</view>
+		<view class="promotion-area-title">
+			<image src="/static/img/remenbangdan.png" mode=""></image>
+		</view>
+		<view class="goods-list" >
+			<view class="goods" v-for="(item,index) in 3" :key="index">
+				<view class="goods-img">
+					<image src="/static/img/assemble-bg2.jpg" mode=""></image>
+				</view>
+				<view class="title">
+					A1109 大月梳（赞比亚紫檀）
+				</view>
+				<view class="money">
+					￥88.00
+				</view>
+			</view>
+			
+		</view>
+		<view class="promotion-area-title">
+			<image src="/static/img/shangpincuxiao.png" mode=""></image>
+		</view>
+		<view class="goods-ArrList" >
+			<view class="goods" v-for="(item,index) in 4" :key="index">
+				<view class="goods-img">
+					<image src="/static/img/assemble-bg2.jpg" mode=""></image>
+				</view>
+				<view class="title">
+					A1109 大月梳（赞比亚紫檀）
+				</view>
+				<view class="money-box">
+					<view class="box-left">
+						<view class="money">
+							<text style="font-size: 28upx;">￥</text>88.00
+						</view>
+						<view class="ot-money">
+							<text style="font-size: 28upx;">￥</text>88.00
+						</view>
+						
+					</view>
+					<view class="fengqiang">
+						<image src="/static/img/fengqiang.png" mode=""></image>
+					</view>
+				</view>				
+			</view>
+			
+		</view>
 	</view>
 </template>
 
@@ -217,6 +262,93 @@
 				background-size: 100% 100%;
 				background-repeat: no-repeat;
 			}
+		}
+	}
+	
+	.goods-list{
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		.goods{
+			margin-left: 20upx;
+			width:225upx;
+			overflow: hidden;
+			// height: 300upx;
+			border-radius: 15upx;
+			.goods-img{
+				width: 100%;
+				height: 200upx;
+				image{
+					width: 100%;
+					height: 100%;
+				}
+			}
+			.title{
+				margin-top: 10upx;
+				font-size: 24upx;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+			.money{
+				color: #E34819;
+				font-size: 24upx;
+			}
+		}
+		
+	}
+	.goods-ArrList{
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		.goods{
+			margin-left: 20upx;
+			width:345upx;
+			overflow: hidden;
+			// height: 300upx;
+			border-radius: 15upx;
+			margin-top: 25upx;
+			.goods-img{
+				width: 100%;
+				height: 294upx;
+				image{
+					width: 100%;
+					height: 100%;
+				}
+			}
+			.title{
+				margin-top: 10upx;
+				font-size: 30upx;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+			}
+			.money-box{
+				display: flex;
+				align-items: center;
+				.box-left{
+					.money{
+						color: #E34819;
+						font-size: 34upx;
+					}
+					.ot-money{
+						font-size: 18upx;
+						color: #aaa;
+						text-decoration: line-through;
+						
+					}
+				}
+				.fengqiang{
+					width: 75upx;
+					height: 30upx;
+					margin-left: 5upx;
+					image{
+						width: 100%;
+						height: 100%;
+					}
+				}
+			}
+			
 		}
 	}
 	
