@@ -86,11 +86,17 @@
 			</view>
 			
 		</view>
+		<pictrue></pictrue>
+		
 	</view>
 </template>
 
 <script>
+	import pictrue from '@/components/pictrue/pictrue.vue'
 	export default {
+		components:{
+			pictrue
+		},
 		data() {
 			return {
 				keyword:'',
@@ -152,6 +158,9 @@
 </script>
 
 <style lang="scss">
+	
+
+	
 	.search-box{
 		width: 100%;
 		padding: 20upx;
@@ -228,7 +237,7 @@
 			.bg-img{
 				width: 100%;
 				height: 280upx;
-				background-image: url('../../static/img/seckill-bg.png');
+				background-image: url('/static/img/seckill-bg.png');
 				background-size: 100% 100%;
 				background-repeat: no-repeat;
 			}

@@ -18,7 +18,8 @@
 		{
 			"path": "pages/tabbar/cartList",
 			"style": {
-				"navigationBarTitleText": "购物车"
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": false
 			}
 		},
 		{
