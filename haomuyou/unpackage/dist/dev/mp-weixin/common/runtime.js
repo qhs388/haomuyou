@@ -105,11 +105,11 @@
 /******/
 /******/
 /******/ 		// mini-css-extract-plugin CSS loading
-/******/ 		var cssChunks = {"components/pictrue/pictrue":1,"uview-ui/components/u-search/u-search":1,"uview-ui/components/u-swiper/u-swiper":1,"uview-ui/components/u-tabs/u-tabs":1,"uview-ui/components/u-icon/u-icon":1,"uview-ui/components/u-badge/u-badge":1};
+/******/ 		var cssChunks = {"components/pictrue/pictrue":1,"uview-ui/components/u-search/u-search":1,"uview-ui/components/u-swiper/u-swiper":1,"uview-ui/components/u-tabs/u-tabs":1,"uview-ui/components/u-checkbox-group/u-checkbox-group":1,"uview-ui/components/u-button/u-button":1,"uview-ui/components/u-checkbox/u-checkbox":1,"uview-ui/components/u-icon/u-icon":1,"uview-ui/components/u-badge/u-badge":1};
 /******/ 		if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 		else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 			promises.push(installedCssChunks[chunkId] = new Promise(function(resolve, reject) {
-/******/ 				var href = "" + ({"components/pictrue/pictrue":"components/pictrue/pictrue","uview-ui/components/u-search/u-search":"uview-ui/components/u-search/u-search","uview-ui/components/u-swiper/u-swiper":"uview-ui/components/u-swiper/u-swiper","uview-ui/components/u-tabs/u-tabs":"uview-ui/components/u-tabs/u-tabs","uview-ui/components/u-icon/u-icon":"uview-ui/components/u-icon/u-icon","uview-ui/components/u-badge/u-badge":"uview-ui/components/u-badge/u-badge"}[chunkId]||chunkId) + ".wxss";
+/******/ 				var href = "" + ({"components/pictrue/pictrue":"components/pictrue/pictrue","uview-ui/components/u-search/u-search":"uview-ui/components/u-search/u-search","uview-ui/components/u-swiper/u-swiper":"uview-ui/components/u-swiper/u-swiper","uview-ui/components/u-tabs/u-tabs":"uview-ui/components/u-tabs/u-tabs","uview-ui/components/u-checkbox-group/u-checkbox-group":"uview-ui/components/u-checkbox-group/u-checkbox-group","uview-ui/components/u-button/u-button":"uview-ui/components/u-button/u-button","uview-ui/components/u-checkbox/u-checkbox":"uview-ui/components/u-checkbox/u-checkbox","uview-ui/components/u-icon/u-icon":"uview-ui/components/u-icon/u-icon","uview-ui/components/u-badge/u-badge":"uview-ui/components/u-badge/u-badge"}[chunkId]||chunkId) + ".wxss";
 /******/ 				var fullhref = __webpack_require__.p + href;
 /******/ 				var existingLinkTags = document.getElementsByTagName("link");
 /******/ 				for(var i = 0; i < existingLinkTags.length; i++) {

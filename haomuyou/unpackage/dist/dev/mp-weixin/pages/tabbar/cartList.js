@@ -98,6 +98,15 @@ try {
     uIcon: function() {
       return __webpack_require__.e(/*! import() | uview-ui/components/u-icon/u-icon */ "uview-ui/components/u-icon/u-icon").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-icon/u-icon.vue */ 115))
     },
+    uCheckboxGroup: function() {
+      return Promise.all(/*! import() | uview-ui/components/u-checkbox-group/u-checkbox-group */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uview-ui/components/u-checkbox-group/u-checkbox-group")]).then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-checkbox-group/u-checkbox-group.vue */ 140))
+    },
+    uCheckbox: function() {
+      return __webpack_require__.e(/*! import() | uview-ui/components/u-checkbox/u-checkbox */ "uview-ui/components/u-checkbox/u-checkbox").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-checkbox/u-checkbox.vue */ 148))
+    },
+    uButton: function() {
+      return __webpack_require__.e(/*! import() | uview-ui/components/u-button/u-button */ "uview-ui/components/u-button/u-button").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-button/u-button.vue */ 157))
+    },
     pictrue: function() {
       return __webpack_require__.e(/*! import() | components/pictrue/pictrue */ "components/pictrue/pictrue").then(__webpack_require__.bind(null, /*! @/components/pictrue/pictrue.vue */ 101))
     }
@@ -185,15 +194,239 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 {
   components: {
     pictrue: pictrue },
 
   data: function data() {
-    return {};
+    return {
+      customStyle2: {
+        width: '120px',
+        marginLeft: '20px',
+        backgroundColor: '#fff',
+        color: '#999' },
 
+      customStyle: {
+        width: '120px',
+        marginLeft: '20px',
+        backgroundColor: '#ff1f44',
+        color: '#fff' },
 
-  } };exports.default = _default;
+      flag: true, // 用于判断用户购物车是否有商品，没有商品为true，有商品为false
+      cartlist: [{
+        flag: false,
+        proname: '华为',
+        price: 5999,
+        num: 1,
+        right: 0 },
+
+      {
+        flag: false,
+        proname: '华为',
+        price: 5999,
+        num: 1,
+        right: 0 }],
+
+      // 购物车商品信息
+      administrate: false,
+      allchecked: false, //默认全选为true，因为后台数据没有是否选中的信息
+      //左滑默认宽度
+      delBtnWidth: 80 };
+
+  },
+  computed: {
+    // 计算选中商品数量
+    totalNum: function totalNum() {
+      var totalNum = 0;
+      this.cartlist.map(function (item) {
+        item.flag ? totalNum += item.num : totalNum += 0;
+      });
+      return totalNum;
+    },
+    //计算选中商品的总价
+    totalPrice: function totalPrice() {
+      var totalPrice = 0;
+      this.cartlist.map(function (item) {
+        item.flag ? totalPrice += item.num * item.price : totalPrice += 0;
+      });
+      return totalPrice;
+    } },
+
+  methods: {
+    strate: function strate() {
+      this.administrate = !this.administrate;
+    },
+    // 减号操作
+    reduce: function reduce(item) {
+      var num = item.num;
+      // 需要判断是否会减到0，我在这里是最小为1.
+      if (num > 1) {
+        num -= 1;
+      } else {
+        num = 1;
+        return;
+      }
+      item.num = num;
+    },
+    // 加号操作
+    add: function add(item) {
+      var num = item.num;
+      num += 1;
+      item.num = num;
+      // console.log(item)
+    },
+    // 删除单挑购物车商品
+    del: function del(item, index) {
+      // console.log(item)
+      this.cartlist.splice(index, 1);
+    },
+    // 单个商品前的勾选
+    selected: function selected(item) {
+      // console.log(item)
+      // item.flag = !item.flag
+      if (!item.flag) {
+        this.allchecked = false;
+      } else {
+        var test = this.cartlist.every(function (item) {
+          return item.flag === true;
+        });
+        if (test) {
+          this.allchecked = true;
+        } else {
+          this.allchecked = false;
+        }
+      }
+    },
+    // 全选按钮
+    selectedall: function selectedall() {
+      if (this.allchecked) {
+        this.cartlist.map(function (item) {
+          item.flag = true;
+        });
+      } else {
+        this.cartlist.map(function (item) {
+          item.flag = false;
+        });
+      }
+    },
+    //开始触摸滑动
+    drawStart: function drawStart(e) {
+      // console.log("开始触发");
+      var touch = e.touches[0];
+      this.startX = touch.clientX;
+    },
+    //触摸滑动
+    drawMove: function drawMove(e) {
+      // console.log("滑动");
+      for (var index in this.cartlist) {
+        this.$set(this.cartlist[index], 'right', 0);
+      }
+      var touch = e.touches[0];
+      // console.log(touch)
+      // console.log(e.currentTarget.dataset)
+      var item = this.cartlist[e.currentTarget.dataset.index];
+      var disX = this.startX - touch.clientX;
+      // console.log(this.delBtnWidth)
+      if (disX >= 20) {
+        if (disX > this.delBtnWidth) {
+          disX = this.delBtnWidth;
+        }
+        this.$set(item, 'right', disX);
+      } else {
+        this.$set(item, 'right', 0);
+      }
+    },
+    //触摸滑动结束
+    drawEnd: function drawEnd(e) {
+      // console.log("滑动结束");
+      var item = this.cartlist[e.currentTarget.dataset.index];
+      if (item.right >= this.delBtnWidth / 2) {
+        this.$set(item, 'right', this.delBtnWidth);
+      } else {
+        this.$set(item, 'right', 0);
+      }
+    } } };exports.default = _default;
 
 /***/ }),
 
