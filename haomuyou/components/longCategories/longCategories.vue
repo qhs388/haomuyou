@@ -60,7 +60,6 @@
 
 <script>
 	export default {
-		name: "category",
 		data() {
 			return {
 				height: 0,

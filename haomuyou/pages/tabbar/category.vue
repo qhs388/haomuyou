@@ -6,17 +6,16 @@
 		<view class="tabs-box">
 			<u-tabs :list="tabsList" font-size="35"  :is-scroll="false" fonz :current="current" bar-width="110" @change="change" active-color="#E44B1D" inactive-color="#333333"></u-tabs>
 		</view>
-		aaa
-		<long-categories
-		:list="list"></long-categories>
+		<glance-shop-classify ></glance-shop-classify>
+		
 	</view>
 </template>
 
 <script>
-	import longCategories from '../../components/longCategories/longCategories.vue'
+	import glanceShopClassify from '@/components/glance-ShopClassify/glance-ShopClassify.vue'
 	export default {
-		comments:{
-			longCategories
+		components:{
+			glanceShopClassify
 		},
 		data() {
 			return {

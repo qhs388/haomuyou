@@ -24,8 +24,28 @@
 		{
 			"path": "pages/tabbar/userCenter",
 			"style": {
-				"navigationBarTitleText": "我的"
+				"navigationBarTitleText": "我的",
+				"navigationBarBackgroundColor":"#e93323",
+				"navigationBarTextStyle":"white"
 			}
+		}
+	],
+	"subPackages":[
+		{
+		 "root":"index",
+		 "pages":[
+			
+			
+			{
+                    "path" : "goodsDetail/goodsDetail",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+            ]
 		}
 	],
 	"tabBar": {

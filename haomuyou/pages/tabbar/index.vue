@@ -62,7 +62,7 @@
 			<image src="/static/img/shangpincuxiao.png" mode=""></image>
 		</view>
 		<view class="goods-ArrList" >
-			<view class="goods" v-for="(item,index) in 4" :key="index">
+			<view class="goods" v-for="(item,index) in 4" :key="index" @click="gotoGoodsDetail()">
 				<view class="goods-img">
 					<image src="/static/img/assemble-bg2.jpg" mode=""></image>
 				</view>
@@ -153,6 +153,13 @@
 					},
 				]
 			};
+		},
+		methods:{
+			gotoGoodsDetail(id){
+				uni.navigateTo({
+					url:`/index/goodsDetail/goodsDetail`
+				})
+			}
 		}
 	}
 </script>
