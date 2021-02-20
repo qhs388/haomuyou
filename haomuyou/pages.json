@@ -45,6 +45,15 @@
                 }
                 
                 }
+                ,{
+                    "path" : "orderSubmit/orderSubmit",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "确认订单",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
             ]
 		}
 	],
