@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "订单详情",
+  "enablePullDownRefresh": false,
+  "navigationBarBackgroundColor": "#e93323",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "u-steps": "/uview-ui/components/u-steps/u-steps",
+    "u-button": "/uview-ui/components/u-button/u-button"
+  }
+}

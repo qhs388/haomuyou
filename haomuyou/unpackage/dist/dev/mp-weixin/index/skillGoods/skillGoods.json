@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "限时抢购",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "ss-scroll-navbar": "/components/ss-scroll-navbar/ss-scroll-navbar"
+  }
+}

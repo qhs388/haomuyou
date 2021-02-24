@@ -96,13 +96,13 @@ var components
 try {
   components = {
     uSearch: function() {
-      return __webpack_require__.e(/*! import() | uview-ui/components/u-search/u-search */ "uview-ui/components/u-search/u-search").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-search/u-search.vue */ 113))
+      return __webpack_require__.e(/*! import() | uview-ui/components/u-search/u-search */ "uview-ui/components/u-search/u-search").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-search/u-search.vue */ 145))
     },
     uSwiper: function() {
-      return __webpack_require__.e(/*! import() | uview-ui/components/u-swiper/u-swiper */ "uview-ui/components/u-swiper/u-swiper").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-swiper/u-swiper.vue */ 120))
+      return __webpack_require__.e(/*! import() | uview-ui/components/u-swiper/u-swiper */ "uview-ui/components/u-swiper/u-swiper").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-swiper/u-swiper.vue */ 152))
     },
     pictrue: function() {
-      return __webpack_require__.e(/*! import() | components/pictrue/pictrue */ "components/pictrue/pictrue").then(__webpack_require__.bind(null, /*! @/components/pictrue/pictrue.vue */ 127))
+      return __webpack_require__.e(/*! import() | components/pictrue/pictrue */ "components/pictrue/pictrue").then(__webpack_require__.bind(null, /*! @/components/pictrue/pictrue.vue */ 159))
     }
   }
 } catch (e) {
@@ -159,7 +159,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var pictrue = function pictrue() {__webpack_require__.e(/*! require.ensure | components/pictrue/pictrue */ "components/pictrue/pictrue").then((function () {return resolve(__webpack_require__(/*! @/components/pictrue/pictrue.vue */ 127));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var pictrue = function pictrue() {__webpack_require__.e(/*! require.ensure | components/pictrue/pictrue */ "components/pictrue/pictrue").then((function () {return resolve(__webpack_require__(/*! @/components/pictrue/pictrue.vue */ 159));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 
 
@@ -319,6 +319,11 @@ __webpack_require__.r(__webpack_exports__);
     gotoGoodsDetail: function gotoGoodsDetail(id) {
       uni.navigateTo({
         url: "/index/goodsDetail/goodsDetail" });
+
+    },
+    gotoSeckill: function gotoSeckill() {
+      uni.navigateTo({
+        url: '/index/skillGoods/skillGoods' });
 
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))

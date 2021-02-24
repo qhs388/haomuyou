@@ -125,22 +125,22 @@ var components
 try {
   components = {
     uSwiper: function() {
-      return __webpack_require__.e(/*! import() | uview-ui/components/u-swiper/u-swiper */ "uview-ui/components/u-swiper/u-swiper").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-swiper/u-swiper.vue */ 120))
+      return __webpack_require__.e(/*! import() | uview-ui/components/u-swiper/u-swiper */ "uview-ui/components/u-swiper/u-swiper").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-swiper/u-swiper.vue */ 152))
     },
     uIcon: function() {
-      return __webpack_require__.e(/*! import() | uview-ui/components/u-icon/u-icon */ "uview-ui/components/u-icon/u-icon").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-icon/u-icon.vue */ 150))
+      return __webpack_require__.e(/*! import() | uview-ui/components/u-icon/u-icon */ "uview-ui/components/u-icon/u-icon").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-icon/u-icon.vue */ 182))
     },
     uParse: function() {
-      return Promise.all(/*! import() | uview-ui/components/u-parse/u-parse */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uview-ui/components/u-parse/u-parse")]).then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-parse/u-parse.vue */ 179))
+      return Promise.all(/*! import() | uview-ui/components/u-parse/u-parse */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uview-ui/components/u-parse/u-parse")]).then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-parse/u-parse.vue */ 211))
     },
     uBadge: function() {
-      return __webpack_require__.e(/*! import() | uview-ui/components/u-badge/u-badge */ "uview-ui/components/u-badge/u-badge").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-badge/u-badge.vue */ 189))
+      return __webpack_require__.e(/*! import() | uview-ui/components/u-badge/u-badge */ "uview-ui/components/u-badge/u-badge").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-badge/u-badge.vue */ 221))
     },
     stepper: function() {
-      return __webpack_require__.e(/*! import() | components/stepper/stepper */ "components/stepper/stepper").then(__webpack_require__.bind(null, /*! @/components/stepper/stepper.vue */ 196))
+      return __webpack_require__.e(/*! import() | components/stepper/stepper */ "components/stepper/stepper").then(__webpack_require__.bind(null, /*! @/components/stepper/stepper.vue */ 228))
     },
     pictrue: function() {
-      return __webpack_require__.e(/*! import() | components/pictrue/pictrue */ "components/pictrue/pictrue").then(__webpack_require__.bind(null, /*! @/components/pictrue/pictrue.vue */ 127))
+      return __webpack_require__.e(/*! import() | components/pictrue/pictrue */ "components/pictrue/pictrue").then(__webpack_require__.bind(null, /*! @/components/pictrue/pictrue.vue */ 159))
     }
   }
 } catch (e) {
@@ -380,7 +380,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var _product = _interopRequireDefault(__webpack_require__(/*! @/json/product.json */ 100));
 var _skuList = _interopRequireDefault(__webpack_require__(/*! @/json/skuList.json */ 101));
-var _specList = _interopRequireDefault(__webpack_require__(/*! @/json/specList.json */ 102));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _toConsumableArray(arr) {return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();}function _nonIterableSpread() {throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(o);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _iterableToArray(iter) {if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);}function _arrayWithoutHoles(arr) {if (Array.isArray(arr)) return _arrayLikeToArray(arr);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;}var stepper = function stepper() {__webpack_require__.e(/*! require.ensure | components/stepper/stepper */ "components/stepper/stepper").then((function () {return resolve(__webpack_require__(/*! @/components/stepper/stepper.vue */ 196));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var pictrue = function pictrue() {__webpack_require__.e(/*! require.ensure | components/pictrue/pictrue */ "components/pictrue/pictrue").then((function () {return resolve(__webpack_require__(/*! @/components/pictrue/pictrue.vue */ 127));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+var _specList = _interopRequireDefault(__webpack_require__(/*! @/json/specList.json */ 102));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _toConsumableArray(arr) {return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();}function _nonIterableSpread() {throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(o);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _iterableToArray(iter) {if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);}function _arrayWithoutHoles(arr) {if (Array.isArray(arr)) return _arrayLikeToArray(arr);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;}var stepper = function stepper() {__webpack_require__.e(/*! require.ensure | components/stepper/stepper */ "components/stepper/stepper").then((function () {return resolve(__webpack_require__(/*! @/components/stepper/stepper.vue */ 228));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var pictrue = function pictrue() {__webpack_require__.e(/*! require.ensure | components/pictrue/pictrue */ "components/pictrue/pictrue").then((function () {return resolve(__webpack_require__(/*! @/components/pictrue/pictrue.vue */ 159));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 {
   components: {

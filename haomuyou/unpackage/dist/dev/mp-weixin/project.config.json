@@ -25,8 +25,14 @@
     "miniprogram": {
       "list": [
         {
-          "name": "index/orderSubmit/orderSubmit",
-          "pathName": "index/orderSubmit/orderSubmit",
+          "name": "my/myOrder/myOrder",
+          "pathName": "my/myOrder/myOrder",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "my/orderDetail/orderDetail",
+          "pathName": "my/orderDetail/orderDetail",
           "scene": null
         }
       ]

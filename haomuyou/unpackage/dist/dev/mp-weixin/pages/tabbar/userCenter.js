@@ -96,7 +96,7 @@ var components
 try {
   components = {
     pictrue: function() {
-      return __webpack_require__.e(/*! import() | components/pictrue/pictrue */ "components/pictrue/pictrue").then(__webpack_require__.bind(null, /*! @/components/pictrue/pictrue.vue */ 127))
+      return __webpack_require__.e(/*! import() | components/pictrue/pictrue */ "components/pictrue/pictrue").then(__webpack_require__.bind(null, /*! @/components/pictrue/pictrue.vue */ 159))
     }
   }
 } catch (e) {
@@ -153,7 +153,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var pictrue = function pictrue() {__webpack_require__.e(/*! require.ensure | components/pictrue/pictrue */ "components/pictrue/pictrue").then((function () {return resolve(__webpack_require__(/*! @/components/pictrue/pictrue.vue */ 127));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var pictrue = function pictrue() {__webpack_require__.e(/*! require.ensure | components/pictrue/pictrue */ "components/pictrue/pictrue").then((function () {return resolve(__webpack_require__(/*! @/components/pictrue/pictrue.vue */ 159));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 
 
@@ -279,17 +279,17 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
       serviceList: [
       {
-        typeId: 10,
+        url: '/my/applyManager/applyManager',
         pictrue: __webpack_require__(/*! ../../static/img/sqcwzg.png */ 85),
         title: '申请掌柜' },
 
       {
-        typeId: 12,
+        url: '/my/applyPartner/applyPartner',
         pictrue: __webpack_require__(/*! ../../static/img/sqcwhhr.png */ 86),
         title: '申请合伙人' },
 
       {
-        typeId: 147,
+        url: '/my/applyVip/applyVip',
         pictrue: __webpack_require__(/*! ../../static/img/sqcwvip.png */ 87),
         title: '申请VIP' },
 
@@ -314,7 +314,19 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
-  } };exports.default = _default;
+  },
+  methods: {
+    gotoUrl: function gotoUrl(url) {
+      uni.navigateTo({
+        url: url });
+
+    },
+    gotoMyorder: function gotoMyorder() {
+      uni.navigateTo({
+        url: "/my/myOrder/myOrder" });
+
+    } } };exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
 

@@ -96,10 +96,10 @@ var components
 try {
   components = {
     uSearch: function() {
-      return __webpack_require__.e(/*! import() | uview-ui/components/u-search/u-search */ "uview-ui/components/u-search/u-search").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-search/u-search.vue */ 113))
+      return __webpack_require__.e(/*! import() | uview-ui/components/u-search/u-search */ "uview-ui/components/u-search/u-search").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-search/u-search.vue */ 145))
     },
     uTabs: function() {
-      return Promise.all(/*! import() | uview-ui/components/u-tabs/u-tabs */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uview-ui/components/u-tabs/u-tabs")]).then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-tabs/u-tabs.vue */ 134))
+      return Promise.all(/*! import() | uview-ui/components/u-tabs/u-tabs */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uview-ui/components/u-tabs/u-tabs")]).then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-tabs/u-tabs.vue */ 166))
     }
   }
 } catch (e) {
@@ -156,7 +156,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var glanceShopClassify = function glanceShopClassify() {Promise.all(/*! require.ensure | components/glance-ShopClassify/glance-ShopClassify */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/glance-ShopClassify/glance-ShopClassify")]).then((function () {return resolve(__webpack_require__(/*! @/components/glance-ShopClassify/glance-ShopClassify.vue */ 141));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var glanceShopClassify = function glanceShopClassify() {Promise.all(/*! require.ensure | components/glance-ShopClassify/glance-ShopClassify */[__webpack_require__.e("common/vendor"), __webpack_require__.e("components/glance-ShopClassify/glance-ShopClassify")]).then((function () {return resolve(__webpack_require__(/*! @/components/glance-ShopClassify/glance-ShopClassify.vue */ 173));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 
 

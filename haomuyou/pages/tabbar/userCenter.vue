@@ -54,7 +54,7 @@
 					</view>
 				</view>
 				<view class="orderState">
-					<view class="item" v-for="(item,index) in itemList" :key="index">
+					<view class="item" v-for="(item,index) in itemList" :key="index" @click="gotoMyorder()">
 						<view class="icon">
 							<image :src="item.pictrue" mode=""></image>
 						</view>
@@ -72,7 +72,7 @@
 					
 				</view>
 				<view class="serviceList">
-					<view class="item" v-for="(item,index) in serviceList" :key="index" :class="{'view-mr':(index+1)%4==0}">
+					<view class="item" v-for="(item,index) in serviceList" :key="index" @click="gotoUrl(item.url)" :class="{'view-mr':(index+1)%4==0}">
 						<view class="icon">
 							<image :src="item.pictrue" mode=""></image>
 						</view>
@@ -124,17 +124,17 @@
 				],
 				serviceList:[
 					{
-						typeId:10,
+						url:'/my/applyManager/applyManager',
 						pictrue:require('../../static/img/sqcwzg.png'),
 						title:'申请掌柜'
 					},
 					{
-						typeId:12,
+						url:'/my/applyPartner/applyPartner',
 						pictrue:require('../../static/img/sqcwhhr.png'),
 						title:'申请合伙人'
 					},
 					{
-						typeId:147,
+						url:'/my/applyVip/applyVip',
 						pictrue:require('../../static/img/sqcwvip.png'),
 						title:'申请VIP'
 					},
@@ -159,6 +159,18 @@
 					}
 				]
 			};
+		},
+		methods:{
+			gotoUrl(url){
+				uni.navigateTo({
+					url:url
+				})
+			},
+			gotoMyorder(){
+				uni.navigateTo({
+					url:`/my/myOrder/myOrder`
+				})
+			}
 		}
 	}
 </script>

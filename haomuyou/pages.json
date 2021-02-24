@@ -54,6 +54,72 @@
                 }
                 
                 }
+                ,{
+                    "path" : "skillGoods/skillGoods",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "限时抢购",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+            ]
+		},
+		{
+		 "root":"my",
+		 "pages":[
+			
+			{
+                    "path" : "applyManager/applyManager",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "申请成为掌柜",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+                ,{
+                    "path" : "applyPartner/applyPartner",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "申请成为合伙人",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+                ,{
+                    "path" : "applyVip/applyVip",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "申请成为VIP",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+                ,{
+                    "path" : "myOrder/myOrder",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "我的订单",
+                    "enablePullDownRefresh": false,
+					"onReachBottomDistance":50,
+					"navigationBarBackgroundColor":"#ff1f44",
+					"navigationBarTextStyle":"white"
+                }
+                
+                }
+                ,{
+                    "path" : "orderDetail/orderDetail",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "订单详情",
+                    "enablePullDownRefresh": false,
+					"navigationBarBackgroundColor":"#e93323",
+					"navigationBarTextStyle":"white"
+					
+                }
+                
+                }
             ]
 		}
 	],

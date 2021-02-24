@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "我的订单",
+  "enablePullDownRefresh": false,
+  "onReachBottomDistance": 50,
+  "navigationBarBackgroundColor": "#ff1f44",
+  "navigationBarTextStyle": "white",
+  "usingComponents": {
+    "ss-navbar": "/components/ss-navbar/ss-navbar",
+    "u-button": "/uview-ui/components/u-button/u-button"
+  }
+}

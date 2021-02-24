@@ -18,7 +18,7 @@
 			<image src="/static/img/promotion-area.png" mode=""></image>
 		</view>
 		<view class="promotion-area">
-			<view class="seckill">
+			<view class="seckill" @click="gotoSeckill">
 				<view class="seckill-title">
 					<image src="/static/img/seckill-title.png" mode=""></image>
 				</view>
@@ -158,6 +158,11 @@
 			gotoGoodsDetail(id){
 				uni.navigateTo({
 					url:`/index/goodsDetail/goodsDetail`
+				})
+			},
+			gotoSeckill(){
+				uni.navigateTo({
+					url:'/index/skillGoods/skillGoods'
 				})
 			}
 		}
