@@ -22,7 +22,8 @@
         "applyVip/applyVip",
         "myOrder/myOrder",
         "orderDetail/orderDetail",
-        "userSetting/userSetting"
+        "userSetting/userSetting",
+        "help/help"
       ]
     }
   ],
@@ -68,5 +69,7 @@
       }
     ]
   },
-  "usingComponents": {}
+  "usingComponents": {
+    "mescroll-body": "/components/mescroll-uni/mescroll-body"
+  }
 }

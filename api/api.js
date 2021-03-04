@@ -5,8 +5,9 @@ import Request from '../js_sdk/luch-request/luch-request/index.js' // 下载的�
 
 const http = new Request();
 
-export const userRegister = (param) => {//注册
-    return http.post("/user/handelRegister", param);
+
+
+
+export const getSlides = (param) => {//获取轮播图
+    return http.get("/api/index/getSlides", param);
 }
-
-

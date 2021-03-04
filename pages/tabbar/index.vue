@@ -92,6 +92,9 @@
 </template>
 
 <script>
+	import {
+		getSlides,
+	} from "@/api/api.js"
 	import pictrue from '@/components/pictrue/pictrue.vue'
 	export default {
 		components:{
@@ -154,6 +157,9 @@
 				]
 			};
 		},
+		onLoad() {
+			this.getSlides();
+		},
 		methods:{
 			gotoGoodsDetail(id){
 				uni.navigateTo({
@@ -164,6 +170,31 @@
 				uni.navigateTo({
 					url:'/index/skillGoods/skillGoods'
 				})
+			},
+			getSlides(){
+				getSlides({
+					
+				})
+				.then(result => {
+					let data = result.data || [];
+					if (data.code == this.$dict.responseCode.success) {
+						
+						
+					} else {
+						uni.showToast({
+							title: data.msg || '请求错误',
+							icon: 'none'
+						})
+						return false
+					}
+				})
+				.catch(error => {
+					console.log(error)
+					uni.showToast({
+						title: error.msg || '请求错误',
+						icon: 'none'
+					});
+				});
 			}
 		}
 	}

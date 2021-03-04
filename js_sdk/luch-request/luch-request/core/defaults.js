@@ -4,8 +4,10 @@
 
 
 export default {
-  baseURL: '',
-  header: {},
+  baseURL: 'http://haomuyou.com',
+  header: {
+	  'content-type': 'application/json;charset=UTF-8',
+  },
   method: 'GET',
   dataType: 'json',
   // #ifndef MP-ALIPAY || APP-PLUS
