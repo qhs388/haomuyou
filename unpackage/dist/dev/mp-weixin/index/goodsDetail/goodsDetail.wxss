@@ -84,6 +84,7 @@
   height: 22rpx;
 }
 .wrapper .share .vip-icon image {
+  display: block;
   width: 100%;
   height: 100%;
 }
@@ -193,7 +194,7 @@
   box-shadow: 0rpx 0rpx 10rpx #e3e3e3;
 }
 .footer .item {
-  margin-right: 40rpx;
+  margin-right: 38rpx;
   position: relative;
 }
 .footer .item .icon {

@@ -3,7 +3,7 @@
 		<view class="search-box">
 			<u-search placeholder="搜索商品" v-model="keyword" :show-action="false" class="search"></u-search>
 		</view>
-		<u-swiper :list="list" height="300"></u-swiper>
+		<u-swiper :list="banner"  height="300"></u-swiper>
 		<view class="navList">
 			<view class="nav-item" v-for="(item,index) in itemList" :key="item.id" :class="{'view-mr':(index+1)%5==0}">
 				<view class="pictrue">
@@ -62,20 +62,20 @@
 			<image src="/static/img/shangpincuxiao.png" mode=""></image>
 		</view>
 		<view class="goods-ArrList" >
-			<view class="goods" v-for="(item,index) in 4" :key="index" @click="gotoGoodsDetail()">
+			<view class="goods" v-for="(item,index) in BenefitGoodsList" :key="index" @click="gotoGoodsDetail(item.id)">
 				<view class="goods-img">
-					<image src="/static/img/assemble-bg2.jpg" mode=""></image>
+					<image :src="item.image" mode=""></image>
 				</view>
 				<view class="title">
-					A1109 大月梳（赞比亚紫檀）
+					{{item.goodsName}}
 				</view>
 				<view class="money-box">
 					<view class="box-left">
 						<view class="money">
-							<text style="font-size: 28upx;">￥</text>88.00
+							<text style="font-size: 28upx;">￥</text>{{item.webPrice}}
 						</view>
 						<view class="ot-money">
-							<text style="font-size: 28upx;">￥</text>88.00
+							<text style="font-size: 28upx;">￥</text>{{item.webOldPrice}}
 						</view>
 						
 					</view>
@@ -94,6 +94,7 @@
 <script>
 	import {
 		getSlides,
+		getRecommendGoods
 	} from "@/api/api.js"
 	import pictrue from '@/components/pictrue/pictrue.vue'
 	export default {
@@ -102,7 +103,9 @@
 		},
 		data() {
 			return {
+				banner:[],
 				keyword:'',
+				BenefitGoodsList:[],
 				itemList:[
 					{
 						typeId:10,
@@ -159,11 +162,12 @@
 		},
 		onLoad() {
 			this.getSlides();
+			this.getRecommendGoods()
 		},
 		methods:{
 			gotoGoodsDetail(id){
 				uni.navigateTo({
-					url:`/index/goodsDetail/goodsDetail`
+					url:`/index/goodsDetail/goodsDetail?id=${id}`
 				})
 			},
 			gotoSeckill(){
@@ -178,7 +182,32 @@
 				.then(result => {
 					let data = result.data || [];
 					if (data.code == this.$dict.responseCode.success) {
+						this.banner = data.data
 						
+					} else {
+						uni.showToast({
+							title: data.msg || '请求错误',
+							icon: 'none'
+						})
+						return false
+					}
+				})
+				.catch(error => {
+					console.log(error)
+					uni.showToast({
+						title: error.msg || '请求错误',
+						icon: 'none'
+					});
+				});
+			},
+			getRecommendGoods(){
+				getRecommendGoods({
+					
+				})
+				.then(result => {
+					let data = result.data || [];
+					if (data.code == this.$dict.responseCode.success) {
+						this.BenefitGoodsList = data.data
 						
 					} else {
 						uni.showToast({

@@ -23,7 +23,9 @@
         "myOrder/myOrder",
         "orderDetail/orderDetail",
         "userSetting/userSetting",
-        "help/help"
+        "help/help",
+        "addressList/addressList",
+        "addressAdd/addressAdd"
       ]
     }
   ],
@@ -71,5 +73,6 @@
   },
   "usingComponents": {
     "mescroll-body": "/components/mescroll-uni/mescroll-body"
-  }
+  },
+  "sitemapLocation": "sitemap1.json"
 }

@@ -138,6 +138,24 @@
                 }
                 
                 }
+                ,{
+                    "path" : "addressList/addressList",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "地址管理",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+                ,{
+                    "path" : "addressAdd/addressAdd",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "添加地址",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
             ]
 		}
 	],

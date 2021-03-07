@@ -4,9 +4,25 @@
 			<view class="address">
 				<view class="addressCon" @click="show=true">
 					
-					<view class="text" >
-						 设置收货地址
+					<view class="addressItem">
+						<view class="addressItem-top">
+							<view class="name">
+								测试
+							</view>
+							<view class="phone">
+								18780581923
+							</view>
+						</view>
+						<view class="addressItem-bottom">
+							<text style="color: #fc4141;">[默认]</text>
+							<view style="margin-left: 15upx;">
+								北京密云区城区以外的
+							</view>
+						</view>
 					</view>
+				<!-- 	<view class="text" >
+						 设置收货地址
+					</view> -->
 					<u-icon name="arrow-right" size="33" color="#82848f"></u-icon>
 				</view>
 				<view class="line">
@@ -93,12 +109,40 @@
 			<u-button shape="circle" :customStyle="customStyle" >立即结算</u-button>
 		</view>
 		
-		<u-popup v-model="show" mode="bottom" length="75%">
+		<u-popup v-model="show" mode="bottom" >
 			<view class="content">
 				<view class="popupTitle">
 					选择地址
 				</view>
-				
+				<view class="content-view">
+					<view class="addressItem" @click="clickItem(index)" :style="{'color':(addressIndex==index?'#fc4141 ':'#282828')}" v-for="(item,index) in addressList" :key="index">
+						<view class="addressItem-left">
+							<view class="addressItem-top">
+								<view class="name">
+									测试
+								</view>
+								<view class="phone">
+									18780581923
+								</view>
+							</view>
+							<view class="addressItem-bottom" :style="{'color':(addressIndex==index?'#fc4141 ':'#282828')}">
+								<view>
+									北京密云区城区以外的
+								</view>
+							</view>
+						</view>
+						<u-icon name="checkmark" v-if="addressIndex==index" :color="addressIndex==index?'#fc4141':'#282828'" size="38"></u-icon>
+					</view>
+					<view class="noaddress" v-if="addressList.length==0">
+						<image src="/static/img/noAddress.png" mode=""></image>
+					</view>
+					
+				</view>
+				<view class="foot-button">
+					<u-button :custom-style="customStyle2" :ripple="true" type="warning"  shape="circle" @click="gotoAddressAdd"   >
+						添加地址
+					</u-button>
+				</view>
 			</view>
 		</u-popup>
 		
@@ -109,18 +153,35 @@
 	export default {
 		data() {
 			return {
+				addressList:[],
 				show:false,
+				addressIndex:0,
 				customStyle:{
 					width:'120px',
 					marginLeft:'20px',
 					backgroundColor:'#ff1f44',
 					color:'#fff'
 				},
+				customStyle2: {
+					border:'1px solid #fff',
+					width: '200upx', 
+					height:'90upx',
+					background:"#ff1f44",
+					color: '#fff',
+					fontSize:'32upx'
+				},
 				flag:false,
 			};
 		},
 		methods:{
-			
+			clickItem(index){
+				this.addressIndex = index
+			},
+			gotoAddressAdd(){
+				uni.navigateTo({
+					url:'/my/addressAdd/addressAdd'
+				})
+			}
 		}
 	}
 </script>
@@ -154,6 +215,27 @@
 				color: #666;
 				padding: 30upx;
 				box-sizing: border-box;
+				.addressItem{
+					.addressItem-top{
+						display: flex;
+						align-items: center;
+						font-size: 30upx;
+						font-weight: 700;
+						.name{
+							
+						}
+						.phone{
+							margin-left: 25upx;
+						}
+					}
+					.addressItem-bottom{
+						color: #666;
+						display: flex;
+						align-items: center;
+						font-size: 26upx;
+						margin-top: 15upx;
+					}
+				}
 			}
 			.line{
 				width: 100%;
@@ -296,11 +378,66 @@
 	.content{
 		padding: 30upx;
 		box-sizing: border-box;
+		min-height: 40%;
 		.popupTitle{
 			text-align: center;
 			color: #333;
 			font-size: 34upx;
 			font-weight: bold;
+			margin-bottom: 20upx;
+		}
+		.content-view{
+			max-height: 600upx;
+		
+			overflow-y: auto;
+			.addressItem{
+				padding-bottom: 25upx;
+				border-bottom: 1upx solid #eee;
+				box-sizing: border-box;
+				margin-top: 25upx;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				.addressItem-left{
+					
+					.addressItem-top{
+						display: flex;
+						align-items: center;
+						font-size: 30upx;
+						font-weight: 700;
+						.name{
+							
+						}
+						.phone{
+							margin-left: 25upx;
+						}
+					}
+					.addressItem-bottom{
+						color: #666 ;
+						display: flex;
+						align-items: center;
+						font-size: 26upx;
+						margin-top: 15upx;
+					}
+				}
+				
+			}
+		}
+		.foot-button{
+			margin-top: 100upx;
+		}
+		
+	}
+	
+	.noaddress{
+		width: 414upx;
+		height: 336upx;
+		margin: 0 auto;
+		margin-top: 100upx;
+		image{
+			width: 100%;
+			height: 100%;
+			display: block;
 		}
 	}
 	

@@ -60,6 +60,30 @@ page {
   padding: 30rpx;
   box-sizing: border-box;
 }
+.allAddress .address .addressCon .addressItem .addressItem-top {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  font-size: 30rpx;
+  font-weight: 700;
+}
+.allAddress .address .addressCon .addressItem .addressItem-top .phone {
+  margin-left: 25rpx;
+}
+.allAddress .address .addressCon .addressItem .addressItem-bottom {
+  color: #666;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  font-size: 26rpx;
+  margin-top: 15rpx;
+}
 .allAddress .address .line {
   width: 100%;
   height: 3rpx;
@@ -226,11 +250,70 @@ page {
 .content {
   padding: 30rpx;
   box-sizing: border-box;
+  min-height: 40%;
 }
 .content .popupTitle {
   text-align: center;
   color: #333;
   font-size: 34rpx;
   font-weight: bold;
+  margin-bottom: 20rpx;
+}
+.content .content-view {
+  max-height: 600rpx;
+  overflow-y: auto;
+}
+.content .content-view .addressItem {
+  padding-bottom: 25rpx;
+  border-bottom: 1rpx solid #eee;
+  box-sizing: border-box;
+  margin-top: 25rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+}
+.content .content-view .addressItem .addressItem-left .addressItem-top {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  font-size: 30rpx;
+  font-weight: 700;
+}
+.content .content-view .addressItem .addressItem-left .addressItem-top .phone {
+  margin-left: 25rpx;
+}
+.content .content-view .addressItem .addressItem-left .addressItem-bottom {
+  color: #666;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  font-size: 26rpx;
+  margin-top: 15rpx;
+}
+.content .foot-button {
+  margin-top: 100rpx;
+}
+.noaddress {
+  width: 414rpx;
+  height: 336rpx;
+  margin: 0 auto;
+  margin-top: 100rpx;
+}
+.noaddress image {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 

@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "添加地址",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "u-icon": "/uview-ui/components/u-icon/u-icon",
+    "u-checkbox-group": "/uview-ui/components/u-checkbox-group/u-checkbox-group",
+    "u-checkbox": "/uview-ui/components/u-checkbox/u-checkbox",
+    "u-button": "/uview-ui/components/u-button/u-button",
+    "city-select": "/components/u-city-select/u-city-select"
+  }
+}

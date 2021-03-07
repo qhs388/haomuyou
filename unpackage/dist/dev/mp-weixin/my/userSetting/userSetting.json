@@ -1,5 +1,7 @@
 {
   "navigationBarTitleText": "设置",
   "enablePullDownRefresh": false,
-  "usingComponents": {}
+  "usingComponents": {
+    "u-button": "/uview-ui/components/u-button/u-button"
+  }
 }

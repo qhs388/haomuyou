@@ -144,7 +144,7 @@
 						title:'我的二维码'
 					},
 					{
-						typeId:135,
+						url:'/my/addressList/addressList',
 						pictrue:require('../../static/img/dzgl.png'),
 						title:'地址管理'
 					},

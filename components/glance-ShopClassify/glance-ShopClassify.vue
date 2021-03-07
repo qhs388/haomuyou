@@ -3,8 +3,9 @@
 		<view class="VerticalBox">
 			<scroll-view class="VerticalNav nav" scroll-y scroll-with-animation :scroll-top="verticalNavTop">
 				<block v-for="(item,index) in list" :key="index">
+					
 					<view class="cu-item" :class="index==tabCur?'text-red cur':''" @tap="TabSelect" :data-id="index">
-						<view :class="index==tabCur?'text-black text-bold':''">分类-{{item.name}}</view>
+						<view :class="index==tabCur?'text-black text-bold':''">{{item.cateName}}</view>
 					</view>
 				</block>
 			</scroll-view>
@@ -48,14 +49,21 @@
 	export default {
 		data() {
 			return {
-				list: [], tabCur: 0, mainCur: 0, verticalNavTop: 0, load: true, sortList: [],
+				tabCur: 0,
+				mainCur: 0, 
+				verticalNavTop: 0, 
+				load: true, 
+				sortList: [],
 			}
 		},
+		props:{
+			 list: {
+			  type: Array,
+			  default: [],
+			},
+		},
 		onLoad() {
-			
-			
-			
-			
+			console.log('aaaaaaaaaaa',this.list);	
 		},
 		onReady() {
 			console.log("xxxxxxxxxxxxxxxxx")
@@ -65,14 +73,14 @@
 			    duration: 0
 			});
 			
-			let list = [{}];
-			for (let i = 0; i < 26; i++) {
-				list[i] = {};
-				list[i].name = String.fromCharCode(65 + i);
-				list[i].id = i;
-			}
-			this.list = list;
-			this.listCur = list[0];
+			// let list = [{}];
+			// for (let i = 0; i < 26; i++) {
+			// 	list[i] = {};
+			// 	list[i].name = String.fromCharCode(65 + i);
+			// 	list[i].id = i;
+			// }
+			// this.list = list;
+			// this.listCur = list[0];
 			
 			this.sortList = _sort_data.sortListData();
 		},

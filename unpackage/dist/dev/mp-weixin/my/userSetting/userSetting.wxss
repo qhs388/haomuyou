@@ -24,9 +24,14 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
+image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
 .line {
   width: 100%;
-  height: 15rpx;
+  height: 10rpx;
   background-color: #eee;
 }
 .wrapper {
@@ -38,5 +43,117 @@
   font-size: 32rpx;
   color: #282828;
   margin-bottom: 25rpx;
+}
+.wrapper .content {
+  overflow: hidden;
+  border-radius: 20rpx;
+  border: 1rpx solid #e93323;
+  padding: 30rpx;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  position: relative;
+  background-color: #fff9f9;
+}
+.wrapper .content .pictrue-box {
+  position: relative;
+}
+.wrapper .content .pictrue-box .pictrue {
+  border-radius: 100%;
+  overflow: hidden;
+  width: 106rpx;
+  height: 106rpx;
+  background-color: #eee;
+}
+.wrapper .content .pictrue-box .icon {
+  position: absolute;
+  width: 30rpx;
+  height: 30rpx;
+  bottom: 0rpx;
+  right: 10rpx;
+  z-index: 1;
+}
+.wrapper .content .msg {
+  margin-left: 20rpx;
+}
+.wrapper .content .msg .id {
+  font-size: 30rpx;
+  color: #282828;
+}
+.wrapper .content .msg .phone {
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 15rpx;
+}
+.wrapper .content .text {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 26rpx;
+  background-color: rgba(233, 51, 35, 0.1);
+  padding: 9rpx;
+  color: #E34819;
+  z-index: 3;
+  box-sizing: border-box;
+  border-radius: 0 20rpx 0 20rpx;
+}
+.wrapper .content .bg-img {
+  position: absolute;
+  bottom: 0rpx;
+  right: 0rpx;
+  z-index: 1;
+  width: 650rpx;
+  height: 100%;
+}
+.inputs {
+  overflow: hidden;
+  padding-left: 25rpx;
+}
+.inputs .item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  font-size: 32rpx;
+  border-bottom: 1rpx solid #eee;
+  margin-top: 25rpx;
+  padding-bottom: 25rpx;
+  padding-right: 25rpx;
+}
+.inputs .item .name {
+  color: #282828;
+}
+.inputs .item .item-right {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+          justify-content: flex-end;
+}
+.inputs .item .item-right .input-item {
+  text-align: right;
+  color: #868686;
+  font-size: 32rpx;
+}
+.inputs .item .item-right .text {
+  color: #868686;
+}
+.inputs .item .item-right .lock {
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 15rpx;
 }
 

@@ -21,6 +21,8 @@ const mergeKeys = (keys, config2) => {
 export default (config) => {
   return new Promise((resolve, reject) => {
     let fullPath = buildURL(buildFullPath(config.baseURL, config.url), config.params)
+	config.header.openId = 'oiray0RjmeVFbAkNMP0z61KGOdbc'
+	
     const _config = {
       url: fullPath,
       header: config.header,

@@ -6,13 +6,20 @@
 		<view class="tabs-box">
 			<u-tabs :list="tabsList" font-size="35"  :is-scroll="false" fonz :current="current" bar-width="110" @change="change" active-color="#E44B1D" inactive-color="#333333"></u-tabs>
 		</view>
-		<glance-shop-classify ></glance-shop-classify>
+		<glance-shop-classify :list="list" ></glance-shop-classify>
 		
 	</view>
 </template>
 
 <script>
 	import glanceShopClassify from '@/components/glance-ShopClassify/glance-ShopClassify.vue'
+	
+	import {
+		getRootGoodsType
+	} from "@/api/api.js"
+	
+	
+	
 	export default {
 		components:{
 			glanceShopClassify
@@ -20,9 +27,11 @@
 		data() {
 			return {
 				tabsList: [{
-					name: '用途'
+					name: '用途',
+					type:1,
 				}, {
-					name: '材质'
+					name: '材质',
+					type:2
 				}
 				],
 				current: 0,
@@ -30,7 +39,8 @@
 			};
 		},
 		onLoad() {
-			this.init()
+			// this.init()
+			this.getData();
 		},
 		methods:{
 			init () {
@@ -54,6 +64,32 @@
 			},
 			change(index){
 				this.current = index;
+			},
+			getData(){
+				getRootGoodsType({
+					type:this.tabsList[this.current].type
+				})
+				.then(result => {
+					let data = result.data || [];
+					if (data.code == this.$dict.responseCode.success) {
+						this.list = data.data
+						
+						
+					} else {
+						uni.showToast({
+							title: data.msg || '请求错误',
+							icon: 'none'
+						})
+						return false
+					}
+				})
+				.catch(error => {
+					console.log(error)
+					uni.showToast({
+						title: error.msg || '请求错误',
+						icon: 'none'
+					});
+				});
 			}
 		}
 	}

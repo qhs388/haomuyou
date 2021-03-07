@@ -4,7 +4,7 @@
 
 
 export default {
-  baseURL: 'http://haomuyou.com',
+  baseURL: 'http://shop.sanqieryi.net',
   header: {
 	  'content-type': 'application/json;charset=UTF-8',
   },
