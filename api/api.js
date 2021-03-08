@@ -25,7 +25,9 @@ export const getRootGoodsType = (param) => {//根据类型查询一级分类
      return http.get("/api/goodsType/getRootGoodsType/"+param.type, param);
 }
 
-
+export const getChildGoodsType = (param) => {//根据一级分类查询二级分类
+    return http.get("/api/goodsType/getChildGoodsType/"+param.pid, param);
+}
 
 
 export const getRecommendGoods = (param) => {//获取推荐商品 所有有推荐的商品的都用这个接口
@@ -40,8 +42,8 @@ export const addressAdd = (param) => {//新增地址
     return http.post("/api/address/add", param);
 }
 
-export const getChildGoodsType = (param) => {//根据一级分类查询二级分类
-    return http.get("/api/goodsType/getChildGoodsType/"+param.pid, param);
-}
+
+
+
 
 

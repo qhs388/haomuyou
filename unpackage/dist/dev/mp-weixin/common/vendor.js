@@ -8,7 +8,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.createApp = createApp;exports.createComponent = createComponent;exports.createPage = createPage;exports.default = void 0;var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _slicedToArray(arr, i) {return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();}function _nonIterableRest() {throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _iterableToArrayLimit(arr, i) {if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return;var _arr = [];var _n = true;var _d = false;var _e = undefined;try {for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {_arr.push(_s.value);if (i && _arr.length === i) break;}} catch (err) {_d = true;_e = err;} finally {try {if (!_n && _i["return"] != null) _i["return"]();} finally {if (_d) throw _e;}}return _arr;}function _arrayWithHoles(arr) {if (Array.isArray(arr)) return arr;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function _toConsumableArray(arr) {return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();}function _nonIterableSpread() {throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(o);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _iterableToArray(iter) {if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);}function _arrayWithoutHoles(arr) {if (Array.isArray(arr)) return _arrayLikeToArray(arr);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;}
+Object.defineProperty(exports, "__esModule", { value: true });exports.createApp = createApp;exports.createComponent = createComponent;exports.createPage = createPage;exports.createSubpackageApp = createSubpackageApp;exports.default = void 0;var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 2));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function ownKeys(object, enumerableOnly) {var keys = Object.keys(object);if (Object.getOwnPropertySymbols) {var symbols = Object.getOwnPropertySymbols(object);if (enumerableOnly) symbols = symbols.filter(function (sym) {return Object.getOwnPropertyDescriptor(object, sym).enumerable;});keys.push.apply(keys, symbols);}return keys;}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};if (i % 2) {ownKeys(Object(source), true).forEach(function (key) {_defineProperty(target, key, source[key]);});} else if (Object.getOwnPropertyDescriptors) {Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));} else {ownKeys(Object(source)).forEach(function (key) {Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));});}}return target;}function _slicedToArray(arr, i) {return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();}function _nonIterableRest() {throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _iterableToArrayLimit(arr, i) {if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return;var _arr = [];var _n = true;var _d = false;var _e = undefined;try {for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) {_arr.push(_s.value);if (i && _arr.length === i) break;}} catch (err) {_d = true;_e = err;} finally {try {if (!_n && _i["return"] != null) _i["return"]();} finally {if (_d) throw _e;}}return _arr;}function _arrayWithHoles(arr) {if (Array.isArray(arr)) return arr;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}function _toConsumableArray(arr) {return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();}function _nonIterableSpread() {throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _unsupportedIterableToArray(o, minLen) {if (!o) return;if (typeof o === "string") return _arrayLikeToArray(o, minLen);var n = Object.prototype.toString.call(o).slice(8, -1);if (n === "Object" && o.constructor) n = o.constructor.name;if (n === "Map" || n === "Set") return Array.from(o);if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);}function _iterableToArray(iter) {if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);}function _arrayWithoutHoles(arr) {if (Array.isArray(arr)) return _arrayLikeToArray(arr);}function _arrayLikeToArray(arr, len) {if (len == null || len > arr.length) len = arr.length;for (var i = 0, arr2 = new Array(len); i < len; i++) {arr2[i] = arr[i];}return arr2;}
 
 var _toString = Object.prototype.toString;
 var hasOwnProperty = Object.prototype.hasOwnProperty;
@@ -241,7 +241,7 @@ var promiseInterceptor = {
 
 
 var SYNC_API_RE =
-/^\$|sendNativeEvent|restoreGlobal|getCurrentSubNVue|getMenuButtonBoundingClientRect|^report|interceptors|Interceptor$|getSubNVueById|requireNativePlugin|upx2px|hideKeyboard|canIUse|^create|Sync$|Manager$|base64ToArrayBuffer|arrayBufferToBase64/;
+/^\$|Window$|WindowStyle$|sendNativeEvent|restoreGlobal|getCurrentSubNVue|getMenuButtonBoundingClientRect|^report|interceptors|Interceptor$|getSubNVueById|requireNativePlugin|upx2px|hideKeyboard|canIUse|^create|Sync$|Manager$|base64ToArrayBuffer|arrayBufferToBase64/;
 
 var CONTEXT_API_RE = /^create|Manager$/;
 
@@ -432,7 +432,19 @@ var previewImage = {
   } };
 
 
-// import navigateTo from 'uni-helpers/navigate-to'
+var UUID_KEY = '__DC_STAT_UUID';
+var deviceId;
+function addUuid(result) {
+  deviceId = deviceId || wx.getStorageSync(UUID_KEY);
+  if (!deviceId) {
+    deviceId = Date.now() + '' + Math.floor(Math.random() * 1e7);
+    wx.setStorage({
+      key: UUID_KEY,
+      data: deviceId });
+
+  }
+  result.deviceId = deviceId;
+}
 
 function addSafeAreaInsets(result) {
   if (result.safeArea) {
@@ -445,16 +457,22 @@ function addSafeAreaInsets(result) {
 
   }
 }
+
+var getSystemInfo = {
+  returnValue: function returnValue(result) {
+    addUuid(result);
+    addSafeAreaInsets(result);
+  } };
+
+
+// import navigateTo from 'uni-helpers/navigate-to'
+
 var protocols = {
   redirectTo: redirectTo,
   // navigateTo,  // 由于在微信开发者工具的页面参数，会显示__id__参数，因此暂时关闭mp-weixin对于navigateTo的AOP
   previewImage: previewImage,
-  getSystemInfo: {
-    returnValue: addSafeAreaInsets },
-
-  getSystemInfoSync: {
-    returnValue: addSafeAreaInsets } };
-
+  getSystemInfo: getSystemInfo,
+  getSystemInfoSync: getSystemInfo };
 
 var todos = [
 'vibrate',
@@ -686,16 +704,19 @@ function initHook(name, options) {
     };
   }
 }
+if (!MPPage.__$wrappered) {
+  MPPage.__$wrappered = true;
+  Page = function Page() {var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+    initHook('onLoad', options);
+    return MPPage(options);
+  };
+  Page.after = MPPage.after;
 
-Page = function Page() {var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  initHook('onLoad', options);
-  return MPPage(options);
-};
-
-Component = function Component() {var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  initHook('created', options);
-  return MPComponent(options);
-};
+  Component = function Component() {var options = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+    initHook('created', options);
+    return MPComponent(options);
+  };
+}
 
 var PAGE_EVENT_HOOKS = [
 'onPullDownRefresh',
@@ -1214,9 +1235,13 @@ function handleEvent(event) {var _this = this;
           isCustom,
           methodName);
 
+          params = Array.isArray(params) ? params : [];
           // 参数尾部增加原始事件对象用于复杂表达式内获取额外数据
-          // eslint-disable-next-line no-sparse-arrays
-          ret.push(handler.apply(handlerCtx, (Array.isArray(params) ? params : []).concat([,,,,,,,,,, event])));
+          if (/=\s*\S+\.eventParams\s*\|\|\s*\S+\[['"]event-params['"]\]/.test(handler.toString())) {
+            // eslint-disable-next-line no-sparse-arrays
+            params = params.concat([,,,,,,,,,, event]);
+          }
+          ret.push(handler.apply(handlerCtx, params));
         }
       });
     }
@@ -1231,6 +1256,19 @@ function handleEvent(event) {var _this = this;
   }
 }
 
+var eventChannels = {};
+
+var eventChannelStack = [];
+
+function getEventChannel(id) {
+  if (id) {
+    var eventChannel = eventChannels[id];
+    delete eventChannels[id];
+    return eventChannel;
+  }
+  return eventChannelStack.shift();
+}
+
 var hooks = [
 'onShow',
 'onHide',
@@ -1240,10 +1278,28 @@ var hooks = [
 'onUnhandledRejection'];
 
 
+function initEventChannel() {
+  _vue.default.prototype.getOpenerEventChannel = function () {
+    // 微信小程序使用自身getOpenerEventChannel
+    {
+      return this.$scope.getOpenerEventChannel();
+    }
+  };
+  var callHook = _vue.default.prototype.__call_hook;
+  _vue.default.prototype.__call_hook = function (hook, args) {
+    if (hook === 'onLoad' && args && args.__id__) {
+      this.__eventChannel__ = getEventChannel(args.__id__);
+      delete args.__id__;
+    }
+    return callHook.call(this, hook, args);
+  };
+}
+
 function parseBaseApp(vm, _ref3)
 
 
 {var mocks = _ref3.mocks,initRefs = _ref3.initRefs;
+  initEventChannel();
   if (vm.$options.store) {
     _vue.default.prototype.$store = vm.$options.store;
   }
@@ -1412,34 +1468,7 @@ function parseApp(vm) {
 
 }
 
-var eventChannels = {};
-
-var eventChannelStack = [];
-
-function getEventChannel(id) {
-  if (id) {
-    var eventChannel = eventChannels[id];
-    delete eventChannels[id];
-    return eventChannel;
-  }
-  return eventChannelStack.shift();
-}
-
 function createApp(vm) {
-  _vue.default.prototype.getOpenerEventChannel = function () {
-    // 微信小程序使用自身getOpenerEventChannel
-    {
-      return this.$scope.getOpenerEventChannel();
-    }
-  };
-  var callHook = _vue.default.prototype.__call_hook;
-  _vue.default.prototype.__call_hook = function (hook, args) {
-    if (hook === 'onLoad' && args && args.__id__) {
-      this.__eventChannel__ = getEventChannel(args.__id__);
-      delete args.__id__;
-    }
-    return callHook.call(this, hook, args);
-  };
   App(parseApp(vm));
   return vm;
 }
@@ -1642,6 +1671,41 @@ function createComponent(vueOptions) {
   }
 }
 
+function createSubpackageApp(vm) {
+  var appOptions = parseApp(vm);
+  var app = getApp({
+    allowDefault: true });
+
+  var globalData = app.globalData;
+  if (globalData) {
+    Object.keys(appOptions.globalData).forEach(function (name) {
+      if (!hasOwn(globalData, name)) {
+        globalData[name] = appOptions.globalData[name];
+      }
+    });
+  }
+  Object.keys(appOptions).forEach(function (name) {
+    if (!hasOwn(app, name)) {
+      app[name] = appOptions[name];
+    }
+  });
+  if (isFn(appOptions.onShow) && wx.onAppShow) {
+    wx.onAppShow(function () {for (var _len5 = arguments.length, args = new Array(_len5), _key5 = 0; _key5 < _len5; _key5++) {args[_key5] = arguments[_key5];}
+      appOptions.onShow.apply(app, args);
+    });
+  }
+  if (isFn(appOptions.onHide) && wx.onAppHide) {
+    wx.onAppHide(function () {for (var _len6 = arguments.length, args = new Array(_len6), _key6 = 0; _key6 < _len6; _key6++) {args[_key6] = arguments[_key6];}
+      appOptions.onHide.apply(app, args);
+    });
+  }
+  if (isFn(appOptions.onLaunch)) {
+    var args = wx.getLaunchOptionsSync && wx.getLaunchOptionsSync();
+    appOptions.onLaunch.call(app, args);
+  }
+  return vm;
+}
+
 todos.forEach(function (todoApi) {
   protocols[todoApi] = false;
 });
@@ -1721,6 +1785,7 @@ if (typeof Proxy !== 'undefined' && "mp-weixin" !== 'app-plus') {
 wx.createApp = createApp;
 wx.createPage = createPage;
 wx.createComponent = createComponent;
+wx.createSubpackageApp = createSubpackageApp;
 
 var uni$1 = uni;var _default =
 
@@ -1738,7 +1803,7 @@ uni$1;exports.default = _default;
 __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function(global) {/*!
  * Vue.js v2.6.11
- * (c) 2014-2020 Evan You
+ * (c) 2014-2021 Evan You
  * Released under the MIT License.
  */
 /*  */
@@ -4382,7 +4447,7 @@ function renderList (
       var iterator = val[Symbol.iterator]();
       var result = iterator.next();
       while (!result.done) {
-        ret.push(render(result.value, ret.length, i++, i)); // fixed by xxxxxx
+        ret.push(render(result.value, ret.length, i, i++)); // fixed by xxxxxx
         result = iterator.next();
       }
     } else {
@@ -7697,6 +7762,7 @@ var LIFECYCLE_HOOKS$1 = [
     'onError',
     'onUnhandledRejection',
     //Page
+    'onInit',
     'onLoad',
     // 'onShow',
     'onReady',
@@ -7804,9 +7870,9 @@ module.exports = g;
 
 /***/ }),
 /* 4 */
-/*!**************************************!*\
-  !*** D:/liukang/haomuyou/pages.json ***!
-  \**************************************/
+/*!***************************************!*\
+  !*** D:/liukang2/haomuyou/pages.json ***!
+  \***************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -7947,9 +8013,9 @@ function normalizeComponent (
 
 /***/ }),
 /* 11 */
-/*!***************************************!*\
-  !*** D:/liukang/haomuyou/api/dict.js ***!
-  \***************************************/
+/*!****************************************!*\
+  !*** D:/liukang2/haomuyou/api/dict.js ***!
+  \****************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7975,9 +8041,9 @@ var wxData = { // 微信相关的
 
 /***/ }),
 /* 12 */
-/*!*********************************************!*\
-  !*** D:/liukang/haomuyou/uview-ui/index.js ***!
-  \*********************************************/
+/*!**********************************************!*\
+  !*** D:/liukang2/haomuyou/uview-ui/index.js ***!
+  \**********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8126,9 +8192,9 @@ var install = function install(Vue) {
 
 /***/ }),
 /* 13 */
-/*!********************************************************!*\
-  !*** D:/liukang/haomuyou/uview-ui/libs/mixin/mixin.js ***!
-  \********************************************************/
+/*!*********************************************************!*\
+  !*** D:/liukang2/haomuyou/uview-ui/libs/mixin/mixin.js ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8199,9 +8265,9 @@ var install = function install(Vue) {
 
 /***/ }),
 /* 14 */
-/*!**********************************************************!*\
-  !*** D:/liukang/haomuyou/uview-ui/libs/request/index.js ***!
-  \**********************************************************/
+/*!***********************************************************!*\
+  !*** D:/liukang2/haomuyou/uview-ui/libs/request/index.js ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8379,9 +8445,9 @@ new Request();exports.default = _default;
 
 /***/ }),
 /* 15 */
-/*!***************************************************************!*\
-  !*** D:/liukang/haomuyou/uview-ui/libs/function/deepMerge.js ***!
-  \***************************************************************/
+/*!****************************************************************!*\
+  !*** D:/liukang2/haomuyou/uview-ui/libs/function/deepMerge.js ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8419,9 +8485,9 @@ deepMerge;exports.default = _default;
 
 /***/ }),
 /* 16 */
-/*!***************************************************************!*\
-  !*** D:/liukang/haomuyou/uview-ui/libs/function/deepClone.js ***!
-  \***************************************************************/
+/*!****************************************************************!*\
+  !*** D:/liukang2/haomuyou/uview-ui/libs/function/deepClone.js ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8452,9 +8518,9 @@ deepClone;exports.default = _default;
 
 /***/ }),
 /* 17 */
-/*!**********************************************************!*\
-  !*** D:/liukang/haomuyou/uview-ui/libs/function/test.js ***!
-  \**********************************************************/
+/*!***********************************************************!*\
+  !*** D:/liukang2/haomuyou/uview-ui/libs/function/test.js ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8693,9 +8759,9 @@ function code(value) {var len = arguments.length > 1 && arguments[1] !== undefin
 
 /***/ }),
 /* 18 */
-/*!*****************************************************************!*\
-  !*** D:/liukang/haomuyou/uview-ui/libs/function/queryParams.js ***!
-  \*****************************************************************/
+/*!******************************************************************!*\
+  !*** D:/liukang2/haomuyou/uview-ui/libs/function/queryParams.js ***!
+  \******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -8761,9 +8827,9 @@ queryParams;exports.default = _default;
 
 /***/ }),
 /* 19 */
-/*!***********************************************************!*\
-  !*** D:/liukang/haomuyou/uview-ui/libs/function/route.js ***!
-  \***********************************************************/
+/*!************************************************************!*\
+  !*** D:/liukang2/haomuyou/uview-ui/libs/function/route.js ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9682,9 +9748,9 @@ if (hadRuntime) {
 
 /***/ }),
 /* 23 */
-/*!****************************************************************!*\
-  !*** D:/liukang/haomuyou/uview-ui/libs/function/timeFormat.js ***!
-  \****************************************************************/
+/*!*****************************************************************!*\
+  !*** D:/liukang2/haomuyou/uview-ui/libs/function/timeFormat.js ***!
+  \*****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9743,9 +9809,9 @@ timeFormat;exports.default = _default;
 
 /***/ }),
 /* 24 */
-/*!**************************************************************!*\
-  !*** D:/liukang/haomuyou/uview-ui/libs/function/timeFrom.js ***!
-  \**************************************************************/
+/*!***************************************************************!*\
+  !*** D:/liukang2/haomuyou/uview-ui/libs/function/timeFrom.js ***!
+  \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9800,9 +9866,9 @@ timeFrom;exports.default = _default;
 
 /***/ }),
 /* 25 */
-/*!*******************************************************************!*\
-  !*** D:/liukang/haomuyou/uview-ui/libs/function/colorGradient.js ***!
-  \*******************************************************************/
+/*!********************************************************************!*\
+  !*** D:/liukang2/haomuyou/uview-ui/libs/function/colorGradient.js ***!
+  \********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9943,9 +10009,9 @@ function colorToRgba(color) {var alpha = arguments.length > 1 && arguments[1] !=
 
 /***/ }),
 /* 26 */
-/*!**********************************************************!*\
-  !*** D:/liukang/haomuyou/uview-ui/libs/function/guid.js ***!
-  \**********************************************************/
+/*!***********************************************************!*\
+  !*** D:/liukang2/haomuyou/uview-ui/libs/function/guid.js ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9994,9 +10060,9 @@ guid;exports.default = _default;
 
 /***/ }),
 /* 27 */
-/*!***********************************************************!*\
-  !*** D:/liukang/haomuyou/uview-ui/libs/function/color.js ***!
-  \***********************************************************/
+/*!************************************************************!*\
+  !*** D:/liukang2/haomuyou/uview-ui/libs/function/color.js ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10041,9 +10107,9 @@ color;exports.default = _default;
 
 /***/ }),
 /* 28 */
-/*!***************************************************************!*\
-  !*** D:/liukang/haomuyou/uview-ui/libs/function/type2icon.js ***!
-  \***************************************************************/
+/*!****************************************************************!*\
+  !*** D:/liukang2/haomuyou/uview-ui/libs/function/type2icon.js ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10086,9 +10152,9 @@ type2icon;exports.default = _default;
 
 /***/ }),
 /* 29 */
-/*!*****************************************************************!*\
-  !*** D:/liukang/haomuyou/uview-ui/libs/function/randomArray.js ***!
-  \*****************************************************************/
+/*!******************************************************************!*\
+  !*** D:/liukang2/haomuyou/uview-ui/libs/function/randomArray.js ***!
+  \******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10103,9 +10169,9 @@ randomArray;exports.default = _default;
 
 /***/ }),
 /* 30 */
-/*!*************************************************************!*\
-  !*** D:/liukang/haomuyou/uview-ui/libs/function/addUnit.js ***!
-  \*************************************************************/
+/*!**************************************************************!*\
+  !*** D:/liukang2/haomuyou/uview-ui/libs/function/addUnit.js ***!
+  \**************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10121,9 +10187,9 @@ function addUnit() {var value = arguments.length > 0 && arguments[0] !== undefin
 
 /***/ }),
 /* 31 */
-/*!************************************************************!*\
-  !*** D:/liukang/haomuyou/uview-ui/libs/function/random.js ***!
-  \************************************************************/
+/*!*************************************************************!*\
+  !*** D:/liukang2/haomuyou/uview-ui/libs/function/random.js ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10141,9 +10207,9 @@ random;exports.default = _default;
 
 /***/ }),
 /* 32 */
-/*!**********************************************************!*\
-  !*** D:/liukang/haomuyou/uview-ui/libs/function/trim.js ***!
-  \**********************************************************/
+/*!***********************************************************!*\
+  !*** D:/liukang2/haomuyou/uview-ui/libs/function/trim.js ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10166,9 +10232,9 @@ trim;exports.default = _default;
 
 /***/ }),
 /* 33 */
-/*!***********************************************************!*\
-  !*** D:/liukang/haomuyou/uview-ui/libs/function/toast.js ***!
-  \***********************************************************/
+/*!************************************************************!*\
+  !*** D:/liukang2/haomuyou/uview-ui/libs/function/toast.js ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10186,9 +10252,9 @@ toast;exports.default = _default;
 
 /***/ }),
 /* 34 */
-/*!***************************************************************!*\
-  !*** D:/liukang/haomuyou/uview-ui/libs/function/getParent.js ***!
-  \***************************************************************/
+/*!****************************************************************!*\
+  !*** D:/liukang2/haomuyou/uview-ui/libs/function/getParent.js ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10243,9 +10309,9 @@ function getParent(name, keys) {
 
 /***/ }),
 /* 35 */
-/*!*************************************************************!*\
-  !*** D:/liukang/haomuyou/uview-ui/libs/function/$parent.js ***!
-  \*************************************************************/
+/*!**************************************************************!*\
+  !*** D:/liukang2/haomuyou/uview-ui/libs/function/$parent.js ***!
+  \**************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10271,9 +10337,9 @@ function $parent() {var name = arguments.length > 0 && arguments[0] !== undefine
 
 /***/ }),
 /* 36 */
-/*!*********************************************************!*\
-  !*** D:/liukang/haomuyou/uview-ui/libs/function/sys.js ***!
-  \*********************************************************/
+/*!**********************************************************!*\
+  !*** D:/liukang2/haomuyou/uview-ui/libs/function/sys.js ***!
+  \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10289,9 +10355,9 @@ function sys() {
 
 /***/ }),
 /* 37 */
-/*!**************************************************************!*\
-  !*** D:/liukang/haomuyou/uview-ui/libs/function/debounce.js ***!
-  \**************************************************************/
+/*!***************************************************************!*\
+  !*** D:/liukang2/haomuyou/uview-ui/libs/function/debounce.js ***!
+  \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10328,9 +10394,9 @@ debounce;exports.default = _default;
 
 /***/ }),
 /* 38 */
-/*!**************************************************************!*\
-  !*** D:/liukang/haomuyou/uview-ui/libs/function/throttle.js ***!
-  \**************************************************************/
+/*!***************************************************************!*\
+  !*** D:/liukang2/haomuyou/uview-ui/libs/function/throttle.js ***!
+  \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10370,9 +10436,9 @@ throttle;exports.default = _default;
 
 /***/ }),
 /* 39 */
-/*!**********************************************************!*\
-  !*** D:/liukang/haomuyou/uview-ui/libs/config/config.js ***!
-  \**********************************************************/
+/*!***********************************************************!*\
+  !*** D:/liukang2/haomuyou/uview-ui/libs/config/config.js ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10393,9 +10459,9 @@ var version = '1.8.3';var _default =
 
 /***/ }),
 /* 40 */
-/*!**********************************************************!*\
-  !*** D:/liukang/haomuyou/uview-ui/libs/config/zIndex.js ***!
-  \**********************************************************/
+/*!***********************************************************!*\
+  !*** D:/liukang2/haomuyou/uview-ui/libs/config/zIndex.js ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10428,14 +10494,14 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /* 45 */,
 /* 46 */,
 /* 47 */
-/*!**************************************!*\
-  !*** D:/liukang/haomuyou/api/api.js ***!
-  \**************************************/
+/*!***************************************!*\
+  !*** D:/liukang2/haomuyou/api/api.js ***!
+  \***************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.getChildGoodsType = exports.addressAdd = exports.goodsDetail = exports.getRecommendGoods = exports.getRootGoodsType = exports.getNavs = exports.getBenefitGoods = exports.getSlides = void 0;
+Object.defineProperty(exports, "__esModule", { value: true });exports.addressAdd = exports.goodsDetail = exports.getRecommendGoods = exports.getChildGoodsType = exports.getRootGoodsType = exports.getNavs = exports.getBenefitGoods = exports.getSlides = void 0;
 
 var _index = _interopRequireDefault(__webpack_require__(/*! ../js_sdk/luch-request/luch-request/index.js */ 48));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} // import Request, { config, requestConfig, response } from '../js_sdk/luch-request/request.js'
 // const http = new Request();
@@ -10462,7 +10528,9 @@ var getRootGoodsType = function getRootGoodsType(param) {//根据类型查询一
   return http.get("/api/goodsType/getRootGoodsType/" + param.type, param);
 };exports.getRootGoodsType = getRootGoodsType;
 
-
+var getChildGoodsType = function getChildGoodsType(param) {//根据一级分类查询二级分类
+  return http.get("/api/goodsType/getChildGoodsType/" + param.pid, param);
+};exports.getChildGoodsType = getChildGoodsType;
 
 
 var getRecommendGoods = function getRecommendGoods(param) {//获取推荐商品 所有有推荐的商品的都用这个接口
@@ -10477,15 +10545,11 @@ var addressAdd = function addressAdd(param) {//新增地址
   return http.post("/api/address/add", param);
 };exports.addressAdd = addressAdd;
 
-var getChildGoodsType = function getChildGoodsType(param) {//根据一级分类查询二级分类
-  return http.get("/api/goodsType/getChildGoodsType/" + param.pid, param);
-};exports.getChildGoodsType = getChildGoodsType;
-
 /***/ }),
 /* 48 */
-/*!*********************************************************************!*\
-  !*** D:/liukang/haomuyou/js_sdk/luch-request/luch-request/index.js ***!
-  \*********************************************************************/
+/*!**********************************************************************!*\
+  !*** D:/liukang2/haomuyou/js_sdk/luch-request/luch-request/index.js ***!
+  \**********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10495,9 +10559,9 @@ _Request.default;exports.default = _default;
 
 /***/ }),
 /* 49 */
-/*!****************************************************************************!*\
-  !*** D:/liukang/haomuyou/js_sdk/luch-request/luch-request/core/Request.js ***!
-  \****************************************************************************/
+/*!*****************************************************************************!*\
+  !*** D:/liukang2/haomuyou/js_sdk/luch-request/luch-request/core/Request.js ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10704,9 +10768,9 @@ Request = /*#__PURE__*/function () {
 
 /***/ }),
 /* 50 */
-/*!************************************************************************************!*\
-  !*** D:/liukang/haomuyou/js_sdk/luch-request/luch-request/core/dispatchRequest.js ***!
-  \************************************************************************************/
+/*!*************************************************************************************!*\
+  !*** D:/liukang2/haomuyou/js_sdk/luch-request/luch-request/core/dispatchRequest.js ***!
+  \*************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10720,9 +10784,9 @@ function _default(config) {
 
 /***/ }),
 /* 51 */
-/*!******************************************************************************!*\
-  !*** D:/liukang/haomuyou/js_sdk/luch-request/luch-request/adapters/index.js ***!
-  \******************************************************************************/
+/*!*******************************************************************************!*\
+  !*** D:/liukang2/haomuyou/js_sdk/luch-request/luch-request/adapters/index.js ***!
+  \*******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10832,9 +10896,9 @@ function _default(config) {
 
 /***/ }),
 /* 52 */
-/*!********************************************************************************!*\
-  !*** D:/liukang/haomuyou/js_sdk/luch-request/luch-request/helpers/buildURL.js ***!
-  \********************************************************************************/
+/*!*********************************************************************************!*\
+  !*** D:/liukang2/haomuyou/js_sdk/luch-request/luch-request/helpers/buildURL.js ***!
+  \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10911,9 +10975,9 @@ function buildURL(url, params) {
 
 /***/ }),
 /* 53 */
-/*!*********************************************************************!*\
-  !*** D:/liukang/haomuyou/js_sdk/luch-request/luch-request/utils.js ***!
-  \*********************************************************************/
+/*!**********************************************************************!*\
+  !*** D:/liukang2/haomuyou/js_sdk/luch-request/luch-request/utils.js ***!
+  \**********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11056,9 +11120,9 @@ function isUndefined(val) {
 
 /***/ }),
 /* 54 */
-/*!**********************************************************************************!*\
-  !*** D:/liukang/haomuyou/js_sdk/luch-request/luch-request/core/buildFullPath.js ***!
-  \**********************************************************************************/
+/*!***********************************************************************************!*\
+  !*** D:/liukang2/haomuyou/js_sdk/luch-request/luch-request/core/buildFullPath.js ***!
+  \***********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11086,9 +11150,9 @@ function buildFullPath(baseURL, requestedURL) {
 
 /***/ }),
 /* 55 */
-/*!*************************************************************************************!*\
-  !*** D:/liukang/haomuyou/js_sdk/luch-request/luch-request/helpers/isAbsoluteURL.js ***!
-  \*************************************************************************************/
+/*!**************************************************************************************!*\
+  !*** D:/liukang2/haomuyou/js_sdk/luch-request/luch-request/helpers/isAbsoluteURL.js ***!
+  \**************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11110,9 +11174,9 @@ function isAbsoluteURL(url) {
 
 /***/ }),
 /* 56 */
-/*!***********************************************************************************!*\
-  !*** D:/liukang/haomuyou/js_sdk/luch-request/luch-request/helpers/combineURLs.js ***!
-  \***********************************************************************************/
+/*!************************************************************************************!*\
+  !*** D:/liukang2/haomuyou/js_sdk/luch-request/luch-request/helpers/combineURLs.js ***!
+  \************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11134,9 +11198,9 @@ function combineURLs(baseURL, relativeURL) {
 
 /***/ }),
 /* 57 */
-/*!***************************************************************************!*\
-  !*** D:/liukang/haomuyou/js_sdk/luch-request/luch-request/core/settle.js ***!
-  \***************************************************************************/
+/*!****************************************************************************!*\
+  !*** D:/liukang2/haomuyou/js_sdk/luch-request/luch-request/core/settle.js ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11160,9 +11224,9 @@ function settle(resolve, reject, response) {
 
 /***/ }),
 /* 58 */
-/*!***************************************************************************************!*\
-  !*** D:/liukang/haomuyou/js_sdk/luch-request/luch-request/core/InterceptorManager.js ***!
-  \***************************************************************************************/
+/*!****************************************************************************************!*\
+  !*** D:/liukang2/haomuyou/js_sdk/luch-request/luch-request/core/InterceptorManager.js ***!
+  \****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11221,9 +11285,9 @@ InterceptorManager;exports.default = _default;
 
 /***/ }),
 /* 59 */
-/*!********************************************************************************!*\
-  !*** D:/liukang/haomuyou/js_sdk/luch-request/luch-request/core/mergeConfig.js ***!
-  \********************************************************************************/
+/*!*********************************************************************************!*\
+  !*** D:/liukang2/haomuyou/js_sdk/luch-request/luch-request/core/mergeConfig.js ***!
+  \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11334,9 +11398,9 @@ function _default(globalsConfig) {var config2 = arguments.length > 1 && argument
 
 /***/ }),
 /* 60 */
-/*!*****************************************************************************!*\
-  !*** D:/liukang/haomuyou/js_sdk/luch-request/luch-request/core/defaults.js ***!
-  \*****************************************************************************/
+/*!******************************************************************************!*\
+  !*** D:/liukang2/haomuyou/js_sdk/luch-request/luch-request/core/defaults.js ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -11375,9 +11439,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 /***/ }),
 /* 61 */
-/*!********************************************!*\
-  !*** D:/liukang/haomuyou/static/img/1.png ***!
-  \********************************************/
+/*!*********************************************!*\
+  !*** D:/liukang2/haomuyou/static/img/1.png ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -11385,9 +11449,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA+gAAAPoCAMAAAB6
 
 /***/ }),
 /* 62 */
-/*!********************************************!*\
-  !*** D:/liukang/haomuyou/static/img/2.png ***!
-  \********************************************/
+/*!*********************************************!*\
+  !*** D:/liukang2/haomuyou/static/img/2.png ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -11395,9 +11459,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA+gAAAPoCAYAAABN
 
 /***/ }),
 /* 63 */
-/*!********************************************!*\
-  !*** D:/liukang/haomuyou/static/img/3.png ***!
-  \********************************************/
+/*!*********************************************!*\
+  !*** D:/liukang2/haomuyou/static/img/3.png ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -11405,9 +11469,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA+gAAAPoCAMAAAB6
 
 /***/ }),
 /* 64 */
-/*!********************************************!*\
-  !*** D:/liukang/haomuyou/static/img/4.png ***!
-  \********************************************/
+/*!*********************************************!*\
+  !*** D:/liukang2/haomuyou/static/img/4.png ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -11415,9 +11479,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA+gAAAPoCAMAAAB6
 
 /***/ }),
 /* 65 */
-/*!********************************************!*\
-  !*** D:/liukang/haomuyou/static/img/5.png ***!
-  \********************************************/
+/*!*********************************************!*\
+  !*** D:/liukang2/haomuyou/static/img/5.png ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -11425,9 +11489,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA+gAAAPoCAMAAAB6
 
 /***/ }),
 /* 66 */
-/*!********************************************!*\
-  !*** D:/liukang/haomuyou/static/img/6.png ***!
-  \********************************************/
+/*!*********************************************!*\
+  !*** D:/liukang2/haomuyou/static/img/6.png ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -11435,9 +11499,9 @@ module.exports = "/static/img/6.png";
 
 /***/ }),
 /* 67 */
-/*!********************************************!*\
-  !*** D:/liukang/haomuyou/static/img/7.png ***!
-  \********************************************/
+/*!*********************************************!*\
+  !*** D:/liukang2/haomuyou/static/img/7.png ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -11445,9 +11509,9 @@ module.exports = "/static/img/7.png";
 
 /***/ }),
 /* 68 */
-/*!********************************************!*\
-  !*** D:/liukang/haomuyou/static/img/8.png ***!
-  \********************************************/
+/*!*********************************************!*\
+  !*** D:/liukang2/haomuyou/static/img/8.png ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -11455,9 +11519,9 @@ module.exports = "/static/img/8.png";
 
 /***/ }),
 /* 69 */
-/*!********************************************!*\
-  !*** D:/liukang/haomuyou/static/img/9.png ***!
-  \********************************************/
+/*!*********************************************!*\
+  !*** D:/liukang2/haomuyou/static/img/9.png ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -11465,9 +11529,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA+gAAAPoCAMAAAB6
 
 /***/ }),
 /* 70 */
-/*!*********************************************!*\
-  !*** D:/liukang/haomuyou/static/img/10.png ***!
-  \*********************************************/
+/*!**********************************************!*\
+  !*** D:/liukang2/haomuyou/static/img/10.png ***!
+  \**********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -11499,9 +11563,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA+gAAAPoCAMAAAB6
 /* 93 */,
 /* 94 */,
 /* 95 */
-/*!****************************************************!*\
-  !*** D:/liukang/haomuyou/static/img/daifukuan.png ***!
-  \****************************************************/
+/*!*****************************************************!*\
+  !*** D:/liukang2/haomuyou/static/img/daifukuan.png ***!
+  \*****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -11509,9 +11573,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAMAAAD8
 
 /***/ }),
 /* 96 */
-/*!*****************************************************!*\
-  !*** D:/liukang/haomuyou/static/img/daipintuan.png ***!
-  \*****************************************************/
+/*!******************************************************!*\
+  !*** D:/liukang2/haomuyou/static/img/daipintuan.png ***!
+  \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -11519,9 +11583,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADD
 
 /***/ }),
 /* 97 */
-/*!***************************************************!*\
-  !*** D:/liukang/haomuyou/static/img/daifahuo.png ***!
-  \***************************************************/
+/*!****************************************************!*\
+  !*** D:/liukang2/haomuyou/static/img/daifahuo.png ***!
+  \****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -11529,9 +11593,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAHOCAMAAABZ
 
 /***/ }),
 /* 98 */
-/*!*****************************************************!*\
-  !*** D:/liukang/haomuyou/static/img/daishouhuo.png ***!
-  \*****************************************************/
+/*!******************************************************!*\
+  !*** D:/liukang2/haomuyou/static/img/daishouhuo.png ***!
+  \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -11539,9 +11603,9 @@ module.exports = "/static/img/daishouhuo.png";
 
 /***/ }),
 /* 99 */
-/*!*****************************************************!*\
-  !*** D:/liukang/haomuyou/static/img/yiwancheng.png ***!
-  \*****************************************************/
+/*!******************************************************!*\
+  !*** D:/liukang2/haomuyou/static/img/yiwancheng.png ***!
+  \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -11549,9 +11613,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAMAAAD8
 
 /***/ }),
 /* 100 */
-/*!*************************************************!*\
-  !*** D:/liukang/haomuyou/static/img/sqcwzg.png ***!
-  \*************************************************/
+/*!**************************************************!*\
+  !*** D:/liukang2/haomuyou/static/img/sqcwzg.png ***!
+  \**************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -11559,9 +11623,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAGzCAMAAADu
 
 /***/ }),
 /* 101 */
-/*!**************************************************!*\
-  !*** D:/liukang/haomuyou/static/img/sqcwhhr.png ***!
-  \**************************************************/
+/*!***************************************************!*\
+  !*** D:/liukang2/haomuyou/static/img/sqcwhhr.png ***!
+  \***************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -11569,9 +11633,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAG2CAMAAAC+
 
 /***/ }),
 /* 102 */
-/*!**************************************************!*\
-  !*** D:/liukang/haomuyou/static/img/sqcwvip.png ***!
-  \**************************************************/
+/*!***************************************************!*\
+  !*** D:/liukang2/haomuyou/static/img/sqcwvip.png ***!
+  \***************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -11579,9 +11643,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAMAAAD8
 
 /***/ }),
 /* 103 */
-/*!************************************************!*\
-  !*** D:/liukang/haomuyou/static/img/wdewm.png ***!
-  \************************************************/
+/*!*************************************************!*\
+  !*** D:/liukang2/haomuyou/static/img/wdewm.png ***!
+  \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -11589,9 +11653,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAIMCAMAAAA0
 
 /***/ }),
 /* 104 */
-/*!***********************************************!*\
-  !*** D:/liukang/haomuyou/static/img/dzgl.png ***!
-  \***********************************************/
+/*!************************************************!*\
+  !*** D:/liukang2/haomuyou/static/img/dzgl.png ***!
+  \************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -11599,9 +11663,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAJ/CAMAAAC5
 
 /***/ }),
 /* 105 */
-/*!***********************************************!*\
-  !*** D:/liukang/haomuyou/static/img/wdfs.png ***!
-  \***********************************************/
+/*!************************************************!*\
+  !*** D:/liukang2/haomuyou/static/img/wdfs.png ***!
+  \************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -11609,9 +11673,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAHHCAMAAAB+
 
 /***/ }),
 /* 106 */
-/*!*******************************************************!*\
-  !*** D:/liukang/haomuyou/static/img/wodeshoucang.png ***!
-  \*******************************************************/
+/*!********************************************************!*\
+  !*** D:/liukang2/haomuyou/static/img/wodeshoucang.png ***!
+  \********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -11627,9 +11691,9 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAYAAADF
 /* 113 */,
 /* 114 */,
 /* 115 */
-/*!*********************************************!*\
-  !*** D:/liukang/haomuyou/json/product.json ***!
-  \*********************************************/
+/*!**********************************************!*\
+  !*** D:/liukang2/haomuyou/json/product.json ***!
+  \**********************************************/
 /*! exports provided: status, product, msg, default */
 /***/ (function(module) {
 
@@ -11637,9 +11701,9 @@ module.exports = JSON.parse("{\"status\":1,\"product\":{\"banner\":[{\"Imgid\":1
 
 /***/ }),
 /* 116 */
-/*!*********************************************!*\
-  !*** D:/liukang/haomuyou/json/skuList.json ***!
-  \*********************************************/
+/*!**********************************************!*\
+  !*** D:/liukang2/haomuyou/json/skuList.json ***!
+  \**********************************************/
 /*! exports provided: status, difference, msg, default */
 /***/ (function(module) {
 
@@ -11647,9 +11711,9 @@ module.exports = JSON.parse("{\"status\":1,\"difference\":[{\"id\":\"19\",\"pric
 
 /***/ }),
 /* 117 */
-/*!**********************************************!*\
-  !*** D:/liukang/haomuyou/json/specList.json ***!
-  \**********************************************/
+/*!***********************************************!*\
+  !*** D:/liukang2/haomuyou/json/specList.json ***!
+  \***********************************************/
 /*! exports provided: status, specifications, msg, default */
 /***/ (function(module) {
 
@@ -11750,9 +11814,9 @@ module.exports = JSON.parse("{\"status\":1,\"specifications\":[{\"name\":\"尺�
 /* 209 */,
 /* 210 */,
 /* 211 */
-/*!*******************************************************************!*\
-  !*** D:/liukang/haomuyou/components/mescroll-uni/mescroll-uni.js ***!
-  \*******************************************************************/
+/*!********************************************************************!*\
+  !*** D:/liukang2/haomuyou/components/mescroll-uni/mescroll-uni.js ***!
+  \********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12560,9 +12624,9 @@ MeScroll.prototype.preventDefault = function (e) {
 
 /***/ }),
 /* 212 */
-/*!**************************************************************************!*\
-  !*** D:/liukang/haomuyou/components/mescroll-uni/mescroll-uni-option.js ***!
-  \**************************************************************************/
+/*!***************************************************************************!*\
+  !*** D:/liukang2/haomuyou/components/mescroll-uni/mescroll-uni-option.js ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12606,9 +12670,9 @@ GlobalOption;exports.default = _default;
 
 /***/ }),
 /* 213 */
-/*!*****************************************************************!*\
-  !*** D:/liukang/haomuyou/components/mescroll-uni/wxs/mixins.js ***!
-  \*****************************************************************/
+/*!******************************************************************!*\
+  !*** D:/liukang2/haomuyou/components/mescroll-uni/wxs/mixins.js ***!
+  \******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12762,9 +12826,9 @@ WxsMixin;exports.default = _default;
 /* 249 */,
 /* 250 */,
 /* 251 */
-/*!*********************************************************!*\
-  !*** D:/liukang/haomuyou/static/zaiui/data/sort_vue.js ***!
-  \*********************************************************/
+/*!**********************************************************!*\
+  !*** D:/liukang2/haomuyou/static/zaiui/data/sort_vue.js ***!
+  \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12819,9 +12883,9 @@ _sort_data;exports.default = _default;
 
 /***/ }),
 /* 252 */
-/*!******************************************************!*\
-  !*** D:/liukang/haomuyou/static/zaiui/util/tools.js ***!
-  \******************************************************/
+/*!*******************************************************!*\
+  !*** D:/liukang2/haomuyou/static/zaiui/util/tools.js ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12899,9 +12963,9 @@ _tool;exports.default = _default;
 /* 265 */,
 /* 266 */,
 /* 267 */
-/*!*********************************************************!*\
-  !*** D:/liukang/haomuyou/uview-ui/libs/util/emitter.js ***!
-  \*********************************************************/
+/*!**********************************************************!*\
+  !*** D:/liukang2/haomuyou/uview-ui/libs/util/emitter.js ***!
+  \**********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12978,10 +13042,17 @@ function _broadcast(componentName, eventName, params) {
 /* 286 */,
 /* 287 */,
 /* 288 */,
-/* 289 */
-/*!****************************************************************************!*\
-  !*** D:/liukang/haomuyou/uview-ui/components/u-parse/libs/MpHtmlParser.js ***!
-  \****************************************************************************/
+/* 289 */,
+/* 290 */,
+/* 291 */,
+/* 292 */,
+/* 293 */,
+/* 294 */,
+/* 295 */,
+/* 296 */
+/*!*****************************************************************************!*\
+  !*** D:/liukang2/haomuyou/uview-ui/components/u-parse/libs/MpHtmlParser.js ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12992,9 +13063,9 @@ function _broadcast(componentName, eventName, params) {
  * @author JinYufeng
  * @listens MIT
  */
-var cfg = __webpack_require__(/*! ./config.js */ 290),
+var cfg = __webpack_require__(/*! ./config.js */ 297),
 blankChar = cfg.blankChar,
-CssHandler = __webpack_require__(/*! ./CssHandler.js */ 291),
+CssHandler = __webpack_require__(/*! ./CssHandler.js */ 298),
 windowWidth = uni.getSystemInfoSync().windowWidth;
 var emoji;
 
@@ -13568,10 +13639,10 @@ module.exports = MpHtmlParser;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 290 */
-/*!**********************************************************************!*\
-  !*** D:/liukang/haomuyou/uview-ui/components/u-parse/libs/config.js ***!
-  \**********************************************************************/
+/* 297 */
+/*!***********************************************************************!*\
+  !*** D:/liukang2/haomuyou/uview-ui/components/u-parse/libs/config.js ***!
+  \***********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -13657,14 +13728,14 @@ if (wx.canIUse('editor')) {
 module.exports = cfg;
 
 /***/ }),
-/* 291 */
-/*!**************************************************************************!*\
-  !*** D:/liukang/haomuyou/uview-ui/components/u-parse/libs/CssHandler.js ***!
-  \**************************************************************************/
+/* 298 */
+/*!***************************************************************************!*\
+  !*** D:/liukang2/haomuyou/uview-ui/components/u-parse/libs/CssHandler.js ***!
+  \***************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var cfg = __webpack_require__(/*! ./config.js */ 290),
+var cfg = __webpack_require__(/*! ./config.js */ 297),
 isLetter = function isLetter(c) {return c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z';};
 
 function CssHandler(tagStyle) {
@@ -13766,13 +13837,6 @@ parser.prototype.Content = function () {
 };
 
 /***/ }),
-/* 292 */,
-/* 293 */,
-/* 294 */,
-/* 295 */,
-/* 296 */,
-/* 297 */,
-/* 298 */,
 /* 299 */,
 /* 300 */,
 /* 301 */,
@@ -13815,10 +13879,17 @@ parser.prototype.Content = function () {
 /* 338 */,
 /* 339 */,
 /* 340 */,
-/* 341 */
-/*!**********************************************************!*\
-  !*** D:/liukang/haomuyou/uview-ui/libs/util/province.js ***!
-  \**********************************************************/
+/* 341 */,
+/* 342 */,
+/* 343 */,
+/* 344 */,
+/* 345 */,
+/* 346 */,
+/* 347 */,
+/* 348 */
+/*!***********************************************************!*\
+  !*** D:/liukang2/haomuyou/uview-ui/libs/util/province.js ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -13826,10 +13897,10 @@ parser.prototype.Content = function () {
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var provinceData = [{ "label": "北京市", "value": "11" }, { "label": "天津市", "value": "12" }, { "label": "河北省", "value": "13" }, { "label": "山西省", "value": "14" }, { "label": "内蒙古自治区", "value": "15" }, { "label": "辽宁省", "value": "21" }, { "label": "吉林省", "value": "22" }, { "label": "黑龙江省", "value": "23" }, { "label": "上海市", "value": "31" }, { "label": "江苏省", "value": "32" }, { "label": "浙江省", "value": "33" }, { "label": "安徽省", "value": "34" }, { "label": "福建省", "value": "35" }, { "label": "江西省", "value": "36" }, { "label": "山东省", "value": "37" }, { "label": "河南省", "value": "41" }, { "label": "湖北省", "value": "42" }, { "label": "湖南省", "value": "43" }, { "label": "广东省", "value": "44" }, { "label": "广西壮族自治区", "value": "45" }, { "label": "海南省", "value": "46" }, { "label": "重庆市", "value": "50" }, { "label": "四川省", "value": "51" }, { "label": "贵州省", "value": "52" }, { "label": "云南省", "value": "53" }, { "label": "西藏自治区", "value": "54" }, { "label": "陕西省", "value": "61" }, { "label": "甘肃省", "value": "62" }, { "label": "青海省", "value": "63" }, { "label": "宁夏回族自治区", "value": "64" }, { "label": "新疆维吾尔自治区", "value": "65" }, { "label": "台湾", "value": "66" }, { "label": "香港", "value": "67" }, { "label": "澳门", "value": "68" }];var _default = provinceData;exports.default = _default;
 
 /***/ }),
-/* 342 */
-/*!******************************************************!*\
-  !*** D:/liukang/haomuyou/uview-ui/libs/util/city.js ***!
-  \******************************************************/
+/* 349 */
+/*!*******************************************************!*\
+  !*** D:/liukang2/haomuyou/uview-ui/libs/util/city.js ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -13837,10 +13908,10 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var cityData = [[{ "label": "市辖区", "value": "1101" }], [{ "label": "市辖区", "value": "1201" }], [{ "label": "石家庄市", "value": "1301" }, { "label": "唐山市", "value": "1302" }, { "label": "秦皇岛市", "value": "1303" }, { "label": "邯郸市", "value": "1304" }, { "label": "邢台市", "value": "1305" }, { "label": "保定市", "value": "1306" }, { "label": "张家口市", "value": "1307" }, { "label": "承德市", "value": "1308" }, { "label": "沧州市", "value": "1309" }, { "label": "廊坊市", "value": "1310" }, { "label": "衡水市", "value": "1311" }], [{ "label": "太原市", "value": "1401" }, { "label": "大同市", "value": "1402" }, { "label": "阳泉市", "value": "1403" }, { "label": "长治市", "value": "1404" }, { "label": "晋城市", "value": "1405" }, { "label": "朔州市", "value": "1406" }, { "label": "晋中市", "value": "1407" }, { "label": "运城市", "value": "1408" }, { "label": "忻州市", "value": "1409" }, { "label": "临汾市", "value": "1410" }, { "label": "吕梁市", "value": "1411" }], [{ "label": "呼和浩特市", "value": "1501" }, { "label": "包头市", "value": "1502" }, { "label": "乌海市", "value": "1503" }, { "label": "赤峰市", "value": "1504" }, { "label": "通辽市", "value": "1505" }, { "label": "鄂尔多斯市", "value": "1506" }, { "label": "呼伦贝尔市", "value": "1507" }, { "label": "巴彦淖尔市", "value": "1508" }, { "label": "乌兰察布市", "value": "1509" }, { "label": "兴安盟", "value": "1522" }, { "label": "锡林郭勒盟", "value": "1525" }, { "label": "阿拉善盟", "value": "1529" }], [{ "label": "沈阳市", "value": "2101" }, { "label": "大连市", "value": "2102" }, { "label": "鞍山市", "value": "2103" }, { "label": "抚顺市", "value": "2104" }, { "label": "本溪市", "value": "2105" }, { "label": "丹东市", "value": "2106" }, { "label": "锦州市", "value": "2107" }, { "label": "营口市", "value": "2108" }, { "label": "阜新市", "value": "2109" }, { "label": "辽阳市", "value": "2110" }, { "label": "盘锦市", "value": "2111" }, { "label": "铁岭市", "value": "2112" }, { "label": "朝阳市", "value": "2113" }, { "label": "葫芦岛市", "value": "2114" }], [{ "label": "长春市", "value": "2201" }, { "label": "吉林市", "value": "2202" }, { "label": "四平市", "value": "2203" }, { "label": "辽源市", "value": "2204" }, { "label": "通化市", "value": "2205" }, { "label": "白山市", "value": "2206" }, { "label": "松原市", "value": "2207" }, { "label": "白城市", "value": "2208" }, { "label": "延边朝鲜族自治州", "value": "2224" }], [{ "label": "哈尔滨市", "value": "2301" }, { "label": "齐齐哈尔市", "value": "2302" }, { "label": "鸡西市", "value": "2303" }, { "label": "鹤岗市", "value": "2304" }, { "label": "双鸭山市", "value": "2305" }, { "label": "大庆市", "value": "2306" }, { "label": "伊春市", "value": "2307" }, { "label": "佳木斯市", "value": "2308" }, { "label": "七台河市", "value": "2309" }, { "label": "牡丹江市", "value": "2310" }, { "label": "黑河市", "value": "2311" }, { "label": "绥化市", "value": "2312" }, { "label": "大兴安岭地区", "value": "2327" }], [{ "label": "市辖区", "value": "3101" }], [{ "label": "南京市", "value": "3201" }, { "label": "无锡市", "value": "3202" }, { "label": "徐州市", "value": "3203" }, { "label": "常州市", "value": "3204" }, { "label": "苏州市", "value": "3205" }, { "label": "南通市", "value": "3206" }, { "label": "连云港市", "value": "3207" }, { "label": "淮安市", "value": "3208" }, { "label": "盐城市", "value": "3209" }, { "label": "扬州市", "value": "3210" }, { "label": "镇江市", "value": "3211" }, { "label": "泰州市", "value": "3212" }, { "label": "宿迁市", "value": "3213" }], [{ "label": "杭州市", "value": "3301" }, { "label": "宁波市", "value": "3302" }, { "label": "温州市", "value": "3303" }, { "label": "嘉兴市", "value": "3304" }, { "label": "湖州市", "value": "3305" }, { "label": "绍兴市", "value": "3306" }, { "label": "金华市", "value": "3307" }, { "label": "衢州市", "value": "3308" }, { "label": "舟山市", "value": "3309" }, { "label": "台州市", "value": "3310" }, { "label": "丽水市", "value": "3311" }], [{ "label": "合肥市", "value": "3401" }, { "label": "芜湖市", "value": "3402" }, { "label": "蚌埠市", "value": "3403" }, { "label": "淮南市", "value": "3404" }, { "label": "马鞍山市", "value": "3405" }, { "label": "淮北市", "value": "3406" }, { "label": "铜陵市", "value": "3407" }, { "label": "安庆市", "value": "3408" }, { "label": "黄山市", "value": "3410" }, { "label": "滁州市", "value": "3411" }, { "label": "阜阳市", "value": "3412" }, { "label": "宿州市", "value": "3413" }, { "label": "六安市", "value": "3415" }, { "label": "亳州市", "value": "3416" }, { "label": "池州市", "value": "3417" }, { "label": "宣城市", "value": "3418" }], [{ "label": "福州市", "value": "3501" }, { "label": "厦门市", "value": "3502" }, { "label": "莆田市", "value": "3503" }, { "label": "三明市", "value": "3504" }, { "label": "泉州市", "value": "3505" }, { "label": "漳州市", "value": "3506" }, { "label": "南平市", "value": "3507" }, { "label": "龙岩市", "value": "3508" }, { "label": "宁德市", "value": "3509" }], [{ "label": "南昌市", "value": "3601" }, { "label": "景德镇市", "value": "3602" }, { "label": "萍乡市", "value": "3603" }, { "label": "九江市", "value": "3604" }, { "label": "新余市", "value": "3605" }, { "label": "鹰潭市", "value": "3606" }, { "label": "赣州市", "value": "3607" }, { "label": "吉安市", "value": "3608" }, { "label": "宜春市", "value": "3609" }, { "label": "抚州市", "value": "3610" }, { "label": "上饶市", "value": "3611" }], [{ "label": "济南市", "value": "3701" }, { "label": "青岛市", "value": "3702" }, { "label": "淄博市", "value": "3703" }, { "label": "枣庄市", "value": "3704" }, { "label": "东营市", "value": "3705" }, { "label": "烟台市", "value": "3706" }, { "label": "潍坊市", "value": "3707" }, { "label": "济宁市", "value": "3708" }, { "label": "泰安市", "value": "3709" }, { "label": "威海市", "value": "3710" }, { "label": "日照市", "value": "3711" }, { "label": "莱芜市", "value": "3712" }, { "label": "临沂市", "value": "3713" }, { "label": "德州市", "value": "3714" }, { "label": "聊城市", "value": "3715" }, { "label": "滨州市", "value": "3716" }, { "label": "菏泽市", "value": "3717" }], [{ "label": "郑州市", "value": "4101" }, { "label": "开封市", "value": "4102" }, { "label": "洛阳市", "value": "4103" }, { "label": "平顶山市", "value": "4104" }, { "label": "安阳市", "value": "4105" }, { "label": "鹤壁市", "value": "4106" }, { "label": "新乡市", "value": "4107" }, { "label": "焦作市", "value": "4108" }, { "label": "濮阳市", "value": "4109" }, { "label": "许昌市", "value": "4110" }, { "label": "漯河市", "value": "4111" }, { "label": "三门峡市", "value": "4112" }, { "label": "南阳市", "value": "4113" }, { "label": "商丘市", "value": "4114" }, { "label": "信阳市", "value": "4115" }, { "label": "周口市", "value": "4116" }, { "label": "驻马店市", "value": "4117" }, { "label": "省直辖县级行政区划", "value": "4190" }], [{ "label": "武汉市", "value": "4201" }, { "label": "黄石市", "value": "4202" }, { "label": "十堰市", "value": "4203" }, { "label": "宜昌市", "value": "4205" }, { "label": "襄阳市", "value": "4206" }, { "label": "鄂州市", "value": "4207" }, { "label": "荆门市", "value": "4208" }, { "label": "孝感市", "value": "4209" }, { "label": "荆州市", "value": "4210" }, { "label": "黄冈市", "value": "4211" }, { "label": "咸宁市", "value": "4212" }, { "label": "随州市", "value": "4213" }, { "label": "恩施土家族苗族自治州", "value": "4228" }, { "label": "省直辖县级行政区划", "value": "4290" }], [{ "label": "长沙市", "value": "4301" }, { "label": "株洲市", "value": "4302" }, { "label": "湘潭市", "value": "4303" }, { "label": "衡阳市", "value": "4304" }, { "label": "邵阳市", "value": "4305" }, { "label": "岳阳市", "value": "4306" }, { "label": "常德市", "value": "4307" }, { "label": "张家界市", "value": "4308" }, { "label": "益阳市", "value": "4309" }, { "label": "郴州市", "value": "4310" }, { "label": "永州市", "value": "4311" }, { "label": "怀化市", "value": "4312" }, { "label": "娄底市", "value": "4313" }, { "label": "湘西土家族苗族自治州", "value": "4331" }], [{ "label": "广州市", "value": "4401" }, { "label": "韶关市", "value": "4402" }, { "label": "深圳市", "value": "4403" }, { "label": "珠海市", "value": "4404" }, { "label": "汕头市", "value": "4405" }, { "label": "佛山市", "value": "4406" }, { "label": "江门市", "value": "4407" }, { "label": "湛江市", "value": "4408" }, { "label": "茂名市", "value": "4409" }, { "label": "肇庆市", "value": "4412" }, { "label": "惠州市", "value": "4413" }, { "label": "梅州市", "value": "4414" }, { "label": "汕尾市", "value": "4415" }, { "label": "河源市", "value": "4416" }, { "label": "阳江市", "value": "4417" }, { "label": "清远市", "value": "4418" }, { "label": "东莞市", "value": "4419" }, { "label": "中山市", "value": "4420" }, { "label": "潮州市", "value": "4451" }, { "label": "揭阳市", "value": "4452" }, { "label": "云浮市", "value": "4453" }], [{ "label": "南宁市", "value": "4501" }, { "label": "柳州市", "value": "4502" }, { "label": "桂林市", "value": "4503" }, { "label": "梧州市", "value": "4504" }, { "label": "北海市", "value": "4505" }, { "label": "防城港市", "value": "4506" }, { "label": "钦州市", "value": "4507" }, { "label": "贵港市", "value": "4508" }, { "label": "玉林市", "value": "4509" }, { "label": "百色市", "value": "4510" }, { "label": "贺州市", "value": "4511" }, { "label": "河池市", "value": "4512" }, { "label": "来宾市", "value": "4513" }, { "label": "崇左市", "value": "4514" }], [{ "label": "海口市", "value": "4601" }, { "label": "三亚市", "value": "4602" }, { "label": "三沙市", "value": "4603" }, { "label": "儋州市", "value": "4604" }, { "label": "省直辖县级行政区划", "value": "4690" }], [{ "label": "市辖区", "value": "5001" }, { "label": "县", "value": "5002" }], [{ "label": "成都市", "value": "5101" }, { "label": "自贡市", "value": "5103" }, { "label": "攀枝花市", "value": "5104" }, { "label": "泸州市", "value": "5105" }, { "label": "德阳市", "value": "5106" }, { "label": "绵阳市", "value": "5107" }, { "label": "广元市", "value": "5108" }, { "label": "遂宁市", "value": "5109" }, { "label": "内江市", "value": "5110" }, { "label": "乐山市", "value": "5111" }, { "label": "南充市", "value": "5113" }, { "label": "眉山市", "value": "5114" }, { "label": "宜宾市", "value": "5115" }, { "label": "广安市", "value": "5116" }, { "label": "达州市", "value": "5117" }, { "label": "雅安市", "value": "5118" }, { "label": "巴中市", "value": "5119" }, { "label": "资阳市", "value": "5120" }, { "label": "阿坝藏族羌族自治州", "value": "5132" }, { "label": "甘孜藏族自治州", "value": "5133" }, { "label": "凉山彝族自治州", "value": "5134" }], [{ "label": "贵阳市", "value": "5201" }, { "label": "六盘水市", "value": "5202" }, { "label": "遵义市", "value": "5203" }, { "label": "安顺市", "value": "5204" }, { "label": "毕节市", "value": "5205" }, { "label": "铜仁市", "value": "5206" }, { "label": "黔西南布依族苗族自治州", "value": "5223" }, { "label": "黔东南苗族侗族自治州", "value": "5226" }, { "label": "黔南布依族苗族自治州", "value": "5227" }], [{ "label": "昆明市", "value": "5301" }, { "label": "曲靖市", "value": "5303" }, { "label": "玉溪市", "value": "5304" }, { "label": "保山市", "value": "5305" }, { "label": "昭通市", "value": "5306" }, { "label": "丽江市", "value": "5307" }, { "label": "普洱市", "value": "5308" }, { "label": "临沧市", "value": "5309" }, { "label": "楚雄彝族自治州", "value": "5323" }, { "label": "红河哈尼族彝族自治州", "value": "5325" }, { "label": "文山壮族苗族自治州", "value": "5326" }, { "label": "西双版纳傣族自治州", "value": "5328" }, { "label": "大理白族自治州", "value": "5329" }, { "label": "德宏傣族景颇族自治州", "value": "5331" }, { "label": "怒江傈僳族自治州", "value": "5333" }, { "label": "迪庆藏族自治州", "value": "5334" }], [{ "label": "拉萨市", "value": "5401" }, { "label": "日喀则市", "value": "5402" }, { "label": "昌都市", "value": "5403" }, { "label": "林芝市", "value": "5404" }, { "label": "山南市", "value": "5405" }, { "label": "那曲地区", "value": "5424" }, { "label": "阿里地区", "value": "5425" }], [{ "label": "西安市", "value": "6101" }, { "label": "铜川市", "value": "6102" }, { "label": "宝鸡市", "value": "6103" }, { "label": "咸阳市", "value": "6104" }, { "label": "渭南市", "value": "6105" }, { "label": "延安市", "value": "6106" }, { "label": "汉中市", "value": "6107" }, { "label": "榆林市", "value": "6108" }, { "label": "安康市", "value": "6109" }, { "label": "商洛市", "value": "6110" }], [{ "label": "兰州市", "value": "6201" }, { "label": "嘉峪关市", "value": "6202" }, { "label": "金昌市", "value": "6203" }, { "label": "白银市", "value": "6204" }, { "label": "天水市", "value": "6205" }, { "label": "武威市", "value": "6206" }, { "label": "张掖市", "value": "6207" }, { "label": "平凉市", "value": "6208" }, { "label": "酒泉市", "value": "6209" }, { "label": "庆阳市", "value": "6210" }, { "label": "定西市", "value": "6211" }, { "label": "陇南市", "value": "6212" }, { "label": "临夏回族自治州", "value": "6229" }, { "label": "甘南藏族自治州", "value": "6230" }], [{ "label": "西宁市", "value": "6301" }, { "label": "海东市", "value": "6302" }, { "label": "海北藏族自治州", "value": "6322" }, { "label": "黄南藏族自治州", "value": "6323" }, { "label": "海南藏族自治州", "value": "6325" }, { "label": "果洛藏族自治州", "value": "6326" }, { "label": "玉树藏族自治州", "value": "6327" }, { "label": "海西蒙古族藏族自治州", "value": "6328" }], [{ "label": "银川市", "value": "6401" }, { "label": "石嘴山市", "value": "6402" }, { "label": "吴忠市", "value": "6403" }, { "label": "固原市", "value": "6404" }, { "label": "中卫市", "value": "6405" }], [{ "label": "乌鲁木齐市", "value": "6501" }, { "label": "克拉玛依市", "value": "6502" }, { "label": "吐鲁番市", "value": "6504" }, { "label": "哈密市", "value": "6505" }, { "label": "昌吉回族自治州", "value": "6523" }, { "label": "博尔塔拉蒙古自治州", "value": "6527" }, { "label": "巴音郭楞蒙古自治州", "value": "6528" }, { "label": "阿克苏地区", "value": "6529" }, { "label": "克孜勒苏柯尔克孜自治州", "value": "6530" }, { "label": "喀什地区", "value": "6531" }, { "label": "和田地区", "value": "6532" }, { "label": "伊犁哈萨克自治州", "value": "6540" }, { "label": "塔城地区", "value": "6542" }, { "label": "阿勒泰地区", "value": "6543" }, { "label": "自治区直辖县级行政区划", "value": "6590" }], [{ "label": "台北", "value": "6601" }, { "label": "高雄", "value": "6602" }, { "label": "基隆", "value": "6603" }, { "label": "台中", "value": "6604" }, { "label": "台南", "value": "6605" }, { "label": "新竹", "value": "6606" }, { "label": "嘉义", "value": "6607" }, { "label": "宜兰", "value": "6608" }, { "label": "桃园", "value": "6609" }, { "label": "苗栗", "value": "6610" }, { "label": "彰化", "value": "6611" }, { "label": "南投", "value": "6612" }, { "label": "云林", "value": "6613" }, { "label": "屏东", "value": "6614" }, { "label": "台东", "value": "6615" }, { "label": "花莲", "value": "6616" }, { "label": "澎湖", "value": "6617" }], [{ "label": "香港岛", "value": "6701" }, { "label": "九龙", "value": "6702" }, { "label": "新界", "value": "6703" }], [{ "label": "澳门半岛", "value": "6801" }, { "label": "氹仔岛", "value": "6802" }, { "label": "路环岛", "value": "6803" }, { "label": "路氹城", "value": "6804" }]];var _default = cityData;exports.default = _default;
 
 /***/ }),
-/* 343 */
-/*!******************************************************!*\
-  !*** D:/liukang/haomuyou/uview-ui/libs/util/area.js ***!
-  \******************************************************/
+/* 350 */
+/*!*******************************************************!*\
+  !*** D:/liukang2/haomuyou/uview-ui/libs/util/area.js ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 

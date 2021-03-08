@@ -10,22 +10,32 @@
   "libVersion": "",
   "appid": "touristappid",
   "projectname": "haomuyou",
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
   "condition": {
-    "search": {
-      "current": -1,
-      "list": []
-    },
-    "conversation": {
-      "current": -1,
+    "plugin": {
       "list": []
     },
     "game": {
-      "current": -1,
+      "list": []
+    },
+    "gamePlugin": {
       "list": []
     },
     "miniprogram": {
-      "current": -1,
-      "list": []
+      "list": [
+        {
+          "name": "pages/tabbar/cartList",
+          "pathName": "pages/tabbar/cartList",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/tabbar/category",
+          "pathName": "pages/tabbar/category",
+          "scene": null
+        }
+      ]
     }
   }
 }

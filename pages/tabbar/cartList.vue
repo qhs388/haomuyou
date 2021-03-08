@@ -1,5 +1,5 @@
 <template>
-	<view>
+	<view style="padding-bottom: 115upx;box-sizing: border-box;">
 		<view class="labelNav">
 					<view class="itme">
 						<u-icon name="checkmark-circle" color="#c3c3c3"></u-icon>
@@ -86,31 +86,37 @@
 					<image src="/static/img/noCart.png" mode=""></image>
 				</view>
 			</view>
+			
+			<recommend></recommend>
+			
 			<view class="footerCar">
-			<u-checkbox-group  @change="selectedall()">
-					<u-checkbox 
-						shape="circle"
-						active-color="#e93323"
-						v-model="allchecked"
-					>全选</u-checkbox>
-				</u-checkbox-group>
-		
-			<view class="footerCarRight">
-				<text class="combined" style="color: #E34819 ;"  v-if="administrate==false">￥<text>{{totalPrice}}</text></text>
-				<u-button shape="circle" :customStyle="customStyle" v-if="administrate==false">立即下单</u-button>
-				<u-button shape="circle" :customStyle="customStyle2" v-else>删除</u-button>
-			</view>
+				<u-checkbox-group  @change="selectedall()">
+						<u-checkbox 
+							shape="circle"
+							active-color="#e93323"
+							v-model="allchecked"
+						>全选</u-checkbox>
+					</u-checkbox-group>
+			
+				<view class="footerCarRight">
+					<text class="combined" style="color: #E34819 ;"  v-if="administrate==false">￥<text>{{totalPrice}}</text></text>
+					<u-button shape="circle" :customStyle="customStyle" v-if="administrate==false">立即下单</u-button>
+					<u-button shape="circle" :customStyle="customStyle2" v-else>删除</u-button>
+				</view>
 			</view>
 		</view>
+		
 		<pictrue></pictrue>
 	</view>
 </template>
 
 <script>
 	import pictrue from '@/components/pictrue/pictrue.vue'
+	import recommend from '@/components/recommend/recommend.vue'
 	export default {
 		components:{
-			pictrue
+			pictrue,
+			recommend
 		},
 		data() {
 			return {

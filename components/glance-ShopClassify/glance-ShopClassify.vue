@@ -11,13 +11,13 @@
 			</scroll-view>
 			<scroll-view class="VerticalMain" scroll-y scroll-with-animation :scroll-into-view="'main-'+mainCur" @scroll="VerticalMain">
 				<block v-for="(item,index) in list" :key="index">
-					<view class="padding-top padding-lr" :id="'main-'+index">
+					<view class="padding-top padding-lr" style="padding: 20upx;box-sizing: border-box;" :id="'main-'+index">
 						
 						<!--标题栏-->
 						<view class="cu-bar bg-white">
 							<view class="action">
 								<text class="cuIcon-title text-red"/>
-								<text>标题栏-{{item.name}}</text>
+								<text>{{item.cateName}}</text>
 							</view>
 						</view>
 						
@@ -25,11 +25,11 @@
 						<view class="zaiui-grid-icon-box">
 							<view class="cu-list grid col-3 no-border">
 								<block v-for="(items,indexs) in sortList" :key="indexs">
-									<view class="cu-item">
+									<view class="cu-item" :class="{'view-mr':(index+1)%2==0}">
 										<view class="grid-icon">
-											<image class="icon" :src="items.img" lazy-load mode="widthFix"/>
+											<image class="icon" :src="items.pic" lazy-load />
 										</view>
-										<text class="text-black">{{items.name}}</text>
+										<text class="text-black">{{items.cateName}}</text>
 									</view>
 								</block>
 							</view>
@@ -46,6 +46,11 @@
 <script>
 	import _sort_data from '@/static/zaiui/data/sort_vue.js';	//虚拟数据
 	import _tool from '@/static/zaiui/util/tools.js';	//工具函数
+	
+	import {
+		getChildGoodsType
+	} from "@/api/api.js"
+	
 	export default {
 		data() {
 			return {
@@ -64,6 +69,7 @@
 		},
 		onLoad() {
 			console.log('aaaaaaaaaaa',this.list);	
+			
 		},
 		onReady() {
 			console.log("xxxxxxxxxxxxxxxxx")
@@ -72,6 +78,7 @@
 			    scrollTop: 0,
 			    duration: 0
 			});
+			this.getChildGoodsType();
 			
 			// let list = [{}];
 			// for (let i = 0; i < 26; i++) {
@@ -82,9 +89,35 @@
 			// this.list = list;
 			// this.listCur = list[0];
 			
-			this.sortList = _sort_data.sortListData();
+			// this.sortList = _sort_data.sortListData();
 		},
 		methods: {
+			getChildGoodsType(){
+				getChildGoodsType({
+					pid:10
+				})
+				.then(result => {
+					let data = result.data || [];
+					if (data.code == this.$dict.responseCode.success) {
+						this.sortList = data.data
+						
+						
+					} else {
+						uni.showToast({
+							title: data.msg || '请求错误',
+							icon: 'none'
+						})
+						return false
+					}
+				})
+				.catch(error => {
+					console.log(error)
+					uni.showToast({
+						title: error.msg || '请求错误',
+						icon: 'none'
+					});
+				});
+			},
 			BackPage() {
 				uni.navigateBack();
 			},
@@ -140,5 +173,29 @@
 	/* #endif */
 	
 	@import "../../static/zaiui/style/sort_vue.scss";
+	.cu-list{
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		.cu-item{
+			text-align: center;
+			margin-right: 34upx;
+		}
+		.grid-icon{
+			
+			width: 138upx;
+			height: 138upx;
+			border-radius: 100%;
+			overflow: hidden;
+			image{
+				width: 100%;
+				height: 100%;
+				display: block;
+			}
+		}
+		.view-mr{
+			margin-right: 0upx !important;
+		}
+	}
 	
 </style>

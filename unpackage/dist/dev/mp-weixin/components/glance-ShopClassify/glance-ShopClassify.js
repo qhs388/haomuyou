@@ -1,9 +1,9 @@
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["components/glance-ShopClassify/glance-ShopClassify"],{
 
 /***/ 246:
-/*!**********************************************************************************!*\
-  !*** D:/liukang/haomuyou/components/glance-ShopClassify/glance-ShopClassify.vue ***!
-  \**********************************************************************************/
+/*!***********************************************************************************!*\
+  !*** D:/liukang2/haomuyou/components/glance-ShopClassify/glance-ShopClassify.vue ***!
+  \***********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -42,9 +42,9 @@ component.options.__file = "components/glance-ShopClassify/glance-ShopClassify.v
 /***/ }),
 
 /***/ 247:
-/*!*****************************************************************************************************************!*\
-  !*** D:/liukang/haomuyou/components/glance-ShopClassify/glance-ShopClassify.vue?vue&type=template&id=1e56d76c& ***!
-  \*****************************************************************************************************************/
+/*!******************************************************************************************************************!*\
+  !*** D:/liukang2/haomuyou/components/glance-ShopClassify/glance-ShopClassify.vue?vue&type=template&id=1e56d76c& ***!
+  \******************************************************************************************************************/
 /*! exports provided: render, staticRenderFns, recyclableRender, components */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -64,9 +64,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 248:
-/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--16-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!D:/liukang/haomuyou/components/glance-ShopClassify/glance-ShopClassify.vue?vue&type=template&id=1e56d76c& ***!
-  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--16-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!D:/liukang2/haomuyou/components/glance-ShopClassify/glance-ShopClassify.vue?vue&type=template&id=1e56d76c& ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns, recyclableRender, components */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -91,9 +91,9 @@ render._withStripped = true
 /***/ }),
 
 /***/ 249:
-/*!***********************************************************************************************************!*\
-  !*** D:/liukang/haomuyou/components/glance-ShopClassify/glance-ShopClassify.vue?vue&type=script&lang=js& ***!
-  \***********************************************************************************************************/
+/*!************************************************************************************************************!*\
+  !*** D:/liukang2/haomuyou/components/glance-ShopClassify/glance-ShopClassify.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -107,9 +107,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 250:
-/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!D:/liukang/haomuyou/components/glance-ShopClassify/glance-ShopClassify.vue?vue&type=script&lang=js& ***!
-  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!D:/liukang2/haomuyou/components/glance-ShopClassify/glance-ShopClassify.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -161,7 +161,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _sort_vue = _interopRequireDefault(__webpack_require__(/*! @/static/zaiui/data/sort_vue.js */ 251));
-var _tools = _interopRequireDefault(__webpack_require__(/*! @/static/zaiui/util/tools.js */ 252));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
+var _tools = _interopRequireDefault(__webpack_require__(/*! @/static/zaiui/util/tools.js */ 252));
+
+var _api = __webpack_require__(/*! @/api/api.js */ 47);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
 //
 //
 //
@@ -208,7 +210,7 @@ var _tools = _interopRequireDefault(__webpack_require__(/*! @/static/zaiui/util/
 //
 //虚拟数据
 //工具函数
-var _default = { data: function data() {return { tabCur: 0, mainCur: 0, verticalNavTop: 0, load: true, sortList: [] };}, props: { list: { type: Array, default: [] } }, onLoad: function onLoad() {console.log('aaaaaaaaaaa', this.list);}, onReady: function onReady() {console.log("xxxxxxxxxxxxxxxxx");_tools.default.setBarColor(true);uni.pageScrollTo({ scrollTop: 0, duration: 0 }); // let list = [{}];
+var _default = { data: function data() {return { tabCur: 0, mainCur: 0, verticalNavTop: 0, load: true, sortList: [] };}, props: { list: { type: Array, default: [] } }, onLoad: function onLoad() {console.log('aaaaaaaaaaa', this.list);}, onReady: function onReady() {console.log("xxxxxxxxxxxxxxxxx");_tools.default.setBarColor(true);uni.pageScrollTo({ scrollTop: 0, duration: 0 });this.getChildGoodsType(); // let list = [{}];
     // for (let i = 0; i < 26; i++) {
     // 	list[i] = {};
     // 	list[i].name = String.fromCharCode(65 + i);
@@ -216,15 +218,46 @@ var _default = { data: function data() {return { tabCur: 0, mainCur: 0, vertical
     // }
     // this.list = list;
     // this.listCur = list[0];
-    this.sortList = _sort_vue.default.sortListData();}, methods: { BackPage: function BackPage() {uni.navigateBack();}, TabSelect: function TabSelect(e) {this.tabCur = e.currentTarget.dataset.id;this.mainCur = e.currentTarget.dataset.id;this.verticalNavTop = (e.currentTarget.dataset.id - 1) * 50;}, VerticalMain: function VerticalMain(e) {var _this = this;var that = this;var tabHeight = 0;if (this.load) {var _loop = function _loop(i) {
-          var view = uni.createSelectorQuery().select("#main-" + _this.list[i].id);
+    // this.sortList = _sort_data.sortListData();
+  }, methods: { getChildGoodsType: function getChildGoodsType() {var _this = this;(0, _api.getChildGoodsType)({ pid: 10 }).then(function (result) {var data = result.data || [];if (data.code == _this.$dict.responseCode.success) {_this.sortList = data.data;} else {uni.showToast({
+            title: data.msg || '请求错误',
+            icon: 'none' });
+
+          return false;
+        }
+      }).
+      catch(function (error) {
+        console.log(error);
+        uni.showToast({
+          title: error.msg || '请求错误',
+          icon: 'none' });
+
+      });
+    },
+    BackPage: function BackPage() {
+      uni.navigateBack();
+    },
+    TabSelect: function TabSelect(e) {
+      this.tabCur = e.currentTarget.dataset.id;
+      this.mainCur = e.currentTarget.dataset.id;
+      this.verticalNavTop = (e.currentTarget.dataset.id - 1) * 50;
+    },
+    VerticalMain: function VerticalMain(e) {var _this2 = this;
+
+
+
+      var that = this;
+      var tabHeight = 0;
+      if (this.load) {var _loop = function _loop(
+        i) {
+          var view = uni.createSelectorQuery().select("#main-" + _this2.list[i].id);
 
           view.fields({
             size: true },
           function (data) {
-            _this.list[i].top = tabHeight;
+            _this2.list[i].top = tabHeight;
             tabHeight = tabHeight + data.height;
-            _this.list[i].bottom = tabHeight;
+            _this2.list[i].bottom = tabHeight;
           }).exec();};for (var i = 0; i < this.list.length; i++) {_loop(i);
         }
         this.load = false;
@@ -249,9 +282,9 @@ var _default = { data: function data() {return { tabCur: 0, mainCur: 0, vertical
 /***/ }),
 
 /***/ 253:
-/*!********************************************************************************************************************!*\
-  !*** D:/liukang/haomuyou/components/glance-ShopClassify/glance-ShopClassify.vue?vue&type=style&index=0&lang=scss& ***!
-  \********************************************************************************************************************/
+/*!*********************************************************************************************************************!*\
+  !*** D:/liukang2/haomuyou/components/glance-ShopClassify/glance-ShopClassify.vue?vue&type=style&index=0&lang=scss& ***!
+  \*********************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -265,9 +298,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 254:
-/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--8-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--8-oneOf-1-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-2!./node_modules/postcss-loader/src??ref--8-oneOf-1-3!./node_modules/sass-loader/dist/cjs.js??ref--8-oneOf-1-4!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-5!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!D:/liukang/haomuyou/components/glance-ShopClassify/glance-ShopClassify.vue?vue&type=style&index=0&lang=scss& ***!
-  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--8-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--8-oneOf-1-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-2!./node_modules/postcss-loader/src??ref--8-oneOf-1-3!./node_modules/sass-loader/dist/cjs.js??ref--8-oneOf-1-4!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--8-oneOf-1-5!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!D:/liukang2/haomuyou/components/glance-ShopClassify/glance-ShopClassify.vue?vue&type=style&index=0&lang=scss& ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
